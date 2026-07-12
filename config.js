@@ -6,5 +6,5 @@ window.SITE_CONFIG = {
   STORAGE_BUCKET: "site-images",
 
   // Необязательно. Укажите только числовой ID счётчика Яндекс Метрики.
-  YANDEX_METRIKA_ID: ""
+  YANDEX_METRIKA_ID: "110623483"
 };
