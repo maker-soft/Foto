@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Лена Сибирская — выпускные альбомы</title>
+  <meta id="metaDescription" name="description" content="Выпускные альбомы для школы и детского сада.">
+  <link id="siteFavicon" rel="icon" type="image/png" href="assets/images/favicon-lena.png">
+  <link id="customFontStylesheet" rel="stylesheet" href="" disabled>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="data/content.js"></script>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body data-page="landing">
+<header class="site-header">
+  <a class="brand" href="./" aria-label="На главную">
+    <span class="brand-visual"><img id="headerLogo" class="brand-logo" alt="" hidden><span id="headerMark" class="brand-mark">ЛС</span></span>
+    <span id="headerBrandCopy" class="brand-copy"><b id="brandName">Лена Сибирская</b><small id="brandTagline"></small></span>
+  </a>
+  <nav class="landing-nav"><a id="navSchool" href="school.html"></a><a id="navKindergarten" href="kindergarten.html"></a></nav>
+  <a id="headerVk" class="btn btn-dark" target="_blank" rel="noopener"></a>
+  <button class="menu-btn" aria-label="Меню" aria-expanded="false">☰</button>
+</header>
+<main>
+  <section class="landing-hero">
+    <div class="landing-intro">
+      <p class="eyebrow" id="landingEyebrow"></p>
+      <h1 id="landingTitle"></h1>
+      <p id="landingText"></p>
+    </div>
+    <div class="direction-grid">
+      <article class="direction-card">
+        <a href="school.html" class="direction-image"><img id="landingSchoolImage" alt="Школьные выпускные альбомы"></a>
+        <div class="direction-copy"><p class="eyebrow" id="landingSchoolLabel"></p><h2 id="landingSchoolTitle"></h2><p id="landingSchoolText"></p><a id="landingSchoolButton" class="btn btn-dark" href="school.html"></a></div>
+      </article>
+      <article class="direction-card direction-card-accent">
+        <a href="kindergarten.html" class="direction-image"><img id="landingKindergartenImage" alt="Выпускные альбомы для детского сада"></a>
+        <div class="direction-copy"><p class="eyebrow" id="landingKindergartenLabel"></p><h2 id="landingKindergartenTitle"></h2><p id="landingKindergartenText"></p><a id="landingKindergartenButton" class="btn btn-dark" href="kindergarten.html"></a></div>
+      </article>
+    </div>
+  </section>
+  <section class="cta landing-cta"><div><p class="eyebrow" id="landingCtaEyebrow"></p><h2 id="landingCtaTitle"></h2></div><a id="landingCtaButton" class="btn btn-light" target="_blank" rel="noopener"></a></section>
+</main>
+<footer>
+  <div class="brand"><span class="brand-visual"><img id="footerLogo" class="brand-logo" alt="" hidden><span id="footerMark" class="brand-mark">ЛС</span></span><span id="footerBrandCopy" class="brand-copy"><b id="footerBrand">Лена Сибирская</b><small id="footerCity"></small></span></div>
+  <p id="footerDescription"></p><div><a id="footerVk2" target="_blank" rel="noopener"></a></div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
