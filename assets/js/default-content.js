@@ -1,5 +1,5 @@
 window.DEFAULT_SITE_CONTENT = {
-  "version": 1,
+  "version": 2,
   "brandTop": "Выпускной альбом Новосибирск",
   "brandBottom": "Фотограф Лена Сибирская",
   "homeSlogan": "Качество без суеты, заморочек и заоблачных цен.",
@@ -47,6 +47,14 @@ window.DEFAULT_SITE_CONTENT = {
       "title": "Начальная школа",
       "subtitle": "ИТОГОВЫЕ АЛЬБОМЫ, ГДЕ ЕСТЬ ВСЁ, КРОМЕ ЛИШНЕГО",
       "hero": "assets/images/school-hero.webp",
+      "pageImages": {
+        "home": "assets/images/school-hero.webp",
+        "albums": "assets/images/school-hero.webp",
+        "preparation": "assets/images/school-hero.webp",
+        "process": "assets/images/school-hero.webp",
+        "questions": "assets/images/school-hero.webp",
+        "photos": "assets/images/school-hero.webp"
+      },
       "albums": [
         {
           "id": "school-folder",
@@ -136,6 +144,14 @@ window.DEFAULT_SITE_CONTENT = {
       "title": "Детский сад",
       "subtitle": "ВЫПУСКНЫЕ АЛЬБОМЫ, В КОТОРЫХ ВАШ РЕБЕНОК БУДЕТ НА КАЖДОМ ФОТО",
       "hero": "assets/images/kindergarten-hero.webp",
+      "pageImages": {
+        "home": "assets/images/kindergarten-hero.webp",
+        "albums": "assets/images/kindergarten-hero.webp",
+        "preparation": "assets/images/kindergarten-hero.webp",
+        "process": "assets/images/kindergarten-hero.webp",
+        "questions": "assets/images/kindergarten-hero.webp",
+        "photos": "assets/images/kindergarten-hero.webp"
+      },
       "albums": [
         {
           "id": "kg-folder",
