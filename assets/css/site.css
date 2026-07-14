@@ -13,6 +13,7 @@
   --nav-size:15px;
   --home-title-size:54px;
   --direction-title-size:70px;
+  --direction-subtitle-size:15px;
   --page-title-size:72px;
   --section-title-size:54px;
   --card-title-size:26px;
@@ -65,7 +66,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
 .direction-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,18,.78),rgba(20,20,18,0) 62%)}
 .direction-card-copy{position:absolute;z-index:2;left:32px;right:32px;bottom:30px;color:#fff}
 .direction-card h2{margin:0 0 12px;font:600 min(var(--direction-title-size),5.2vw)/.94 var(--font-heading);letter-spacing:var(--heading-ls);overflow-wrap:anywhere}
-.direction-card p{max-width:610px;margin:0;font-size:13px;letter-spacing:.07em;line-height:1.55;text-transform:uppercase;opacity:.9;overflow-wrap:anywhere}
+.direction-card p{max-width:610px;margin:0;font-size:clamp(9px,var(--direction-subtitle-size),32px);letter-spacing:.07em;line-height:1.55;text-transform:uppercase;opacity:.9;overflow-wrap:anywhere}
 
 .page{padding:54px 0 86px}
 .page-title{margin:0 0 28px;font:600 min(var(--page-title-size),7vw)/.96 var(--font-heading);letter-spacing:var(--heading-ls);overflow-wrap:anywhere}
@@ -88,7 +89,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
 .direction-panel{grid-column:1;grid-row:1 / span 2;align-self:start;position:sticky;top:calc(var(--topbar-h) + 16px);z-index:20;min-width:0;min-height:650px;min-height:min(650px,calc(100svh - var(--topbar-h) - 32px));max-height:calc(100vh - var(--topbar-h) - 32px);max-height:calc(100svh - var(--topbar-h) - 32px);padding:34px 30px;display:flex;flex-direction:column;overflow:auto;border-radius:var(--radius);background:#fff;box-shadow:0 16px 42px rgba(35,35,33,.08);overscroll-behavior:contain}
 .direction-kicker{margin-bottom:8px;color:var(--muted);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
 .direction-heading{margin:0 0 16px;font:600 min(var(--direction-title-size),5.5vw)/.92 var(--font-heading);letter-spacing:var(--heading-ls);overflow-wrap:anywhere}
-.direction-subtitle{margin:0;color:var(--muted);font-size:11px;line-height:1.55;letter-spacing:.07em;text-transform:uppercase;overflow-wrap:anywhere}
+.direction-subtitle{margin:0;color:var(--muted);font-size:clamp(9px,var(--direction-subtitle-size),32px);line-height:1.55;letter-spacing:.07em;text-transform:uppercase;overflow-wrap:anywhere}
 .side-menu{display:grid;gap:10px;margin-top:28px;min-width:0}
 .side-button{display:flex;width:100%;min-width:0;min-height:48px;align-items:center;justify-content:center;padding:12px 18px;font-weight:600;line-height:1.2;text-align:center;white-space:normal;overflow-wrap:anywhere}
 .side-button.external{background:var(--button)}
@@ -99,6 +100,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
 .direction-hero img{position:relative;z-index:0;width:100%;height:100%;object-fit:cover}
 .section-content{grid-column:2;grid-row:2;min-width:0;padding-top:54px}
 .section-header{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:end;margin-bottom:28px;min-width:0}
+.section-header.without-intro{grid-template-columns:1fr}
 .section-title{margin:0;font:600 min(var(--section-title-size),5vw)/.98 var(--font-heading);letter-spacing:var(--heading-ls);overflow-wrap:anywhere}
 .section-intro{margin:0;color:var(--muted);white-space:pre-line}
 .free-text{max-width:920px;white-space:pre-line;font-size:1.08em}
@@ -154,7 +156,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
   .direction-card{height:100%;min-height:0}
   .direction-card-copy{left:clamp(18px,2.4vw,30px);right:clamp(18px,2.4vw,30px);bottom:clamp(18px,2.4vh,28px)}
   .direction-card h2{font-size:clamp(36px,5.1vw,64px)}
-  .direction-card p{font-size:clamp(9px,1.05vw,12px)}
+  .direction-card p{font-size:clamp(9px,var(--direction-subtitle-size),32px)}
 
   .page{height:calc(100vh - var(--topbar-h));height:calc(100svh - var(--topbar-h));min-height:0;padding:clamp(16px,2.5vh,28px) 0;overflow:hidden}
   .about-layout,.contacts-layout{height:100%;min-height:0}
@@ -166,7 +168,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
   .direction-shell{grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:14px}
   .direction-panel{grid-column:1;grid-row:1;position:relative;top:auto;height:calc(100vh - var(--topbar-h) - 28px);height:calc(100svh - var(--topbar-h) - 28px);min-height:0;max-height:none;padding:clamp(16px,2.2vw,26px);overflow:auto}
   .direction-heading{margin-bottom:10px;font-size:clamp(38px,5vw,58px);line-height:.92}
-  .direction-subtitle{font-size:clamp(8px,.85vw,10px);line-height:1.38}
+  .direction-subtitle{font-size:clamp(9px,var(--direction-subtitle-size),32px);line-height:1.38}
   .side-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:clamp(12px,2vh,18px)}
   .side-button{min-height:40px;padding:8px 9px;font-size:clamp(11px,1.1vw,14px)}
   .direction-bottom{padding-top:10px}
@@ -202,7 +204,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
   .direction-card{height:auto;min-height:410px;border-radius:22px}
   .direction-card-copy{left:20px;right:20px;bottom:20px}
   .direction-card h2{font-size:min(var(--direction-title-size),12vw)}
-  .direction-card p{font-size:10px}
+  .direction-card p{font-size:clamp(9px,var(--direction-subtitle-size),32px)}
 
   .page{height:auto;min-height:calc(100svh - var(--topbar-h));padding:34px 0 52px;overflow:visible}
   .page-title{font-size:min(var(--page-title-size),13vw)}
@@ -214,7 +216,7 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
   .direction-shell{grid-template-columns:1fr;gap:14px}
   .direction-panel{grid-column:1;grid-row:1;position:relative;top:auto;z-index:2;height:auto;min-height:0;max-height:none;padding:18px 10px;overflow:visible;box-shadow:none}
   .direction-heading{font-size:min(var(--direction-title-size),12vw)}
-  .direction-subtitle{font-size:9px}
+  .direction-subtitle{font-size:clamp(9px,var(--direction-subtitle-size),32px)}
   .side-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .side-button{min-height:44px;padding:9px 10px;font-size:12px}
   .direction-bottom{margin-top:14px;padding-top:0}
