@@ -1,5 +1,5 @@
 window.DEFAULT_SITE_CONTENT = {
-  "version": 2,
+  "version": 3,
   "brandTop": "Выпускной альбом Новосибирск",
   "brandBottom": "Фотограф Лена Сибирская",
   "homeSlogan": "Качество без суеты, заморочек и заоблачных цен.",
@@ -34,6 +34,7 @@ window.DEFAULT_SITE_CONTENT = {
     "navSize": 15,
     "homeTitleSize": 54,
     "directionTitleSize": 70,
+    "directionSubtitleSize": 15,
     "pageTitleSize": 72,
     "sectionTitleSize": 54,
     "cardTitleSize": 26,
@@ -46,7 +47,10 @@ window.DEFAULT_SITE_CONTENT = {
     "school": {
       "title": "Начальная школа",
       "subtitle": "ИТОГОВЫЕ АЛЬБОМЫ, ГДЕ ЕСТЬ ВСЁ, КРОМЕ ЛИШНЕГО",
+      "cardImage": "assets/images/school-hero.webp",
       "hero": "assets/images/school-hero.webp",
+      "albumsSectionTitle": "Виды альбомов",
+      "albumsSectionIntro": "Выберите формат, чтобы посмотреть описание и фотографии.",
       "pageImages": {
         "home": "assets/images/school-hero.webp",
         "albums": "assets/images/school-hero.webp",
@@ -143,7 +147,10 @@ window.DEFAULT_SITE_CONTENT = {
     "kindergarten": {
       "title": "Детский сад",
       "subtitle": "ВЫПУСКНЫЕ АЛЬБОМЫ, В КОТОРЫХ ВАШ РЕБЕНОК БУДЕТ НА КАЖДОМ ФОТО",
+      "cardImage": "assets/images/kindergarten-hero.webp",
       "hero": "assets/images/kindergarten-hero.webp",
+      "albumsSectionTitle": "Виды альбомов",
+      "albumsSectionIntro": "Выберите формат, чтобы посмотреть описание и фотографии.",
       "pageImages": {
         "home": "assets/images/kindergarten-hero.webp",
         "albums": "assets/images/kindergarten-hero.webp",
