@@ -33,3 +33,10 @@
 .backup-secondary[open]>summary::after{content:'−'}
 .backup-secondary>.card{margin:0;border-width:1px 0 0;border-radius:0}
 @media(max-width:700px){.backup-title-row{display:grid}.backup-badge{justify-self:start}.backup-primary-card .backup-actions .btn{width:100%}}
+
+/* Удаление фотографий v15 */
+.photo-preview-block{display:grid;gap:10px;justify-items:start}
+.thumb.empty{display:grid;place-items:center;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
+.photo-delete{margin-top:0}
+.image-item button{cursor:pointer;font-size:22px;line-height:1}
+@media(max-width:850px){.photo-delete{width:100%;max-width:260px}}
