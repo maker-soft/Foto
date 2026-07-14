@@ -102,7 +102,12 @@
         upsert: false,
         contentType: file.type
       });
-    if (error) throw error;
+    if (error) {
+      if (/permission denied for function is_site_admin/i.test(String(error.message || ''))) {
+        throw new Error('В Supabase не применено исправление прав загрузки. Выполните файл supabase/fix_storage_permissions_v8.sql в SQL Editor.');
+      }
+      throw error;
+    }
     const { data } = client.storage.from(cfg.STORAGE_BUCKET || 'site-media').getPublicUrl(path);
     return data.publicUrl;
   }
@@ -120,7 +125,12 @@
     const path = storagePath(url);
     if (!path || !client) return;
     const { error } = await client.storage.from(cfg.STORAGE_BUCKET || 'site-media').remove([path]);
-    if (error) throw error;
+    if (error) {
+      if (/permission denied for function is_site_admin/i.test(String(error.message || ''))) {
+        throw new Error('В Supabase не применено исправление прав удаления. Выполните файл supabase/fix_storage_permissions_v8.sql в SQL Editor.');
+      }
+      throw error;
+    }
   }
 
   async function login(password, captchaToken = '') {
