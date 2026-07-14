@@ -12,7 +12,7 @@
 Кратко необходимо:
 
 1. создать проект и пользователя-администратора в Supabase;
-2. заменить `admin@example.com` в `supabase/schema.sql` и выполнить SQL;
+2. заменить `lena.foto@mail.ru` в `supabase/schema.sql` и выполнить SQL;
 3. заполнить `assets/js/config.js`;
 4. проверить сайт через локальный HTTP-сервер;
 5. загрузить содержимое папки в корень GitHub-репозитория;
