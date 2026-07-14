@@ -256,3 +256,99 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
 /* Пустые изображения после удаления через админку v15 */
 .media-placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:18px;background:var(--surface);color:var(--muted);font-size:13px;letter-spacing:.04em;text-align:center}
 .album-detail-cover{position:relative;background:var(--surface)}
+
+/* v16: отдельные кнопки «Обо мне» и «Контакты» в верхней строке */
+.menu-toggle,.mobile-nav{display:none!important}
+
+@media (max-width:1000px){
+  .topbar-inner{gap:12px}
+  .topnav{display:flex;margin-left:auto;gap:7px;min-width:0}
+  .topnav .nav-button{min-width:0;padding:10px 15px;white-space:nowrap}
+}
+
+@media (max-width:560px){
+  .topbar-inner{gap:7px}
+  .brand{flex:1 1 auto;max-width:calc(100% - 174px)}
+  .brand strong{font-size:min(calc(var(--brand-size) * .76),15px);white-space:normal;line-height:1.02}
+  .brand span{margin-top:3px;font-size:9px;line-height:1.1}
+  .topnav{flex:0 0 auto;gap:5px}
+  .topnav .nav-button{min-height:38px;padding:8px 10px;font-size:min(var(--nav-size),11.5px);line-height:1.05}
+}
+
+@media (max-width:420px){
+  .brand{max-width:calc(100% - 162px)}
+  .brand span{display:none}
+  .topnav .nav-button{padding-inline:9px;font-size:10.8px}
+}
+
+@media (max-width:350px){
+  .brand{max-width:calc(100% - 148px)}
+  .brand strong{font-size:12px}
+  .topnav .nav-button{padding-inline:7px;font-size:10px}
+}
+
+/* v16: если фото удалено, контейнер изображения также исчезает */
+.media-placeholder{display:none!important}
+
+.direction-card.no-media{
+  min-height:170px;
+  height:auto;
+  align-self:start;
+  display:flex;
+  align-items:flex-end;
+  border:1px solid var(--line);
+  background:var(--surface);
+}
+.direction-card.no-media::after{display:none}
+.direction-card.no-media .direction-card-copy{
+  position:relative;
+  inset:auto;
+  width:100%;
+  padding:28px;
+  color:var(--ink);
+}
+.direction-card.no-media h2{font-size:min(var(--direction-title-size),42px)}
+.direction-card.no-media p{color:var(--muted);opacity:1}
+
+.about-layout.without-media,.contacts-layout.without-media{grid-template-columns:1fr}
+.about-layout.without-media .about-copy,.contacts-layout.without-media .contacts-copy{max-width:980px}
+
+.direction-shell.without-hero .section-content{
+  grid-column:2;
+  grid-row:1;
+  padding-top:0;
+}
+
+.album-card.no-media{
+  min-height:170px;
+  display:flex;
+  align-items:flex-end;
+  border:1px solid var(--line);
+  background:var(--surface);
+}
+.album-card.no-media::after{display:none}
+.album-card.no-media .album-copy{
+  position:relative;
+  inset:auto;
+  width:100%;
+  padding:24px;
+  color:var(--ink);
+}
+.album-card.no-media .album-copy p{color:var(--muted);opacity:1}
+.album-detail.without-cover{grid-template-columns:1fr}
+.album-detail.without-cover .album-detail-copy{max-width:980px}
+
+@media (min-width:561px) and (max-width:1366px){
+  .direction-card.no-media{height:auto;min-height:150px}
+  .direction-shell.without-hero .section-content{grid-column:2;grid-row:1;padding-top:0}
+  .album-card.no-media{min-height:150px}
+}
+
+@media (max-width:560px){
+  .direction-card.no-media{min-height:145px}
+  .direction-card.no-media .direction-card-copy{padding:22px}
+  .direction-card.no-media h2{font-size:min(var(--direction-title-size),10vw)}
+  .direction-shell.without-hero .section-content{grid-column:1;grid-row:2;padding-top:24px}
+  .album-card.no-media{min-height:140px}
+  .album-card.no-media .album-copy{padding:22px}
+}
