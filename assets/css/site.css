@@ -151,28 +151,39 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
 
   body.view-home,body.view-about,body.view-contacts{overflow-y:hidden}
   .home{height:calc(100vh - var(--topbar-h));height:calc(100svh - var(--topbar-h));min-height:0;padding:clamp(18px,3vh,30px) 0 clamp(14px,2.2vh,24px);display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
-  .slogan{margin:0 0 clamp(14px,2.2vh,24px);font-size:clamp(34px,5vw,var(--home-title-size));line-height:1.02}
+  /* Планшетная типографика уважает размеры из админки, но ограничивает их
+     шириной карточки. Раньше clamp() принудительно увеличивал шрифт минимум
+     до 34–44 px, поэтому подписи могли занимать почти всю фотографию. */
+  body{font-size:min(var(--base-size),18px)}
+  .brand strong{font-size:min(var(--brand-size),22px)}
+  .nav-button,.menu-toggle,.action-button,.folder-tab{font-size:min(var(--nav-size),15px)}
+
+  .slogan{margin:0 0 clamp(14px,2.2vh,24px);font-size:min(var(--home-title-size),clamp(28px,4.35vw,48px));line-height:1.04}
   .direction-grid{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0;height:100%}
   .direction-card{height:100%;min-height:0}
-  .direction-card-copy{left:clamp(18px,2.4vw,30px);right:clamp(18px,2.4vw,30px);bottom:clamp(18px,2.4vh,28px)}
-  .direction-card h2{font-size:clamp(36px,5.1vw,64px)}
-  .direction-card p{font-size:clamp(9px,var(--direction-subtitle-size),32px)}
+  .direction-card-copy{left:clamp(16px,2.2vw,28px);right:clamp(16px,2.2vw,28px);bottom:clamp(16px,2.2vh,26px)}
+  .direction-card h2{margin-bottom:clamp(7px,1.2vh,11px);font-size:min(var(--direction-title-size),clamp(28px,4.25vw,50px));line-height:.98}
+  .direction-card p{max-width:100%;font-size:min(var(--direction-subtitle-size),clamp(10px,1.3vw,16px));line-height:1.42;letter-spacing:.055em}
 
   .page{height:calc(100vh - var(--topbar-h));height:calc(100svh - var(--topbar-h));min-height:0;padding:clamp(16px,2.5vh,28px) 0;overflow:hidden}
   .about-layout,.contacts-layout{height:100%;min-height:0}
   .about-copy,.contacts-copy{height:100%;overflow:auto;padding:clamp(24px,4vw,54px)}
   .slideshow{height:100%;min-height:0}
-  .page-title{font-size:clamp(44px,6vw,68px)}
+  .page-title{font-size:min(var(--page-title-size),clamp(34px,5vw,58px));line-height:1}
 
   .direction-page{padding:14px 0 30px}
   .direction-shell{grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:14px}
   .direction-panel{grid-column:1;grid-row:1;position:relative;top:auto;height:calc(100vh - var(--topbar-h) - 28px);height:calc(100svh - var(--topbar-h) - 28px);min-height:0;max-height:none;padding:clamp(16px,2.2vw,26px);overflow:auto}
-  .direction-heading{margin-bottom:10px;font-size:clamp(38px,5vw,58px);line-height:.92}
-  .direction-subtitle{font-size:clamp(9px,var(--direction-subtitle-size),32px);line-height:1.38}
+  .direction-heading{margin-bottom:10px;font-size:min(var(--direction-title-size),clamp(30px,4.25vw,50px));line-height:.96}
+  .direction-subtitle{font-size:min(var(--direction-subtitle-size),clamp(10px,1.3vw,16px));line-height:1.4;letter-spacing:.055em}
   .side-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:clamp(12px,2vh,18px)}
-  .side-button{min-height:40px;padding:8px 9px;font-size:clamp(11px,1.1vw,14px)}
+  .side-button{min-height:40px;padding:8px 9px;font-size:min(var(--nav-size),14px)}
   .direction-bottom{padding-top:10px}
-  .back-button{min-height:36px;padding:8px 12px;font-size:clamp(11px,1.1vw,14px)}
+  .back-button{min-height:36px;padding:8px 12px;font-size:min(var(--nav-size),14px)}
+  .section-title{font-size:min(var(--section-title-size),clamp(30px,4.25vw,50px));line-height:1}
+  .album-copy h3{font-size:min(var(--card-title-size),clamp(20px,2.4vw,27px))}
+  .album-detail-copy h2{font-size:min(var(--section-title-size),clamp(30px,4.25vw,50px));line-height:1}
+  .faq-question{font-size:min(clamp(20px,2.4vw,34px),30px)}
   .direction-hero{grid-column:2;grid-row:1;height:calc(100vh - var(--topbar-h) - 28px);height:calc(100svh - var(--topbar-h) - 28px);min-height:0}
   .section-content{grid-column:1/-1;grid-row:2;padding-top:38px}
   .album-card{grid-column:span 6}
