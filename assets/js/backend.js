@@ -196,7 +196,9 @@
 
   async function getSiteStats(days = 30) {
     if (!client) throw new Error('Supabase не настроен');
-    const { data, error } = await client.rpc('get_site_stats', { p_days: Number(days) || 30 });
+    const parsed = Number(days);
+    const normalizedDays = Number.isFinite(parsed) ? Math.max(0, Math.min(365, Math.trunc(parsed))) : 30;
+    const { data, error } = await client.rpc('get_site_stats', { p_days: normalizedDays });
     if (error) throw error;
     return data || {};
   }
