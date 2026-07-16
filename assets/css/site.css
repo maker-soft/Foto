@@ -534,3 +534,34 @@ body.lightbox-open{overflow:hidden}
     width:100%;
   }
 }
+
+
+/* v21: компактная подложка десктопного меню и нижняя кнопка возврата на мобильных */
+.album-back-bottom{display:none}
+
+@media (min-width:1367px){
+  .direction-shell{
+    grid-template-columns:280px minmax(0,1fr);
+  }
+  .direction-panel{
+    width:280px;
+    max-width:280px;
+    padding:30px 20px;
+    box-sizing:border-box;
+  }
+  .side-menu{
+    width:100%;
+    min-width:0;
+    max-width:none;
+    margin-right:0;
+  }
+}
+
+@media (max-width:560px){
+  .album-back-top{display:none}
+  .album-back-bottom{
+    display:flex;
+    width:100%;
+    margin:24px 0 0;
+  }
+}
