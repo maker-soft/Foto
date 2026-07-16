@@ -520,11 +520,15 @@ body.lightbox-open{overflow:hidden}
   .album-price{font-size:20px}
 }
 
-/* v19: компактное меню направлений на широком десктопе */
+/* v20: компактное меню направлений на широком десктопе — одна вертикальная колонка */
 @media (min-width:1367px){
   .side-menu{
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:minmax(0,1fr);
+    width:50%;
+    min-width:190px;
+    max-width:230px;
     gap:10px;
+    margin-right:auto;
   }
   .side-button{
     width:100%;
