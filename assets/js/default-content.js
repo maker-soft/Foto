@@ -87,11 +87,11 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/school-hero.webp"
       },
       "albums": [
-        {"id":"school-folder","title":"Папка","subtitle":"Лаконичный формат","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-minimal","title":"Минимальный","subtitle":"Самое важное","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-optimal","title":"Оптимальный","subtitle":"Сбалансированный альбом","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-classic","title":"Классика","subtitle":"Спокойная подача","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
+        {"id":"school-folder","title":"Папка","subtitle":"Лаконичный формат","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-minimal","title":"Минимальный","subtitle":"Самое важное","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-optimal","title":"Оптимальный","subtitle":"Сбалансированный альбом","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-classic","title":"Классика","subtitle":"Спокойная подача","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
       ],
       "preparation": {"title":"Подготовка","intro":"","body":""},
       "process": {"title":"Процесс","intro":"","body":""},
@@ -129,12 +129,12 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/kindergarten-hero.webp"
       },
       "albums": [
-        {"id":"kg-folder","title":"Папка","subtitle":"Лаконичный формат","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-2","title":"2 разворота","subtitle":"Компактный альбом","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-3","title":"3 разворота","subtitle":"Больше памятных кадров","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-4","title":"4 разворота","subtitle":"Расширенная история","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-5","title":"5 разворотов","subtitle":"Подробный выпускной альбом","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]}
+        {"id":"kg-folder","title":"Папка","subtitle":"Лаконичный формат","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-2","title":"2 разворота","subtitle":"Компактный альбом","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-3","title":"3 разворота","subtitle":"Больше памятных кадров","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-4","title":"4 разворота","subtitle":"Расширенная история","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-5","title":"5 разворотов","subtitle":"Подробный выпускной альбом","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]}
       ],
       "preparation": {"title":"Подготовка","intro":"","body":""},
       "process": {"title":"Процесс","intro":"","body":""},

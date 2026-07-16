@@ -189,11 +189,13 @@
       if(!a)return empty(l.albumNotFound);
       const images=uniqueImages([albumImage(a,d),...(a.gallery||[])]);
       const mediaBlock=images.length?`<div class="album-detail-media">${gallery(images,'album-detail-gallery')}</div>`:'';
-      return `<button class="back-button album-back" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>${mediaBlock}<article class="album-detail-copy album-detail-copy-bottom"><span class="direction-kicker">${esc(d.title)}</span><h2>${esc(a.title)}</h2>${a.subtitle?`<div class="album-subtitle rich-text">${richHtml(a.subtitle)}</div>`:''}${a.text?`<div class="album-description rich-text">${richHtml(a.text)}</div>`:''}</article>`;
+      const heading=`<article class="album-detail-heading"><span class="direction-kicker">${esc(d.title)}</span><h2>${esc(a.title)}</h2>${a.subtitle?`<div class="album-subtitle rich-text">${richHtml(a.subtitle)}</div>`:''}${a.price?`<div class="album-price">${esc(a.price)}</div>`:''}</article>`;
+      const description=a.text?`<article class="album-detail-copy album-detail-copy-bottom"><div class="album-description rich-text">${richHtml(a.text)}</div></article>`:'';
+      return `<button class="back-button album-back" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>${heading}${mediaBlock}${description}`;
     }
     return `${sectionHeader(d.albumsSectionTitle||d.menuLabels?.albums||'Виды альбомов',d.albumsSectionIntro)}<div class="album-grid">${d.albums.map(a=>{
       const cover=albumImage(a,d),hasCover=Boolean(asset(cover));
-      return `<button class="album-card ${hasCover?'has-media':'no-media'}" data-go="direction/${dir}/albums/${a.id}">${hasCover?media(cover,a.title,'loading="lazy"'):''}<span class="album-copy"><h3>${esc(a.title)}</h3><p>${esc(a.subtitle)}</p></span></button>`;
+      return `<button class="album-card ${hasCover?'has-media':'no-media'}" data-go="direction/${dir}/albums/${a.id}">${hasCover?media(cover,a.title,'loading="lazy"'):''}<span class="album-copy"><h3>${esc(a.title)}</h3>${a.subtitle?`<p>${esc(a.subtitle)}</p>`:''}${a.price?`<span class="album-card-price">${esc(a.price)}</span>`:''}</span></button>`;
     }).join('')}</div>`;
   }
 
