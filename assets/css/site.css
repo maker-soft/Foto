@@ -476,3 +476,46 @@ body.lightbox-open{overflow:hidden}
 @media(max-width:560px){
   .album-detail-gallery.count-1 figure,.album-detail-gallery.count-2 figure{grid-column:span 12;aspect-ratio:4/3}
 }
+
+/* v18: название, подпись и стоимость альбома над фотографиями. */
+.album-detail-heading{
+  width:100%;
+  margin:0 0 22px;
+  padding:clamp(28px,4vw,56px);
+  border-radius:24px;
+  background:var(--surface);
+}
+.album-detail-heading h2{
+  margin:12px 0 14px;
+  font:600 min(var(--section-title-size),5vw)/.95 var(--font-heading);
+  letter-spacing:var(--heading-ls);
+  overflow-wrap:anywhere;
+}
+.album-price,.album-card-price{
+  display:block;
+  margin-top:14px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.album-price{font-size:clamp(20px,2vw,28px)}
+.album-card-price{font-size:15px;color:#fff}
+.album-card.no-media .album-card-price{color:var(--ink)}
+.album-detail-copy-bottom{margin-top:22px}
+.album-detail-copy-bottom .album-description{margin-top:0}
+
+/* v18: комфортный размер отдельного просмотра на мониторе. */
+@media (min-width:1001px){
+  .lightbox-stage img{
+    max-width:min(1120px,82vw);
+    max-height:min(780px,82vh);
+  }
+}
+@media (min-width:561px) and (max-width:1000px){
+  .album-detail-heading h2{font-size:min(var(--section-title-size),clamp(30px,4.25vw,50px))}
+  .lightbox-stage img{max-width:88vw;max-height:80vh}
+}
+@media (max-width:560px){
+  .album-detail-heading{padding:24px 20px}
+  .album-detail-heading h2{font-size:min(var(--section-title-size),12vw)}
+  .album-price{font-size:20px}
+}
