@@ -352,3 +352,127 @@ main{min-height:calc(100vh - var(--topbar-h));min-height:calc(100svh - var(--top
   .album-card.no-media{min-height:140px}
   .album-card.no-media .album-copy{padding:22px}
 }
+
+/* v17: единые кнопки, полноширинные пояснения, одинаковые фото и просмотр */
+.brand-name,.brand-city{display:block}
+.brand-city{margin-top:2px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Все кнопки навигации имеют одинаковую заливку. Активный пункт выделяется рамкой. */
+.nav-button,.nav-button.active,
+.side-button,.side-button.active,.side-button.external,.side-button.video-button,
+.folder-tab,.folder-tab.active{
+  background:var(--button);
+  border-color:var(--line);
+  color:var(--ink);
+}
+.nav-button.active,.side-button.active,.folder-tab.active{
+  box-shadow:inset 0 0 0 2px var(--active);
+  font-weight:800;
+}
+
+/* Пояснение всегда располагается под заголовком во всю строку. */
+.section-header,.section-header.without-intro{display:block;margin-bottom:30px}
+.section-intro{width:100%;max-width:none;margin:14px 0 0;color:var(--muted)}
+.section-intro.rich-text>*:first-child{margin-top:0}
+.section-intro.rich-text>*:last-child{margin-bottom:0}
+
+/* Безопасное форматирование основных текстов. */
+.rich-text{overflow-wrap:anywhere}
+.rich-text p{margin:0 0 1em}
+.rich-text p:last-child{margin-bottom:0}
+.rich-text ul,.rich-text ol{margin:.7em 0 1em;padding-left:1.35em}
+.rich-text strong{font-weight:800}
+.rich-text em{font-style:italic}
+.page-text{white-space:normal}
+.free-text{white-space:normal}
+.album-description{white-space:normal;margin-top:20px}
+.album-subtitle{color:var(--muted);font-size:1.05em}
+.faq-answer .rich-text{max-width:900px;padding:0 58px 24px 0;color:var(--muted)}
+.faq-answer .rich-text p{padding:0}
+
+/* В подкаталоге альбома сначала фотографии, затем текст. */
+.album-back{width:auto;margin-bottom:22px}
+.album-detail-media{margin-bottom:22px}
+.album-detail-media .gallery{margin-top:0}
+.album-detail-copy-bottom{
+  max-width:none;
+  width:100%;
+  margin-top:22px;
+  padding:clamp(28px,4vw,60px);
+  border-radius:24px;
+  background:var(--surface);
+}
+.album-detail-copy-bottom h2{margin:12px 0 14px;font:600 min(var(--section-title-size),5vw)/.95 var(--font-heading);letter-spacing:var(--heading-ls);overflow-wrap:anywhere}
+
+/* Все фотографии в подборках одного размера. */
+.gallery{grid-template-columns:repeat(12,minmax(0,1fr));align-items:stretch}
+.gallery figure,.gallery figure:nth-child(n){grid-column:span 4;min-height:0;aspect-ratio:4/3}
+.gallery-view,.slide-view,.hero-view{
+  display:block;
+  width:100%;
+  height:100%;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:zoom-in;
+}
+.gallery-view img,.slide-view img,.hero-view img{width:100%;height:100%;object-fit:cover}
+.hero-view{position:absolute;inset:0}
+.slide-view{position:absolute;inset:0}
+.gallery-view:focus-visible,.slide-view:focus-visible,.hero-view:focus-visible{outline:3px solid var(--active);outline-offset:-3px}
+
+/* Полноэкранный просмотр фотографий. */
+body.lightbox-open{overflow:hidden}
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:none;
+  grid-template-columns:72px minmax(0,1fr) 72px;
+  align-items:center;
+  padding:28px;
+  background:rgba(18,18,17,.94);
+  color:#fff;
+}
+.lightbox.open{display:grid}
+.lightbox-stage{position:relative;display:grid;place-items:center;width:100%;height:calc(100vh - 56px);height:calc(100svh - 56px);min-width:0}
+.lightbox-stage img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+.lightbox-close,.lightbox-nav{
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+}
+.lightbox-close{position:absolute;top:max(18px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right));z-index:2;width:48px;height:48px;font-size:32px;line-height:1}
+.lightbox-nav{width:52px;height:52px;font-size:46px;line-height:.8}
+.lightbox-prev{justify-self:start}
+.lightbox-next{justify-self:end}
+.lightbox-counter{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);padding:6px 11px;border-radius:999px;background:rgba(0,0,0,.48);font-size:12px}
+
+@media (min-width:561px) and (max-width:1000px){
+  .gallery figure,.gallery figure:nth-child(n){grid-column:span 6}
+  .album-detail-copy-bottom h2{font-size:min(var(--section-title-size),clamp(30px,4.25vw,50px))}
+}
+
+@media (max-width:560px){
+  .brand span{display:block}
+  .brand-name{margin-top:2px;font-size:8.8px;line-height:1.05}
+  .brand-city{margin-top:1px;font-size:7.8px;line-height:1.05}
+  .gallery figure,.gallery figure:nth-child(n){grid-column:span 12;aspect-ratio:4/3;min-height:0}
+  .album-detail-copy-bottom{padding:24px 20px}
+  .album-detail-copy-bottom h2{font-size:min(var(--section-title-size),12vw)}
+  .faq-answer .rich-text{padding-right:0}
+  .lightbox{grid-template-columns:48px minmax(0,1fr) 48px;padding:12px}
+  .lightbox-stage{height:calc(100vh - 24px);height:calc(100svh - 24px)}
+  .lightbox-nav{width:42px;height:42px;font-size:38px}
+  .lightbox-close{width:44px;height:44px;top:max(10px,env(safe-area-inset-top));right:max(10px,env(safe-area-inset-right))}
+}
+
+/* v17: крупное первое представление фотографий внутри альбома */
+.album-detail-gallery.count-1 figure{grid-column:span 12;aspect-ratio:16/9}
+.album-detail-gallery.count-2 figure{grid-column:span 6}
+@media(max-width:560px){
+  .album-detail-gallery.count-1 figure,.album-detail-gallery.count-2 figure{grid-column:span 12;aspect-ratio:4/3}
+}
