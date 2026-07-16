@@ -519,3 +519,14 @@ body.lightbox-open{overflow:hidden}
   .album-detail-heading h2{font-size:min(var(--section-title-size),12vw)}
   .album-price{font-size:20px}
 }
+
+/* v19: компактное меню направлений на широком десктопе */
+@media (min-width:1367px){
+  .side-menu{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+  .side-button{
+    width:100%;
+  }
+}
