@@ -191,7 +191,7 @@
       const mediaBlock=images.length?`<div class="album-detail-media">${gallery(images,'album-detail-gallery')}</div>`:'';
       const heading=`<article class="album-detail-heading"><span class="direction-kicker">${esc(d.title)}</span><h2>${esc(a.title)}</h2>${a.subtitle?`<div class="album-subtitle rich-text">${richHtml(a.subtitle)}</div>`:''}${a.price?`<div class="album-price">${esc(a.price)}</div>`:''}</article>`;
       const description=a.text?`<article class="album-detail-copy album-detail-copy-bottom"><div class="album-description rich-text">${richHtml(a.text)}</div></article>`:'';
-      return `<button class="back-button album-back" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>${heading}${mediaBlock}${description}`;
+      return `<button class="back-button album-back album-back-top" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>${heading}${mediaBlock}${description}<button class="back-button album-back album-back-bottom" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>`;
     }
     return `${sectionHeader(d.albumsSectionTitle||d.menuLabels?.albums||'Виды альбомов',d.albumsSectionIntro)}<div class="album-grid">${d.albums.map(a=>{
       const cover=albumImage(a,d),hasCover=Boolean(asset(cover));
