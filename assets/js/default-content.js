@@ -1,9 +1,27 @@
 window.DEFAULT_SITE_CONTENT = {
-  "version": 3,
-  "brandTop": "Выпускной альбом Новосибирск",
+  "version": 4,
+  "brandTop": "Выпускной альбом",
   "brandBottom": "Фотограф Лена Сибирская",
+  "brandCity": "Новосибирск",
   "homeSlogan": "Качество без суеты, заморочек и заоблачных цен.",
   "videoUrl": "https://vk.com/clips/nsk_photobook",
+  "labels": {
+    "navAbout": "Обо мне",
+    "navContacts": "Контакты",
+    "videoReviews": "Видеообзоры",
+    "discussShoot": "Обсудить съёмку",
+    "home": "На главную",
+    "backAlbums": "Назад к альбомам",
+    "contactVk": "Написать во ВКонтакте",
+    "contactMax": "Написать в MAX",
+    "albumNotFound": "Альбом не найден",
+    "textComing": "Информация будет добавлена позже.",
+    "questionsComing": "Вопросы и ответы будут добавлены позже.",
+    "photosComing": "Фотографии будут добавлены позже.",
+    "lightboxClose": "Закрыть",
+    "lightboxPrevious": "Предыдущее фото",
+    "lightboxNext": "Следующее фото"
+  },
   "about": {
     "title": "Обо мне",
     "text": "Я фотограф Лена Сибирская. Создаю спокойные и живые выпускные альбомы для начальной школы и детского сада.",
@@ -47,10 +65,19 @@ window.DEFAULT_SITE_CONTENT = {
     "school": {
       "title": "Начальная школа",
       "subtitle": "ИТОГОВЫЕ АЛЬБОМЫ, ГДЕ ЕСТЬ ВСЁ, КРОМЕ ЛИШНЕГО",
+      "menuLabels": {
+        "albums": "Виды альбомов",
+        "preparation": "Подготовка",
+        "process": "Процесс",
+        "questions": "Вопросы",
+        "photos": "Фото"
+      },
       "cardImage": "assets/images/school-hero.webp",
       "hero": "assets/images/school-hero.webp",
       "albumsSectionTitle": "Виды альбомов",
-      "albumsSectionIntro": "Выберите формат, чтобы посмотреть описание и фотографии.",
+      "albumsSectionIntro": "",
+      "photosSectionTitle": "Фото",
+      "photosSectionIntro": "",
       "pageImages": {
         "home": "assets/images/school-hero.webp",
         "albums": "assets/images/school-hero.webp",
@@ -60,97 +87,39 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/school-hero.webp"
       },
       "albums": [
-        {
-          "id": "school-folder",
-          "title": "Папка",
-          "subtitle": "Лаконичный формат",
-          "text": "",
-          "cover": "assets/images/school-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "school-minimal",
-          "title": "Минимальный",
-          "subtitle": "Самое важное",
-          "text": "",
-          "cover": "assets/images/school-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "school-optimal",
-          "title": "Оптимальный",
-          "subtitle": "Сбалансированный альбом",
-          "text": "",
-          "cover": "assets/images/school-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "school-classic",
-          "title": "Классика",
-          "subtitle": "Спокойная подача",
-          "text": "",
-          "cover": "assets/images/school-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "school-bright",
-          "title": "Яркий",
-          "subtitle": "Больше цвета и эмоций",
-          "text": "",
-          "cover": "assets/images/school-hero.webp",
-          "gallery": []
-        }
+        {"id":"school-folder","title":"Папка","subtitle":"Лаконичный формат","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-minimal","title":"Минимальный","subtitle":"Самое важное","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-optimal","title":"Оптимальный","subtitle":"Сбалансированный альбом","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-classic","title":"Классика","subtitle":"Спокойная подача","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
       ],
-      "preparation": {
-        "title": "Подготовка",
-        "intro": "",
-        "body": ""
-      },
-      "process": {
-        "title": "Процесс",
-        "intro": "",
-        "body": ""
-      },
-      "questions": {
-        "title": "Вопросы",
-        "intro": "",
-        "items": []
-      },
+      "preparation": {"title":"Подготовка","intro":"","body":""},
+      "process": {"title":"Процесс","intro":"","body":""},
+      "questions": {"title":"Вопросы","intro":"","items":[]},
       "photoFolders": [
-        {
-          "id": "school-street",
-          "title": "Улица",
-          "images": []
-        },
-        {
-          "id": "school-class",
-          "title": "Класс",
-          "images": []
-        },
-        {
-          "id": "school-lesson",
-          "title": "Урок",
-          "images": []
-        },
-        {
-          "id": "school-break",
-          "title": "Перемена",
-          "images": []
-        },
-        {
-          "id": "school-friends",
-          "title": "Друзья",
-          "images": []
-        }
+        {"id":"school-street","title":"Улица","images":[]},
+        {"id":"school-class","title":"Класс","images":[]},
+        {"id":"school-lesson","title":"Урок","images":[]},
+        {"id":"school-break","title":"Перемена","images":[]},
+        {"id":"school-friends","title":"Друзья","images":[]}
       ]
     },
     "kindergarten": {
       "title": "Детский сад",
       "subtitle": "ВЫПУСКНЫЕ АЛЬБОМЫ, В КОТОРЫХ ВАШ РЕБЕНОК БУДЕТ НА КАЖДОМ ФОТО",
+      "menuLabels": {
+        "albums": "Виды альбомов",
+        "preparation": "Подготовка",
+        "process": "Процесс",
+        "questions": "Вопросы",
+        "photos": "Фото"
+      },
       "cardImage": "assets/images/kindergarten-hero.webp",
       "hero": "assets/images/kindergarten-hero.webp",
       "albumsSectionTitle": "Виды альбомов",
-      "albumsSectionIntro": "Выберите формат, чтобы посмотреть описание и фотографии.",
+      "albumsSectionIntro": "",
+      "photosSectionTitle": "Фото",
+      "photosSectionIntro": "",
       "pageImages": {
         "home": "assets/images/kindergarten-hero.webp",
         "albums": "assets/images/kindergarten-hero.webp",
@@ -160,96 +129,22 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/kindergarten-hero.webp"
       },
       "albums": [
-        {
-          "id": "kg-folder",
-          "title": "Папка",
-          "subtitle": "Лаконичный формат",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "kg-2",
-          "title": "2 разворота",
-          "subtitle": "Компактный альбом",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "kg-3",
-          "title": "3 разворота",
-          "subtitle": "Больше памятных кадров",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "kg-4",
-          "title": "4 разворота",
-          "subtitle": "Расширенная история",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "kg-5",
-          "title": "5 разворотов",
-          "subtitle": "Подробный выпускной альбом",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        },
-        {
-          "id": "kg-more",
-          "title": "Больше разворотов",
-          "subtitle": "Индивидуальный объём",
-          "text": "",
-          "cover": "assets/images/kindergarten-hero.webp",
-          "gallery": []
-        }
+        {"id":"kg-folder","title":"Папка","subtitle":"Лаконичный формат","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-2","title":"2 разворота","subtitle":"Компактный альбом","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-3","title":"3 разворота","subtitle":"Больше памятных кадров","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-4","title":"4 разворота","subtitle":"Расширенная история","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-5","title":"5 разворотов","subtitle":"Подробный выпускной альбом","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
+        {"id":"kg-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]}
       ],
-      "preparation": {
-        "title": "Подготовка",
-        "intro": "",
-        "body": ""
-      },
-      "process": {
-        "title": "Процесс",
-        "intro": "",
-        "body": ""
-      },
-      "questions": {
-        "title": "Вопросы",
-        "intro": "",
-        "items": []
-      },
+      "preparation": {"title":"Подготовка","intro":"","body":""},
+      "process": {"title":"Процесс","intro":"","body":""},
+      "questions": {"title":"Вопросы","intro":"","items":[]},
       "photoFolders": [
-        {
-          "id": "kg-group",
-          "title": "Группа",
-          "images": []
-        },
-        {
-          "id": "kg-walk",
-          "title": "Прогулка",
-          "images": []
-        },
-        {
-          "id": "kg-class",
-          "title": "Занятия",
-          "images": []
-        },
-        {
-          "id": "kg-games",
-          "title": "Игры",
-          "images": []
-        },
-        {
-          "id": "kg-friends",
-          "title": "Друзья",
-          "images": []
-        }
+        {"id":"kg-group","title":"Группа","images":[]},
+        {"id":"kg-walk","title":"Прогулка","images":[]},
+        {"id":"kg-class","title":"Занятия","images":[]},
+        {"id":"kg-games","title":"Игры","images":[]},
+        {"id":"kg-friends","title":"Друзья","images":[]}
       ]
     }
   }
