@@ -223,10 +223,14 @@
       const description=a.text?`<article class="album-detail-copy album-detail-copy-bottom"><div class="album-description rich-text">${richHtml(a.text)}</div></article>`:'';
       return `<button class="back-button album-back album-back-top" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>${heading}${mediaBlock}${description}<button class="back-button album-back album-back-bottom" data-go="direction/${dir}/albums">${esc(l.backAlbums)}</button>`;
     }
-    return `${sectionHeader(d.albumsSectionTitle||d.menuLabels?.albums||'Виды альбомов',d.albumsSectionIntro)}<div class="album-grid">${d.albums.map(a=>{
+    const title=d.albumsSectionTitle||d.menuLabels?.albums||'Виды альбомов';
+    const intro=String(d.albumsSectionIntro||'').trim();
+    const cards=`<div class="album-grid">${d.albums.map(a=>{
       const cover=albumImage(a,d),hasCover=Boolean(asset(cover));
       return `<button class="album-card ${hasCover?'has-media':'no-media'}" data-go="direction/${dir}/albums/${a.id}">${hasCover?`<span class="album-card-media">${media(cover,a.title,'loading="lazy"')}</span>`:''}<span class="album-copy"><h3>${esc(a.title)}</h3>${a.subtitle?`<p>${esc(a.subtitle)}</p>`:''}${a.price?`<span class="album-card-price">${esc(a.price)}</span>`:''}</span></button>`;
     }).join('')}</div>`;
+    const bottomDescription=intro?`<div class="section-intro albums-intro-bottom rich-text">${richHtml(intro)}</div>`:'';
+    return `${sectionHeader(title)}${cards}${bottomDescription}`;
   }
 
   function textSection(s){
