@@ -18,7 +18,37 @@
 
   function hasOwn(obj,key){return Boolean(obj&&Object.prototype.hasOwnProperty.call(obj,key))}
 
+
+  function normalizeDirectionStructure(target,raw){
+    const version=Number(raw?.version||0);
+    const albumTemplate={id:'',title:'',subtitle:'',price:'',text:'',cover:'',gallery:[]};
+    const folderTemplate={id:'',title:'',images:[]};
+    const questionTemplate={question:'',answer:''};
+    Object.keys(target.directions||{}).forEach(key=>{
+      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{};
+      d.menuLabels=deepMerge(defaults.menuLabels||{},d.menuLabels||{});
+      d.preparation=deepMerge(defaults.preparation||{title:'Подготовка',intro:'',body:''},d.preparation||{});
+      d.process=deepMerge(defaults.process||{title:'Процесс',intro:'',body:''},d.process||{});
+      d.questions=deepMerge(defaults.questions||{title:'Вопросы',intro:'',items:[]},d.questions||{});
+      d.questions.items=Array.isArray(d.questions.items)?d.questions.items.map(q=>deepMerge(questionTemplate,q||{})):[];
+      d.albums=Array.isArray(d.albums)?d.albums.map(a=>deepMerge(albumTemplate,a||{})):[];
+      d.photoFolders=Array.isArray(d.photoFolders)?d.photoFolders.map(f=>deepMerge(folderTemplate,f||{})):[];
+      d.albums.forEach((a,i)=>{if(!a.id)a.id=`${key}-album-${i+1}`;if(!Array.isArray(a.gallery))a.gallery=[]});
+      d.photoFolders.forEach((f,i)=>{if(!f.id)f.id=`${key}-folder-${i+1}`;if(!Array.isArray(f.images))f.images=[]});
+    });
+    // Однократная миграция v23: структура школы получает шестую редактируемую карточку,
+    // как в разделе детского сада, без замены уже введённых текстов и фотографий.
+    if(version<5){
+      const school=target.directions?.school;
+      if(school&&Array.isArray(school.albums)&&!school.albums.some(a=>a.id==='school-more')){
+        school.albums.push({id:'school-more',title:'Больше разворотов',subtitle:'Индивидуальный объём',price:'',text:'',cover:'',gallery:[]});
+      }
+    }
+    target.version=Math.max(Number(target.version)||0,5);
+  }
+
   function normalizeContent(target,raw){
+    normalizeDirectionStructure(target,raw);
     if(!hasOwn(raw,'brandCity')){
       target.brandCity='Новосибирск';
       if(String(raw?.brandTop||'').trim().toLowerCase()==='выпускной альбом новосибирск')target.brandTop='Выпускной альбом';
@@ -169,7 +199,7 @@
     const d=content.directions[dir],heroUrl=directionImage(d,section),hasHero=Boolean(asset(heroUrl)),l=content.labels||{},menu=d.menuLabels||{};
     const entries=directionSections.map(id=>[id,menu[id]||id]);
     const hero=hasHero?`<div class="direction-hero">${lightboxTrigger(heroUrl,d.title,media(heroUrl,d.title,'loading="eager" fetchpriority="high"'),'hero-view')}</div>`:'';
-    return `<section class="direction-page container"><div class="direction-shell ${hasHero?'':'without-hero'}"><aside class="direction-panel"><h1 class="direction-heading">${esc(d.title)}</h1><p class="direction-subtitle">${esc(d.subtitle)}</p><nav class="side-menu">${entries.map(([id,label])=>`<button class="side-button ${section===id?'active':''}" data-go="direction/${dir}/${id}">${esc(label)}</button>`).join('')}<a class="side-button external video-button" href="${esc(safeHref(content.videoUrl))}" target="_blank" rel="noopener noreferrer">${esc(l.videoReviews)}</a><button class="side-button external" data-go="contacts">${esc(l.discussShoot)}</button><button class="side-button external" data-go="home">${esc(l.home)}</button></nav></aside>${hero}<div class="section-content">`;
+    return `<section class="direction-page container"><div class="direction-shell ${hasHero?'':'without-hero'}"><aside class="direction-panel"><h1 class="direction-heading">${esc(d.title)}</h1><p class="direction-subtitle">${esc(d.subtitle)}</p><nav class="side-menu"><button class="side-button external home-button" data-go="home">${esc(l.home)}</button>${entries.map(([id,label])=>`<button class="side-button ${section===id?'active':''}" data-go="direction/${dir}/${id}">${esc(label)}</button>`).join('')}<a class="side-button external video-button" href="${esc(safeHref(content.videoUrl))}" target="_blank" rel="noopener noreferrer">${esc(l.videoReviews)}</a><button class="side-button external" data-go="contacts">${esc(l.discussShoot)}</button></nav></aside>${hero}<div class="section-content">`;
   }
 
   function sectionHeader(title,intro=''){
@@ -195,7 +225,7 @@
     }
     return `${sectionHeader(d.albumsSectionTitle||d.menuLabels?.albums||'Виды альбомов',d.albumsSectionIntro)}<div class="album-grid">${d.albums.map(a=>{
       const cover=albumImage(a,d),hasCover=Boolean(asset(cover));
-      return `<button class="album-card ${hasCover?'has-media':'no-media'}" data-go="direction/${dir}/albums/${a.id}">${hasCover?media(cover,a.title,'loading="lazy"'):''}<span class="album-copy"><h3>${esc(a.title)}</h3>${a.subtitle?`<p>${esc(a.subtitle)}</p>`:''}${a.price?`<span class="album-card-price">${esc(a.price)}</span>`:''}</span></button>`;
+      return `<button class="album-card ${hasCover?'has-media':'no-media'}" data-go="direction/${dir}/albums/${a.id}">${hasCover?`<span class="album-card-media">${media(cover,a.title,'loading="lazy"')}</span>`:''}<span class="album-copy"><h3>${esc(a.title)}</h3>${a.subtitle?`<p>${esc(a.subtitle)}</p>`:''}${a.price?`<span class="album-card-price">${esc(a.price)}</span>`:''}</span></button>`;
     }).join('')}</div>`;
   }
 

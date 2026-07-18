@@ -1,5 +1,5 @@
 window.DEFAULT_SITE_CONTENT = {
-  "version": 4,
+  "version": 5,
   "brandTop": "Выпускной альбом",
   "brandBottom": "Фотограф Лена Сибирская",
   "brandCity": "Новосибирск",
@@ -91,7 +91,8 @@ window.DEFAULT_SITE_CONTENT = {
         {"id":"school-minimal","title":"Минимальный","subtitle":"Самое важное","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
         {"id":"school-optimal","title":"Оптимальный","subtitle":"Сбалансированный альбом","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
         {"id":"school-classic","title":"Классика","subtitle":"Спокойная подача","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
+        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
+        {"id":"school-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
       ],
       "preparation": {"title":"Подготовка","intro":"","body":""},
       "process": {"title":"Процесс","intro":"","body":""},
