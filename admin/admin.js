@@ -4,10 +4,34 @@
   const clone=o=>JSON.parse(JSON.stringify(o)),deepMerge=(base,value)=>{if(Array.isArray(base))return Array.isArray(value)?value:base;if(base&&typeof base==='object'){const out={...base};if(value&&typeof value==='object')Object.keys(value).forEach(k=>out[k]=k in base?deepMerge(base[k],value[k]):value[k]);return out}return value===undefined?base:value};
   let data=clone(window.DEFAULT_SITE_CONTENT),dirty=false,currentDirection='school',currentSub='albums',captchaToken='',captchaWidgetId=null,lockTimer=null,pendingBackup=null,pendingPortableBackup=null,backupProgress=null,pendingStorageDeletes=new Set();
   const directionSections=['albums','preparation','process','questions','photos'];
+  const directionMenuTypes=new Set(['home','albums','preparation','process','questions','photos','video','about','contacts','external']);
+  const topMenuTypes=new Set(['home','about','contacts','school','kindergarten','external']);
+  const topMenuOptions=[['home','Главная'],['about','Обо мне'],['contacts','Контакты'],['school','Начальная школа'],['kindergarten','Детский сад'],['external','Внешняя ссылка']];
+  const directionMenuOptions=[['home','На главную'],['albums','Виды альбомов'],['preparation','Подготовка'],['process','Процесс'],['questions','Вопросы'],['photos','Фото'],['video','Видеообзоры'],['about','Обо мне'],['contacts','Контакты / обсудить съёмку'],['external','Внешняя ссылка']];
   const directionSectionLabels={albums:'страницы «Виды альбомов»',preparation:'страницы «Подготовка»',process:'страницы «Процесс»',questions:'страницы «Вопросы»',photos:'страницы «Фото»'};
   const BACKUP_FORMAT='lena-sibirskaya-site-backup',BACKUP_VERSION=1,MAX_BACKUP_BYTES=5*1024*1024,MAX_CONTENT_BYTES=2*1024*1024;
   function hasOwn(obj,key){return Boolean(obj&&Object.prototype.hasOwnProperty.call(obj,key))}
 
+
+  function normalizeMenuItem(value,fallbackId,allowedTypes,defaultType='external'){
+    const item=value&&typeof value==='object'?value:{};
+    const type=allowedTypes.has(String(item.type||''))?String(item.type):defaultType;
+    return {id:String(item.id||fallbackId),type,label:String(item.label||'Новая кнопка'),url:String(item.url||'')};
+  }
+
+  function defaultDirectionMenuItems(key,d,labels){
+    const m=d.menuLabels||{};
+    return [
+      {id:`${key}-menu-home`,type:'home',label:labels.home||'На главную',url:''},
+      {id:`${key}-menu-albums`,type:'albums',label:m.albums||'Виды альбомов',url:''},
+      {id:`${key}-menu-preparation`,type:'preparation',label:m.preparation||'Подготовка',url:''},
+      {id:`${key}-menu-process`,type:'process',label:m.process||'Процесс',url:''},
+      {id:`${key}-menu-questions`,type:'questions',label:m.questions||'Вопросы',url:''},
+      {id:`${key}-menu-photos`,type:'photos',label:m.photos||'Фото',url:''},
+      {id:`${key}-menu-video`,type:'video',label:labels.videoReviews||'Видеообзоры',url:''},
+      {id:`${key}-menu-contacts`,type:'contacts',label:labels.discussShoot||'Обсудить съёмку',url:''}
+    ];
+  }
 
   function normalizeDirectionStructure(target,raw){
     const version=Number(raw?.version||0);
@@ -15,7 +39,7 @@
     const folderTemplate={id:'',title:'',images:[]};
     const questionTemplate={question:'',answer:''};
     Object.keys(target.directions||{}).forEach(key=>{
-      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{};
+      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{},saved=raw?.directions?.[key]||{};
       d.menuLabels=deepMerge(defaults.menuLabels||{},d.menuLabels||{});
       d.preparation=deepMerge(defaults.preparation||{title:'Подготовка',intro:'',body:''},d.preparation||{});
       d.process=deepMerge(defaults.process||{title:'Процесс',intro:'',body:''},d.process||{});
@@ -25,6 +49,8 @@
       d.photoFolders=Array.isArray(d.photoFolders)?d.photoFolders.map(f=>deepMerge(folderTemplate,f||{})):[];
       d.albums.forEach((a,i)=>{if(!a.id)a.id=`${key}-album-${i+1}`;if(!Array.isArray(a.gallery))a.gallery=[]});
       d.photoFolders.forEach((f,i)=>{if(!f.id)f.id=`${key}-folder-${i+1}`;if(!Array.isArray(f.images))f.images=[]});
+      const sourceItems=Array.isArray(saved.menuItems)?d.menuItems:defaultDirectionMenuItems(key,d,target.labels||{});
+      d.menuItems=(Array.isArray(sourceItems)?sourceItems:[]).map((item,i)=>normalizeMenuItem(item,`${key}-menu-${i+1}`,directionMenuTypes,'albums'));
     });
     if(version<5){
       const school=target.directions?.school;
@@ -32,10 +58,20 @@
         school.albums.push({id:'school-more',title:'Больше разворотов',subtitle:'Индивидуальный объём',price:'',text:'',cover:'',gallery:[]});
       }
     }
-    target.version=Math.max(Number(target.version)||0,5);
+    target.version=Math.max(Number(target.version)||0,6);
   }
 
   function normalizeDirectionImages(target,raw){
+    target.homeStyles=deepMerge(window.DEFAULT_SITE_CONTENT.homeStyles||{},target.homeStyles||{});
+    target.menus=deepMerge(window.DEFAULT_SITE_CONTENT.menus||{},target.menus||{});
+    if(Array.isArray(raw?.menus?.top?.items)){
+      target.menus.top.items=(target.menus.top.items||[]).map((item,i)=>normalizeMenuItem(item,`top-menu-${i+1}`,topMenuTypes,'external'));
+    }else{
+      target.menus.top.items=[
+        {id:'top-about',type:'about',label:raw?.labels?.navAbout||target.labels?.navAbout||'Обо мне',url:''},
+        {id:'top-contacts',type:'contacts',label:raw?.labels?.navContacts||target.labels?.navContacts||'Контакты',url:''}
+      ];
+    }
     normalizeDirectionStructure(target,raw);
     if(!hasOwn(raw,'brandCity')){
       target.brandCity='Новосибирск';
@@ -73,6 +109,12 @@
   }
   function setPath(path,value){const a=path.split('.');let x=data;for(let i=0;i<a.length-1;i++)x=x[a[i]];x[a.at(-1)]=value}
   function field(label,path,value,type='text',extra=''){return `<div class="field"><label>${label}</label>${type==='textarea'?`<textarea data-path="${path}" ${extra}>${esc(value)}</textarea>`:`<input data-path="${path}" type="${type}" value="${esc(value)}" ${extra}>`}</div>`}
+  function selectField(label,path,value,options,extra=''){return `<div class="field"><label>${label}</label><select data-path="${path}" ${extra}>${options.map(([v,t])=>`<option value="${esc(v)}" ${String(value)===String(v)?'selected':''}>${esc(t)}</option>`).join('')}</select></div>`}
+  function textStyleEditor(title,path,style){
+    const st=style||{};
+    const weights=[[300,'Тонкий — 300'],[400,'Обычный — 400'],[500,'Средний — 500'],[600,'Полужирный — 600'],[700,'Жирный — 700'],[800,'Очень жирный — 800'],[900,'Максимально жирный — 900']];
+    return `<details class="style-editor"><summary>${esc(title)}</summary><div class="style-editor-body"><div class="grid-3">${field('Шрифт',`${path}.fontFamily`,st.fontFamily||'','text','placeholder="Пусто — использовать общий шрифт"')}${field('Размер, px',`${path}.fontSize`,st.fontSize??16,'number','min="7" max="180" step="1"')}${selectField('Толщина',`${path}.fontWeight`,st.fontWeight??400,weights)}${selectField('Начертание',`${path}.fontStyle`,st.fontStyle||'normal',[['normal','Обычное'],['italic','Курсив']])}${field('Межбуквенный интервал, px',`${path}.letterSpacing`,st.letterSpacing??0,'number','min="-10" max="30" step="0.1"')}${selectField('Регистр',`${path}.textTransform`,st.textTransform||'none',[['none','Как введено'],['uppercase','ПРОПИСНЫЕ'],['lowercase','строчные'],['capitalize','Каждое Слово']])}${selectField('Выравнивание',`${path}.textAlign`,st.textAlign||'left',[['left','По левому краю'],['center','По центру'],['right','По правому краю']])}${field('Цвет',`${path}.color`,st.color||'#232321','color')}</div></div></details>`;
+  }
   function sanitizeRich(value){
     const source=String(value??'').trim();
     if(!source)return '';
@@ -139,22 +181,53 @@
   function queueFolderImages(folder){(folder?.images||[]).forEach(queueStorageDelete)}
 
   function renderGeneral(){
-    const p=$('#panel-general');
-    p.innerHTML=`<h2>Главная страница</h2><div class="card"><h3>Название сайта и слоган</h3>${field('Верхняя строка','brandTop',data.brandTop)}${field('Имя фотографа','brandBottom',data.brandBottom)}${field('Город под именем фотографа','brandCity',data.brandCity||'')}${field('Фраза на главной','homeSlogan',data.homeSlogan,'textarea')}</div><div class="card"><h3>Ссылки</h3>${field('Клипы VK','videoUrl',data.videoUrl,'url')}</div><p class="muted">Ссылки на админку на основном сайте отсутствуют. Адрес админки открывается вручную: <code>/admin/</code>.</p>`;
+    const p=$('#panel-general'),hs=data.homeStyles||{};
+    p.innerHTML=`<h2>Главная страница</h2><div class="card"><h3>Название сайта и слоган</h3>${field('Верхняя строка','brandTop',data.brandTop)}${field('Имя фотографа','brandBottom',data.brandBottom)}${field('Город под именем фотографа','brandCity',data.brandCity||'')}${field('Фраза на главной','homeSlogan',data.homeSlogan,'textarea')}</div><div class="card"><h3>Оформление надписей главной страницы</h3><p class="muted">Для каждой надписи можно отдельно настроить шрифт, размер, толщину, курсив, регистр, цвет и выравнивание. Пустое поле «Шрифт» использует общий шрифт из раздела «Дизайн».</p><div class="style-editors">${textStyleEditor('Верхняя строка', 'homeStyles.brandTop', hs.brandTop)}${textStyleEditor('Имя фотографа', 'homeStyles.brandBottom', hs.brandBottom)}${textStyleEditor('Город под именем', 'homeStyles.brandCity', hs.brandCity)}${textStyleEditor('Главный слоган', 'homeStyles.slogan', hs.slogan)}${textStyleEditor('Названия «Начальная школа» и «Детский сад»', 'homeStyles.directionTitle', hs.directionTitle)}${textStyleEditor('Подписи направлений', 'homeStyles.directionSubtitle', hs.directionSubtitle)}</div></div><div class="card"><h3>Ссылки</h3>${field('Клипы VK','videoUrl',data.videoUrl,'url')}</div><p class="muted">Ссылки на админку на основном сайте отсутствуют. Адрес админки открывается вручную: <code>/admin/</code>.</p>`;
     bindInputs(p);
   }
+
+  function topMenuItemsEditor(items){
+    return `<div class="item-list menu-editor-list">${items.map((item,i)=>`<article class="item menu-item-editor"><div class="item-head"><strong>${esc(item.label||'Новая кнопка')}</strong><div class="inline-actions"><button class="btn small" data-menu-action="move-top-menu" data-index="${i}" data-delta="-1" title="Поднять">↑</button><button class="btn small" data-menu-action="move-top-menu" data-index="${i}" data-delta="1" title="Опустить">↓</button><button class="btn small danger" data-menu-action="delete-top-menu" data-index="${i}">Удалить</button></div></div><div class="grid-3">${field('Надпись',`menus.top.items.${i}.label`,item.label||'')}${selectField('Действие',`menus.top.items.${i}.type`,item.type||'external',topMenuOptions,'data-top-menu-type="1"')}${item.type==='external'?field('Ссылка',`menus.top.items.${i}.url`,item.url||'','url','placeholder="https://..."'):'<div class="field menu-item-help"><label>Переход</label><p class="muted">Кнопка открывает выбранный раздел сайта.</p></div>'}</div></article>`).join('')}</div>`;
+  }
+
   function renderLabels(){
-    const p=$('#panel-labels'),l=data.labels;
-    p.innerHTML=`<h2>Надписи и кнопки</h2><div class="card"><h3>Верхнее меню</h3><div class="grid-2">${field('Кнопка «Обо мне»','labels.navAbout',l.navAbout)}${field('Кнопка «Контакты»','labels.navContacts',l.navContacts)}</div></div><div class="card"><h3>Кнопки разделов</h3><div class="grid-2">${field('Видеообзоры','labels.videoReviews',l.videoReviews)}${field('Обсудить съёмку','labels.discussShoot',l.discussShoot)}${field('На главную','labels.home',l.home)}${field('Назад к альбомам','labels.backAlbums',l.backAlbums)}</div></div><div class="card"><h3>Кнопки контактов</h3><div class="grid-2">${field('ВКонтакте','labels.contactVk',l.contactVk)}${field('MAX','labels.contactMax',l.contactMax)}</div></div><div class="card"><h3>Служебные сообщения сайта</h3>${field('Альбом не найден','labels.albumNotFound',l.albumNotFound)}${field('Пустая текстовая страница','labels.textComing',l.textComing)}${field('Нет вопросов','labels.questionsComing',l.questionsComing)}${field('Нет фотографий','labels.photosComing',l.photosComing)}</div><p class="muted">Названия кнопок «Виды альбомов», «Подготовка», «Процесс», «Вопросы» и «Фото» редактируются отдельно для школы и детского сада в разделе «Школа и сад».</p>`;
+    const p=$('#panel-labels'),l=data.labels,top=data.menus?.top||{},directionMenu=data.menus?.direction||{},items=Array.isArray(top.items)?top.items:[];
+    const weights=[[300,'Тонкий — 300'],[400,'Обычный — 400'],[500,'Средний — 500'],[600,'Полужирный — 600'],[700,'Жирный — 700'],[800,'Очень жирный — 800'],[900,'Максимально жирный — 900']];
+    p.innerHTML=`<h2>Надписи и кнопки</h2><div class="card"><div class="item-head"><div><h3 style="margin:0">Верхнее меню сайта</h3><p class="muted" style="margin:6px 0 0">Можно добавлять, удалять и менять порядок кнопок в верхней строке.</p></div><button class="btn small" data-menu-action="add-top-menu">Добавить кнопку</button></div><div class="grid-3 menu-style-grid">${field('Шрифт кнопок','menus.top.fontFamily',top.fontFamily||'','text','placeholder="Пусто — общий шрифт"')}${field('Размер текста, px','menus.top.fontSize',top.fontSize??15,'number','min="8" max="36"')}${selectField('Толщина','menus.top.fontWeight',top.fontWeight??700,weights)}${selectField('Начертание','menus.top.fontStyle',top.fontStyle||'normal',[['normal','Обычное'],['italic','Курсив']])}${field('Межбуквенный интервал, px','menus.top.letterSpacing',top.letterSpacing??0,'number','min="-5" max="15" step="0.1"')}${selectField('Регистр','menus.top.textTransform',top.textTransform||'none',[['none','Как введено'],['uppercase','ПРОПИСНЫЕ'],['lowercase','строчные'],['capitalize','Каждое Слово']])}${field('Высота кнопки, px','menus.top.buttonHeight',top.buttonHeight??48,'number','min="30" max="90"')}${field('Боковые отступы, px','menus.top.paddingX',top.paddingX??22,'number','min="4" max="60"')}${field('Скругление, px','menus.top.radius',top.radius??999,'number','min="0" max="999"')}</div>${topMenuItemsEditor(items)}</div><div class="card"><h3>Оформление меню школы и детского сада</h3><p class="muted">Эти параметры применяются к кнопкам бокового меню обоих направлений. Состав и надписи каждого меню задаются в разделе «Школа и сад».</p><div class="grid-3">${field('Шрифт кнопок','menus.direction.fontFamily',directionMenu.fontFamily||'','text','placeholder="Пусто — общий шрифт"')}${field('Размер текста, px','menus.direction.fontSize',directionMenu.fontSize??15,'number','min="8" max="36"')}${selectField('Толщина','menus.direction.fontWeight',directionMenu.fontWeight??600,weights)}${selectField('Начертание','menus.direction.fontStyle',directionMenu.fontStyle||'normal',[['normal','Обычное'],['italic','Курсив']])}${field('Межбуквенный интервал, px','menus.direction.letterSpacing',directionMenu.letterSpacing??0,'number','min="-5" max="15" step="0.1"')}${selectField('Регистр','menus.direction.textTransform',directionMenu.textTransform||'none',[['none','Как введено'],['uppercase','ПРОПИСНЫЕ'],['lowercase','строчные'],['capitalize','Каждое Слово']])}${field('Высота кнопки, px','menus.direction.buttonHeight',directionMenu.buttonHeight??48,'number','min="30" max="90"')}${field('Скругление, px','menus.direction.radius',directionMenu.radius??999,'number','min="0" max="999"')}</div></div><div class="card"><h3>Общие надписи сайта</h3><div class="grid-2">${field('Видеообзоры — значение по умолчанию','labels.videoReviews',l.videoReviews)}${field('Обсудить съёмку — значение по умолчанию','labels.discussShoot',l.discussShoot)}${field('На главную — значение по умолчанию','labels.home',l.home)}${field('Назад к альбомам','labels.backAlbums',l.backAlbums)}</div></div><div class="card"><h3>Кнопки контактов</h3><div class="grid-2">${field('ВКонтакте','labels.contactVk',l.contactVk)}${field('MAX','labels.contactMax',l.contactMax)}</div></div><div class="card"><h3>Служебные сообщения сайта</h3>${field('Альбом не найден','labels.albumNotFound',l.albumNotFound)}${field('Пустая текстовая страница','labels.textComing',l.textComing)}${field('Нет вопросов','labels.questionsComing',l.questionsComing)}${field('Нет фотографий','labels.photosComing',l.photosComing)}</div>`;
     bindInputs(p);
+    bindLabelActions(p);
+  }
+
+  function bindLabelActions(root){
+    $$('[data-menu-action]',root).forEach(button=>button.onclick=()=>{
+      const items=data.menus.top.items,action=button.dataset.menuAction,index=Number(button.dataset.index);
+      if(action==='add-top-menu')items.push({id:uid('top-menu'),type:'external',label:'Новая кнопка',url:''});
+      if(action==='delete-top-menu'){
+        if(!confirm('Удалить эту кнопку из верхнего меню?'))return;
+        items.splice(index,1);
+      }
+      if(action==='move-top-menu'){
+        const to=index+Number(button.dataset.delta);
+        if(to<0||to>=items.length)return;
+        [items[index],items[to]]=[items[to],items[index]];
+      }
+      markDirty();
+      renderLabels();
+    });
+    $$('[data-top-menu-type]',root).forEach(select=>select.addEventListener('change',()=>setTimeout(renderLabels,0)));
   }
 
   function renderDirectionButtons(){return `<div class="section-select"><button data-dir="school" class="${currentDirection==='school'?'active':''}">Начальная школа</button><button data-dir="kindergarten" class="${currentDirection==='kindergarten'?'active':''}">Детский сад</button></div><div class="section-select">${[['albums','Альбомы'],['preparation','Подготовка'],['process','Процесс'],['questions','Вопросы'],['photos','Фото']].map(([id,t])=>`<button data-sub="${id}" class="${currentSub===id?'active':''}">${t}</button>`).join('')}</div>`}
   function pageImageEditor(d){const label=directionSectionLabels[currentSub]||'текущей страницы',url=directionImage(d,currentSub);return `<div class="card"><h3>Фото ${label}</h3><p class="muted">Это изображение используется только в выбранном разделе и не меняет фотографии остальных страниц.</p><div class="grid-2"><div>${imagePreview(url,true,`direction-page-image:${currentSub}`)}</div><div>${uploadField('Заменить фото только для этой страницы',`direction-page-image:${currentSub}`)}</div></div></div>`}
 
+  function directionMenuEditor(d){
+    const items=Array.isArray(d.menuItems)?d.menuItems:[];
+    return `<div class="card"><div class="item-head"><div><h3 style="margin:0">Кнопки меню этого направления</h3><p class="muted" style="margin:6px 0 0">Надписи, количество и порядок кнопок настраиваются отдельно для школы и детского сада.</p></div><button class="btn small" data-action="add-direction-menu">Добавить кнопку</button></div><div class="item-list menu-editor-list">${items.map((item,i)=>`<article class="item menu-item-editor"><div class="item-head"><strong>${esc(item.label||'Новая кнопка')}</strong><div class="inline-actions"><button class="btn small" data-action="move-direction-menu" data-index="${i}" data-delta="-1" title="Поднять">↑</button><button class="btn small" data-action="move-direction-menu" data-index="${i}" data-delta="1" title="Опустить">↓</button><button class="btn small danger" data-action="delete-direction-menu" data-index="${i}">Удалить</button></div></div><div class="grid-3">${field('Надпись на кнопке',`directions.${currentDirection}.menuItems.${i}.label`,item.label||'')}${selectField('Назначение',`directions.${currentDirection}.menuItems.${i}.type`,item.type||'albums',directionMenuOptions,'data-direction-menu-type="1"')}${item.type==='external'?field('Ссылка',`directions.${currentDirection}.menuItems.${i}.url`,item.url||'','url','placeholder="https://..."'):item.type==='video'?field('Отдельная ссылка для видео (необязательно)',`directions.${currentDirection}.menuItems.${i}.url`,item.url||'','url','placeholder="Пусто — общая ссылка VK Clips"'):'<div class="field menu-item-help"><label>Переход</label><p class="muted">Кнопка открывает выбранный раздел сайта.</p></div>'}</div></article>`).join('')}</div></div>`;
+  }
+
   function renderDirections(){
-    const p=$('#panel-directions'),d=data.directions[currentDirection],m=d.menuLabels||{};
-    let body=`<h2>Школа и детский сад</h2>${renderDirectionButtons()}<div class="card"><h3>Общие настройки направления</h3><div class="grid-2"><div>${field('Название',`directions.${currentDirection}.title`,d.title)}${field('Подзаголовок',`directions.${currentDirection}.subtitle`,d.subtitle,'textarea')}</div><div>${imagePreview(directionImage(d,'home'),false,'direction-card-image')}${uploadField('Фото карточки направления на главной странице','direction-card-image')}<p class="muted">Это отдельное фото только для главной страницы. Загрузка фотографий в разделах его не меняет.</p></div></div></div><div class="card"><h3>Надписи на кнопках этого направления</h3><div class="grid-3">${field('Альбомы',`directions.${currentDirection}.menuLabels.albums`,m.albums)}${field('Подготовка',`directions.${currentDirection}.menuLabels.preparation`,m.preparation)}${field('Процесс',`directions.${currentDirection}.menuLabels.process`,m.process)}${field('Вопросы',`directions.${currentDirection}.menuLabels.questions`,m.questions)}${field('Фото',`directions.${currentDirection}.menuLabels.photos`,m.photos)}</div></div>${pageImageEditor(d)}`;
+    const p=$('#panel-directions'),d=data.directions[currentDirection];
+    let body=`<h2>Школа и детский сад</h2>${renderDirectionButtons()}<div class="card"><h3>Общие настройки направления</h3><div class="grid-2"><div>${field('Название',`directions.${currentDirection}.title`,d.title)}${field('Подзаголовок',`directions.${currentDirection}.subtitle`,d.subtitle,'textarea')}</div><div>${imagePreview(directionImage(d,'home'),false,'direction-card-image')}${uploadField('Фото карточки направления на главной странице','direction-card-image')}<p class="muted">Это отдельное фото только для главной страницы. Загрузка фотографий в разделах его не меняет.</p></div></div></div>${directionMenuEditor(d)}${pageImageEditor(d)}`;
     if(currentSub==='albums')body+=albumsEditor(d);
     if(currentSub==='preparation'||currentSub==='process')body+=textEditor(d,currentSub);
     if(currentSub==='questions')body+=faqEditor(d);
@@ -231,6 +304,7 @@
     $$('[data-sub]',p).forEach(b=>b.onclick=()=>{currentSub=b.dataset.sub;renderDirections()});
     $$('[data-action]',p).forEach(b=>b.onclick=()=>handleAction(b));
     $$('[data-upload]',p).forEach(inp=>inp.onchange=()=>handleUpload(inp));
+    $$('[data-direction-menu-type]',p).forEach(select=>select.addEventListener('change',()=>setTimeout(renderDirections,0)));
   }
 
   async function handleAction(b){
@@ -250,6 +324,16 @@
     if(action==='delete-folder'){
       if(!confirm('Удалить подпапку и все фотографии в ней?'))return;
       queueFolderImages(d.photoFolders[i]);d.photoFolders.splice(i,1);
+    }
+    if(action==='add-direction-menu')d.menuItems.push({id:uid(`${currentDirection}-menu`),type:'external',label:'Новая кнопка',url:''});
+    if(action==='delete-direction-menu'){
+      if(!confirm('Удалить эту кнопку из меню направления?'))return;
+      d.menuItems.splice(i,1);
+    }
+    if(action==='move-direction-menu'){
+      const to=i+Number(b.dataset.delta);
+      if(to<0||to>=d.menuItems.length)return;
+      [d.menuItems[i],d.menuItems[to]]=[d.menuItems[to],d.menuItems[i]];
     }
     if(action==='move-image'){
       const arr=imageArray(b.dataset.scope),to=i+Number(b.dataset.delta);
@@ -350,7 +434,7 @@
     if(raw==='about')return{title:data.about?.title||data.labels?.navAbout||'Обо мне',detail:'#about'};
     if(raw==='contacts')return{title:data.contacts?.title||data.labels?.navContacts||'Контакты',detail:'#contacts'};
     if(parts[0]==='direction'){
-      const dir=parts[1]||'school',section=parts[2]||'albums',direction=data.directions?.[dir],dirTitle=direction?.title||dir,sectionTitle=direction?.menuLabels?.[section]||section;
+      const dir=parts[1]||'school',section=parts[2]||'albums',direction=data.directions?.[dir],dirTitle=direction?.title||dir,sectionTitle=direction?.menuItems?.find(item=>item.type===section)?.label||direction?.menuLabels?.[section]||section;
       if(section==='albums'&&parts[3]){
         const album=direction?.albums?.find(a=>String(a.id)===parts[3]);
         return{title:`${dirTitle} → Альбом «${album?.title||'без названия'}»`,detail:`#${raw}`};
