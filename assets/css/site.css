@@ -612,3 +612,18 @@ body.lightbox-open{overflow:hidden}
   .album-card.no-media .album-copy{min-height:138px}
 }
 
+
+
+/* v24: во «Видах альбомов» общее описание расположено после папок/карточек. */
+.albums-intro-bottom{
+  width:100%;
+  max-width:none;
+  margin-top:30px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  white-space:pre-line;
+}
+@media (max-width:560px){
+  .albums-intro-bottom{margin-top:22px;padding-top:20px}
+}
