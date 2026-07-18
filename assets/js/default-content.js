@@ -1,5 +1,5 @@
 window.DEFAULT_SITE_CONTENT = {
-  "version": 5,
+  "version": 6,
   "brandTop": "Выпускной альбом",
   "brandBottom": "Фотограф Лена Сибирская",
   "brandCity": "Новосибирск",
@@ -87,22 +87,152 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/school-hero.webp"
       },
       "albums": [
-        {"id":"school-folder","title":"Папка","subtitle":"Лаконичный формат","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-minimal","title":"Минимальный","subtitle":"Самое важное","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-optimal","title":"Оптимальный","subtitle":"Сбалансированный альбом","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-classic","title":"Классика","subtitle":"Спокойная подача","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-bright","title":"Яркий","subtitle":"Больше цвета и эмоций","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]},
-        {"id":"school-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","price":"","text":"","cover":"assets/images/school-hero.webp","gallery":[]}
+        {
+          "id": "school-folder",
+          "title": "Папка",
+          "subtitle": "Лаконичный формат",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "school-minimal",
+          "title": "Минимальный",
+          "subtitle": "Самое важное",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "school-optimal",
+          "title": "Оптимальный",
+          "subtitle": "Сбалансированный альбом",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "school-classic",
+          "title": "Классика",
+          "subtitle": "Спокойная подача",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "school-bright",
+          "title": "Яркий",
+          "subtitle": "Больше цвета и эмоций",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "school-more",
+          "title": "Больше разворотов",
+          "subtitle": "Индивидуальный объём",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/school-hero.webp",
+          "gallery": []
+        }
       ],
-      "preparation": {"title":"Подготовка","intro":"","body":""},
-      "process": {"title":"Процесс","intro":"","body":""},
-      "questions": {"title":"Вопросы","intro":"","items":[]},
+      "preparation": {
+        "title": "Подготовка",
+        "intro": "",
+        "body": ""
+      },
+      "process": {
+        "title": "Процесс",
+        "intro": "",
+        "body": ""
+      },
+      "questions": {
+        "title": "Вопросы",
+        "intro": "",
+        "items": []
+      },
       "photoFolders": [
-        {"id":"school-street","title":"Улица","images":[]},
-        {"id":"school-class","title":"Класс","images":[]},
-        {"id":"school-lesson","title":"Урок","images":[]},
-        {"id":"school-break","title":"Перемена","images":[]},
-        {"id":"school-friends","title":"Друзья","images":[]}
+        {
+          "id": "school-street",
+          "title": "Улица",
+          "images": []
+        },
+        {
+          "id": "school-class",
+          "title": "Класс",
+          "images": []
+        },
+        {
+          "id": "school-lesson",
+          "title": "Урок",
+          "images": []
+        },
+        {
+          "id": "school-break",
+          "title": "Перемена",
+          "images": []
+        },
+        {
+          "id": "school-friends",
+          "title": "Друзья",
+          "images": []
+        }
+      ],
+      "menuItems": [
+        {
+          "id": "school-menu-home",
+          "type": "home",
+          "label": "На главную",
+          "url": ""
+        },
+        {
+          "id": "school-menu-albums",
+          "type": "albums",
+          "label": "Виды альбомов",
+          "url": ""
+        },
+        {
+          "id": "school-menu-preparation",
+          "type": "preparation",
+          "label": "Подготовка",
+          "url": ""
+        },
+        {
+          "id": "school-menu-process",
+          "type": "process",
+          "label": "Процесс",
+          "url": ""
+        },
+        {
+          "id": "school-menu-questions",
+          "type": "questions",
+          "label": "Вопросы",
+          "url": ""
+        },
+        {
+          "id": "school-menu-photos",
+          "type": "photos",
+          "label": "Фото",
+          "url": ""
+        },
+        {
+          "id": "school-menu-video",
+          "type": "video",
+          "label": "Видеообзоры",
+          "url": ""
+        },
+        {
+          "id": "school-menu-contacts",
+          "type": "contacts",
+          "label": "Обсудить съёмку",
+          "url": ""
+        }
       ]
     },
     "kindergarten": {
@@ -130,23 +260,252 @@ window.DEFAULT_SITE_CONTENT = {
         "photos": "assets/images/kindergarten-hero.webp"
       },
       "albums": [
-        {"id":"kg-folder","title":"Папка","subtitle":"Лаконичный формат","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-2","title":"2 разворота","subtitle":"Компактный альбом","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-3","title":"3 разворота","subtitle":"Больше памятных кадров","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-4","title":"4 разворота","subtitle":"Расширенная история","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-5","title":"5 разворотов","subtitle":"Подробный выпускной альбом","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]},
-        {"id":"kg-more","title":"Больше разворотов","subtitle":"Индивидуальный объём","price":"","text":"","cover":"assets/images/kindergarten-hero.webp","gallery":[]}
+        {
+          "id": "kg-folder",
+          "title": "Папка",
+          "subtitle": "Лаконичный формат",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "kg-2",
+          "title": "2 разворота",
+          "subtitle": "Компактный альбом",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "kg-3",
+          "title": "3 разворота",
+          "subtitle": "Больше памятных кадров",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "kg-4",
+          "title": "4 разворота",
+          "subtitle": "Расширенная история",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "kg-5",
+          "title": "5 разворотов",
+          "subtitle": "Подробный выпускной альбом",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        },
+        {
+          "id": "kg-more",
+          "title": "Больше разворотов",
+          "subtitle": "Индивидуальный объём",
+          "price": "",
+          "text": "",
+          "cover": "assets/images/kindergarten-hero.webp",
+          "gallery": []
+        }
       ],
-      "preparation": {"title":"Подготовка","intro":"","body":""},
-      "process": {"title":"Процесс","intro":"","body":""},
-      "questions": {"title":"Вопросы","intro":"","items":[]},
+      "preparation": {
+        "title": "Подготовка",
+        "intro": "",
+        "body": ""
+      },
+      "process": {
+        "title": "Процесс",
+        "intro": "",
+        "body": ""
+      },
+      "questions": {
+        "title": "Вопросы",
+        "intro": "",
+        "items": []
+      },
       "photoFolders": [
-        {"id":"kg-group","title":"Группа","images":[]},
-        {"id":"kg-walk","title":"Прогулка","images":[]},
-        {"id":"kg-class","title":"Занятия","images":[]},
-        {"id":"kg-games","title":"Игры","images":[]},
-        {"id":"kg-friends","title":"Друзья","images":[]}
+        {
+          "id": "kg-group",
+          "title": "Группа",
+          "images": []
+        },
+        {
+          "id": "kg-walk",
+          "title": "Прогулка",
+          "images": []
+        },
+        {
+          "id": "kg-class",
+          "title": "Занятия",
+          "images": []
+        },
+        {
+          "id": "kg-games",
+          "title": "Игры",
+          "images": []
+        },
+        {
+          "id": "kg-friends",
+          "title": "Друзья",
+          "images": []
+        }
+      ],
+      "menuItems": [
+        {
+          "id": "kindergarten-menu-home",
+          "type": "home",
+          "label": "На главную",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-albums",
+          "type": "albums",
+          "label": "Виды альбомов",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-preparation",
+          "type": "preparation",
+          "label": "Подготовка",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-process",
+          "type": "process",
+          "label": "Процесс",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-questions",
+          "type": "questions",
+          "label": "Вопросы",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-photos",
+          "type": "photos",
+          "label": "Фото",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-video",
+          "type": "video",
+          "label": "Видеообзоры",
+          "url": ""
+        },
+        {
+          "id": "kindergarten-menu-contacts",
+          "type": "contacts",
+          "label": "Обсудить съёмку",
+          "url": ""
+        }
       ]
+    }
+  },
+  "homeStyles": {
+    "brandTop": {
+      "fontFamily": "",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "fontStyle": "normal",
+      "letterSpacing": -1.4,
+      "textTransform": "none",
+      "textAlign": "left",
+      "color": "#232321"
+    },
+    "brandBottom": {
+      "fontFamily": "",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "letterSpacing": 0,
+      "textTransform": "none",
+      "textAlign": "left",
+      "color": "#75736e"
+    },
+    "brandCity": {
+      "fontFamily": "",
+      "fontSize": 11,
+      "fontWeight": 500,
+      "fontStyle": "normal",
+      "letterSpacing": 0.8,
+      "textTransform": "uppercase",
+      "textAlign": "left",
+      "color": "#75736e"
+    },
+    "slogan": {
+      "fontFamily": "",
+      "fontSize": 54,
+      "fontWeight": 600,
+      "fontStyle": "normal",
+      "letterSpacing": -1.4,
+      "textTransform": "uppercase",
+      "textAlign": "left",
+      "color": "#8a6f56"
+    },
+    "directionTitle": {
+      "fontFamily": "",
+      "fontSize": 70,
+      "fontWeight": 600,
+      "fontStyle": "normal",
+      "letterSpacing": -1.4,
+      "textTransform": "none",
+      "textAlign": "left",
+      "color": "#ffffff"
+    },
+    "directionSubtitle": {
+      "fontFamily": "",
+      "fontSize": 15,
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "letterSpacing": 1.05,
+      "textTransform": "uppercase",
+      "textAlign": "left",
+      "color": "#ffffff"
+    }
+  },
+  "menus": {
+    "top": {
+      "fontFamily": "",
+      "fontSize": 15,
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "letterSpacing": 0.1,
+      "textTransform": "none",
+      "buttonHeight": 48,
+      "paddingX": 22,
+      "radius": 999,
+      "items": [
+        {
+          "id": "top-about",
+          "type": "about",
+          "label": "Обо мне",
+          "url": ""
+        },
+        {
+          "id": "top-contacts",
+          "type": "contacts",
+          "label": "Контакты",
+          "url": ""
+        }
+      ]
+    },
+    "direction": {
+      "fontFamily": "",
+      "fontSize": 15,
+      "fontWeight": 600,
+      "fontStyle": "normal",
+      "letterSpacing": 0.1,
+      "textTransform": "none",
+      "buttonHeight": 48,
+      "radius": 999
     }
   }
 };

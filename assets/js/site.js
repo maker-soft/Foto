@@ -15,9 +15,36 @@
   let content=JSON.parse(JSON.stringify(window.DEFAULT_SITE_CONTENT));
   let slideTimer=null,faqOpen=null,lastTrackedRoute='',lightboxItems=[],lightboxIndex=0,touchStartX=null;
   const directionSections=['albums','preparation','process','questions','photos'];
+  const directionMenuTypes=new Set(['home','albums','preparation','process','questions','photos','video','about','contacts','external']);
+  const topMenuTypes=new Set(['home','about','contacts','school','kindergarten','external']);
 
   function hasOwn(obj,key){return Boolean(obj&&Object.prototype.hasOwnProperty.call(obj,key))}
 
+
+  function menuItem(value,fallbackId,allowedTypes,defaultType='external'){
+    const item=value&&typeof value==='object'?value:{};
+    const type=allowedTypes.has(String(item.type||''))?String(item.type):defaultType;
+    return {
+      id:String(item.id||fallbackId),
+      type,
+      label:String(item.label||'Новая кнопка'),
+      url:String(item.url||'')
+    };
+  }
+
+  function defaultDirectionMenuItems(key,d,labels){
+    const m=d.menuLabels||{};
+    return [
+      {id:`${key}-menu-home`,type:'home',label:labels.home||'На главную',url:''},
+      {id:`${key}-menu-albums`,type:'albums',label:m.albums||'Виды альбомов',url:''},
+      {id:`${key}-menu-preparation`,type:'preparation',label:m.preparation||'Подготовка',url:''},
+      {id:`${key}-menu-process`,type:'process',label:m.process||'Процесс',url:''},
+      {id:`${key}-menu-questions`,type:'questions',label:m.questions||'Вопросы',url:''},
+      {id:`${key}-menu-photos`,type:'photos',label:m.photos||'Фото',url:''},
+      {id:`${key}-menu-video`,type:'video',label:labels.videoReviews||'Видеообзоры',url:''},
+      {id:`${key}-menu-contacts`,type:'contacts',label:labels.discussShoot||'Обсудить съёмку',url:''}
+    ];
+  }
 
   function normalizeDirectionStructure(target,raw){
     const version=Number(raw?.version||0);
@@ -25,7 +52,7 @@
     const folderTemplate={id:'',title:'',images:[]};
     const questionTemplate={question:'',answer:''};
     Object.keys(target.directions||{}).forEach(key=>{
-      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{};
+      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{},saved=raw?.directions?.[key]||{};
       d.menuLabels=deepMerge(defaults.menuLabels||{},d.menuLabels||{});
       d.preparation=deepMerge(defaults.preparation||{title:'Подготовка',intro:'',body:''},d.preparation||{});
       d.process=deepMerge(defaults.process||{title:'Процесс',intro:'',body:''},d.process||{});
@@ -35,19 +62,30 @@
       d.photoFolders=Array.isArray(d.photoFolders)?d.photoFolders.map(f=>deepMerge(folderTemplate,f||{})):[];
       d.albums.forEach((a,i)=>{if(!a.id)a.id=`${key}-album-${i+1}`;if(!Array.isArray(a.gallery))a.gallery=[]});
       d.photoFolders.forEach((f,i)=>{if(!f.id)f.id=`${key}-folder-${i+1}`;if(!Array.isArray(f.images))f.images=[]});
+      const sourceItems=Array.isArray(saved.menuItems)?d.menuItems:defaultDirectionMenuItems(key,d,target.labels||{});
+      d.menuItems=(Array.isArray(sourceItems)?sourceItems:[]).map((item,i)=>menuItem(item,`${key}-menu-${i+1}`,directionMenuTypes,'albums'));
     });
-    // Однократная миграция v23: структура школы получает шестую редактируемую карточку,
-    // как в разделе детского сада, без замены уже введённых текстов и фотографий.
     if(version<5){
       const school=target.directions?.school;
       if(school&&Array.isArray(school.albums)&&!school.albums.some(a=>a.id==='school-more')){
         school.albums.push({id:'school-more',title:'Больше разворотов',subtitle:'Индивидуальный объём',price:'',text:'',cover:'',gallery:[]});
       }
     }
-    target.version=Math.max(Number(target.version)||0,5);
+    target.version=Math.max(Number(target.version)||0,6);
   }
 
   function normalizeContent(target,raw){
+    target.homeStyles=deepMerge(window.DEFAULT_SITE_CONTENT.homeStyles||{},target.homeStyles||{});
+    target.menus=deepMerge(window.DEFAULT_SITE_CONTENT.menus||{},target.menus||{});
+    const rawTopItems=raw?.menus?.top?.items;
+    if(Array.isArray(rawTopItems)){
+      target.menus.top.items=(target.menus.top.items||[]).map((item,i)=>menuItem(item,`top-menu-${i+1}`,topMenuTypes,'external'));
+    }else{
+      target.menus.top.items=[
+        {id:'top-about',type:'about',label:raw?.labels?.navAbout||target.labels?.navAbout||'Обо мне',url:''},
+        {id:'top-contacts',type:'contacts',label:raw?.labels?.navContacts||target.labels?.navContacts||'Контакты',url:''}
+      ];
+    }
     normalizeDirectionStructure(target,raw);
     if(!hasOwn(raw,'brandCity')){
       target.brandCity='Новосибирск';
@@ -140,6 +178,28 @@
     return hasOwn(album,'cover')?(album.cover||''):directionImage(direction,'albums');
   }
 
+  function safeNumber(value,fallback,min,max){
+    const number=Number(value);
+    return Number.isFinite(number)?Math.min(max,Math.max(min,number)):fallback;
+  }
+  function safeChoice(value,choices,fallback){return choices.includes(String(value))?String(value):fallback}
+  function safeColor(value,fallback){return /^#[0-9a-f]{6}$/i.test(String(value||''))?String(value):fallback}
+  function safeFontFamily(value,fallback){
+    const font=String(value||'').trim();
+    return font&&!/[;{}<>]/.test(font)?font.slice(0,180):fallback;
+  }
+  function applyTextVars(root,prefix,style,fallback){
+    const value=style||{};
+    root.setProperty(`--${prefix}-font`,safeFontFamily(value.fontFamily,fallback.font));
+    root.setProperty(`--${prefix}-size`,`${safeNumber(value.fontSize,fallback.size,7,180)}px`);
+    root.setProperty(`--${prefix}-weight`,safeNumber(value.fontWeight,fallback.weight,100,900));
+    root.setProperty(`--${prefix}-style`,safeChoice(value.fontStyle,['normal','italic'],fallback.style||'normal'));
+    root.setProperty(`--${prefix}-ls`,`${safeNumber(value.letterSpacing,fallback.letterSpacing,-10,30)}px`);
+    root.setProperty(`--${prefix}-transform`,safeChoice(value.textTransform,['none','uppercase','lowercase','capitalize'],fallback.transform||'none'));
+    root.setProperty(`--${prefix}-align`,safeChoice(value.textAlign,['left','center','right'],fallback.align||'left'));
+    root.setProperty(`--${prefix}-color`,safeColor(value.color,fallback.color));
+  }
+
   function applyTheme(){
     const t=content.theme||{},r=document.documentElement.style;
     const m={bg:'--bg',ink:'--ink',muted:'--muted',line:'--line',surface:'--surface',button:'--button',active:'--active',bodyFont:'--font-body',headingFont:'--font-heading'};
@@ -147,6 +207,33 @@
     [['baseSize','--base-size','px'],['brandSize','--brand-size','px'],['navSize','--nav-size','px'],['homeTitleSize','--home-title-size','px'],['directionTitleSize','--direction-title-size','px'],['directionSubtitleSize','--direction-subtitle-size','px'],['pageTitleSize','--page-title-size','px'],['sectionTitleSize','--section-title-size','px'],['cardTitleSize','--card-title-size','px'],['bodyLetterSpacing','--body-ls','px'],['headingLetterSpacing','--heading-ls','px'],['navLetterSpacing','--nav-ls','px']]
       .forEach(([k,v,u])=>Number.isFinite(Number(t[k]))&&r.setProperty(v,Number(t[k])+u));
     Number.isFinite(Number(t.lineHeight))&&r.setProperty('--body-lh',t.lineHeight);
+
+    const hs=content.homeStyles||{},menus=content.menus||{},top=menus.top||{},directionMenu=menus.direction||{};
+    applyTextVars(r,'home-brand-top',hs.brandTop,{font:t.headingFont||'var(--font-heading)',size:Number(t.brandSize)||17,weight:600,style:'normal',letterSpacing:Number(t.headingLetterSpacing)||0,transform:'none',align:'left',color:t.ink||'#232321'});
+    applyTextVars(r,'home-brand-bottom',hs.brandBottom,{font:t.bodyFont||'var(--font-body)',size:12,weight:400,style:'normal',letterSpacing:0,transform:'none',align:'left',color:t.muted||'#75736e'});
+    applyTextVars(r,'home-brand-city',hs.brandCity,{font:t.bodyFont||'var(--font-body)',size:11,weight:500,style:'normal',letterSpacing:.8,transform:'uppercase',align:'left',color:t.muted||'#75736e'});
+    applyTextVars(r,'home-slogan',hs.slogan,{font:t.headingFont||'var(--font-heading)',size:Number(t.homeTitleSize)||54,weight:600,style:'normal',letterSpacing:Number(t.headingLetterSpacing)||0,transform:'uppercase',align:'left',color:'#8a6f56'});
+    applyTextVars(r,'home-direction-title',hs.directionTitle,{font:t.headingFont||'var(--font-heading)',size:Number(t.directionTitleSize)||70,weight:600,style:'normal',letterSpacing:Number(t.headingLetterSpacing)||0,transform:'none',align:'left',color:'#ffffff'});
+    applyTextVars(r,'home-direction-subtitle',hs.directionSubtitle,{font:t.bodyFont||'var(--font-body)',size:Number(t.directionSubtitleSize)||15,weight:400,style:'normal',letterSpacing:1.05,transform:'uppercase',align:'left',color:'#ffffff'});
+
+    r.setProperty('--top-menu-font',safeFontFamily(top.fontFamily,t.bodyFont||'var(--font-body)'));
+    r.setProperty('--top-menu-size',`${safeNumber(top.fontSize,Number(t.navSize)||15,8,36)}px`);
+    r.setProperty('--top-menu-weight',safeNumber(top.fontWeight,700,100,900));
+    r.setProperty('--top-menu-style',safeChoice(top.fontStyle,['normal','italic'],'normal'));
+    r.setProperty('--top-menu-ls',`${safeNumber(top.letterSpacing,Number(t.navLetterSpacing)||0,-5,15)}px`);
+    r.setProperty('--top-menu-transform',safeChoice(top.textTransform,['none','uppercase','lowercase','capitalize'],'none'));
+    r.setProperty('--top-menu-height',`${safeNumber(top.buttonHeight,48,30,90)}px`);
+    r.setProperty('--top-menu-padding-x',`${safeNumber(top.paddingX,22,4,60)}px`);
+    r.setProperty('--top-menu-radius',`${safeNumber(top.radius,999,0,999)}px`);
+
+    r.setProperty('--direction-menu-font',safeFontFamily(directionMenu.fontFamily,t.bodyFont||'var(--font-body)'));
+    r.setProperty('--direction-menu-size',`${safeNumber(directionMenu.fontSize,Number(t.navSize)||15,8,36)}px`);
+    r.setProperty('--direction-menu-weight',safeNumber(directionMenu.fontWeight,600,100,900));
+    r.setProperty('--direction-menu-style',safeChoice(directionMenu.fontStyle,['normal','italic'],'normal'));
+    r.setProperty('--direction-menu-ls',`${safeNumber(directionMenu.letterSpacing,Number(t.navLetterSpacing)||0,-5,15)}px`);
+    r.setProperty('--direction-menu-transform',safeChoice(directionMenu.textTransform,['none','uppercase','lowercase','capitalize'],'none'));
+    r.setProperty('--direction-menu-height',`${safeNumber(directionMenu.buttonHeight,48,30,90)}px`);
+    r.setProperty('--direction-menu-radius',`${safeNumber(directionMenu.radius,999,0,999)}px`);
   }
 
   function route(){
@@ -159,14 +246,34 @@
 
   function go(hash){location.hash=hash;window.scrollTo({top:0,behavior:'smooth'})}
 
+  function menuGo(type){
+    if(type==='home')return 'home';
+    if(type==='about')return 'about';
+    if(type==='contacts')return 'contacts';
+    if(type==='school')return 'direction/school/albums';
+    if(type==='kindergarten')return 'direction/kindergarten/albums';
+    return '';
+  }
+
+  function topMenuMarkup(active){
+    const items=content.menus?.top?.items||[];
+    return items.map(item=>{
+      const label=String(item.label||'').trim();
+      if(!label)return '';
+      if(item.type==='external'){
+        return `<a class="nav-button" href="${esc(safeHref(item.url))}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+      }
+      const target=menuGo(item.type);
+      if(!target)return '';
+      const isActive=(item.type===active)||(active==='home'&&item.type==='home');
+      return `<button class="nav-button ${isActive?'active':''}" data-go="${esc(target)}">${esc(label)}</button>`;
+    }).join('');
+  }
+
   function header(active){
-    const l=content.labels||{};
     return `<header class="topbar"><div class="container"><div class="topbar-inner">
       <button class="brand" data-go="home"><strong>${esc(content.brandTop)}</strong><span class="brand-name">${esc(content.brandBottom)}</span>${content.brandCity?`<span class="brand-city">${esc(content.brandCity)}</span>`:''}</button>
-      <nav class="topnav" aria-label="Основная навигация">
-        <button class="nav-button ${active==='about'?'active':''}" data-go="about">${esc(l.navAbout)}</button>
-        <button class="nav-button ${active==='contacts'?'active':''}" data-go="contacts">${esc(l.navContacts)}</button>
-      </nav>
+      <nav class="topnav" aria-label="Основная навигация">${topMenuMarkup(active)}</nav>
     </div></div></header>`;
   }
 
@@ -195,11 +302,26 @@
     return `${header('contacts')}<main id="main"><section class="page container"><div class="contacts-layout ${hasPhoto?'':'without-media'}"><article class="contacts-copy"><h1 class="page-title">${esc(c.title)}</h1><div class="page-text rich-text">${richHtml(c.text)}</div><div class="contacts-actions"><a class="action-button" href="${esc(safeHref(c.vk))}" target="_blank" rel="noopener noreferrer">${esc(l.contactVk)}</a><a class="action-button" href="${esc(safeHref(c.max))}" target="_blank" rel="noopener noreferrer">${esc(l.contactMax)}</a></div></article>${photoBlock}</div></section></main>`;
   }
 
+  function directionMenuItem(item,dir,section){
+    const label=String(item?.label||'').trim();
+    if(!label)return '';
+    const type=String(item.type||'');
+    if(directionSections.includes(type)){
+      return `<button class="side-button ${section===type?'active':''}" data-go="direction/${esc(dir)}/${esc(type)}">${esc(label)}</button>`;
+    }
+    if(type==='home')return `<button class="side-button external home-button" data-go="home">${esc(label)}</button>`;
+    if(type==='about')return `<button class="side-button external" data-go="about">${esc(label)}</button>`;
+    if(type==='contacts')return `<button class="side-button external" data-go="contacts">${esc(label)}</button>`;
+    if(type==='video')return `<a class="side-button external video-button" href="${esc(safeHref(item.url||content.videoUrl))}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+    if(type==='external')return `<a class="side-button external" href="${esc(safeHref(item.url))}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+    return '';
+  }
+
   function directionTop(dir,section){
-    const d=content.directions[dir],heroUrl=directionImage(d,section),hasHero=Boolean(asset(heroUrl)),l=content.labels||{},menu=d.menuLabels||{};
-    const entries=directionSections.map(id=>[id,menu[id]||id]);
+    const d=content.directions[dir],heroUrl=directionImage(d,section),hasHero=Boolean(asset(heroUrl));
+    const items=Array.isArray(d.menuItems)?d.menuItems:defaultDirectionMenuItems(dir,d,content.labels||{});
     const hero=hasHero?`<div class="direction-hero">${lightboxTrigger(heroUrl,d.title,media(heroUrl,d.title,'loading="eager" fetchpriority="high"'),'hero-view')}</div>`:'';
-    return `<section class="direction-page container"><div class="direction-shell ${hasHero?'':'without-hero'}"><aside class="direction-panel"><h1 class="direction-heading">${esc(d.title)}</h1><p class="direction-subtitle">${esc(d.subtitle)}</p><nav class="side-menu"><button class="side-button external home-button" data-go="home">${esc(l.home)}</button>${entries.map(([id,label])=>`<button class="side-button ${section===id?'active':''}" data-go="direction/${dir}/${id}">${esc(label)}</button>`).join('')}<a class="side-button external video-button" href="${esc(safeHref(content.videoUrl))}" target="_blank" rel="noopener noreferrer">${esc(l.videoReviews)}</a><button class="side-button external" data-go="contacts">${esc(l.discussShoot)}</button></nav></aside>${hero}<div class="section-content">`;
+    return `<section class="direction-page container"><div class="direction-shell ${hasHero?'':'without-hero'}"><aside class="direction-panel"><h1 class="direction-heading">${esc(d.title)}</h1><p class="direction-subtitle">${esc(d.subtitle)}</p><nav class="side-menu">${items.map(item=>directionMenuItem(item,dir,section)).join('')}</nav></aside>${hero}<div class="section-content">`;
   }
 
   function sectionHeader(title,intro=''){
