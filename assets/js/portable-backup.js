@@ -277,7 +277,7 @@
     'assets/css/site.css', 'assets/css/admin.css',
     'assets/js/config.js', 'assets/js/default-content.js', 'assets/js/backend.js', 'assets/js/site.js', 'assets/js/portable-backup.js',
     'assets/images/favicon.svg', 'assets/images/school-hero.webp', 'assets/images/kindergarten-hero.webp',
-    'supabase/schema.sql', 'supabase/security_analytics_upgrade.sql', 'supabase/statistics_ui_upgrade_v7.sql', 'supabase/fix_storage_permissions_v8.sql',
+    'supabase/schema.sql', 'supabase/security_analytics_upgrade.sql', 'supabase/statistics_ui_upgrade_v7.sql', 'supabase/fix_storage_permissions_v8.sql', 'supabase/unique_visitors_v22.sql',
     'БЕЗОПАСНОСТЬ_И_СТАТИСТИКА.md', 'ИНСТРУКЦИЯ_РАЗВЕРТЫВАНИЯ.md', 'ПОЛНЫЙ_БЕКАП_С_ФО_V12.txt'
   ];
 

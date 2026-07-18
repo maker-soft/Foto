@@ -33,7 +33,10 @@
     if (window.crypto?.randomUUID) return window.crypto.randomUUID();
     const bytes = new Uint8Array(16);
     window.crypto?.getRandomValues?.(bytes);
-    return [...bytes].map((value) => value.toString(16).padStart(2, '0')).join('');
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = [...bytes].map((value) => value.toString(16).padStart(2, '0'));
+    return `${hex.slice(0,4).join('')}-${hex.slice(4,6).join('')}-${hex.slice(6,8).join('')}-${hex.slice(8,10).join('')}-${hex.slice(10).join('')}`;
   }
 
   function safeFolder(folder) {
@@ -171,6 +174,20 @@
     }
   }
 
+  function analyticsVisitorId() {
+    const key = 'lena-site-analytics-visitor-v1';
+    try {
+      let value = localStorage.getItem(key);
+      if (!value) {
+        value = randomId();
+        localStorage.setItem(key, value);
+      }
+      return value;
+    } catch (_) {
+      return analyticsSessionId();
+    }
+  }
+
   function deviceType() {
     const width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     if (width < 600) return 'mobile';
@@ -192,13 +209,20 @@
     if (!client || navigator.doNotTrack === '1') return;
     const cleanPath = String(path || 'home').replace(/[^a-z0-9/_-]/gi, '').slice(0, 160) || 'home';
     try {
-      await client.rpc('track_page_view', {
+      const common = {
         p_session_id: analyticsSessionId(),
         p_path: cleanPath,
         p_referrer_host: referrerHost(),
         p_device: deviceType(),
         p_screen_width: Math.min(10000, Math.max(0, Math.round(window.screen?.width || window.innerWidth || 0)))
+      };
+      const { error } = await client.rpc('track_page_view', {
+        p_visitor_id: analyticsVisitorId(),
+        ...common
       });
+      if (error && /track_page_view|schema cache|function/i.test(String(error.message || ''))) {
+        await client.rpc('track_page_view', common);
+      }
     } catch (_) {
       // Аналитика не должна мешать работе сайта.
     }
