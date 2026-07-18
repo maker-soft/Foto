@@ -8,7 +8,35 @@
   const BACKUP_FORMAT='lena-sibirskaya-site-backup',BACKUP_VERSION=1,MAX_BACKUP_BYTES=5*1024*1024,MAX_CONTENT_BYTES=2*1024*1024;
   function hasOwn(obj,key){return Boolean(obj&&Object.prototype.hasOwnProperty.call(obj,key))}
 
+
+  function normalizeDirectionStructure(target,raw){
+    const version=Number(raw?.version||0);
+    const albumTemplate={id:'',title:'',subtitle:'',price:'',text:'',cover:'',gallery:[]};
+    const folderTemplate={id:'',title:'',images:[]};
+    const questionTemplate={question:'',answer:''};
+    Object.keys(target.directions||{}).forEach(key=>{
+      const d=target.directions[key],defaults=window.DEFAULT_SITE_CONTENT.directions?.[key]||{};
+      d.menuLabels=deepMerge(defaults.menuLabels||{},d.menuLabels||{});
+      d.preparation=deepMerge(defaults.preparation||{title:'Подготовка',intro:'',body:''},d.preparation||{});
+      d.process=deepMerge(defaults.process||{title:'Процесс',intro:'',body:''},d.process||{});
+      d.questions=deepMerge(defaults.questions||{title:'Вопросы',intro:'',items:[]},d.questions||{});
+      d.questions.items=Array.isArray(d.questions.items)?d.questions.items.map(q=>deepMerge(questionTemplate,q||{})):[];
+      d.albums=Array.isArray(d.albums)?d.albums.map(a=>deepMerge(albumTemplate,a||{})):[];
+      d.photoFolders=Array.isArray(d.photoFolders)?d.photoFolders.map(f=>deepMerge(folderTemplate,f||{})):[];
+      d.albums.forEach((a,i)=>{if(!a.id)a.id=`${key}-album-${i+1}`;if(!Array.isArray(a.gallery))a.gallery=[]});
+      d.photoFolders.forEach((f,i)=>{if(!f.id)f.id=`${key}-folder-${i+1}`;if(!Array.isArray(f.images))f.images=[]});
+    });
+    if(version<5){
+      const school=target.directions?.school;
+      if(school&&Array.isArray(school.albums)&&!school.albums.some(a=>a.id==='school-more')){
+        school.albums.push({id:'school-more',title:'Больше разворотов',subtitle:'Индивидуальный объём',price:'',text:'',cover:'',gallery:[]});
+      }
+    }
+    target.version=Math.max(Number(target.version)||0,5);
+  }
+
   function normalizeDirectionImages(target,raw){
+    normalizeDirectionStructure(target,raw);
     if(!hasOwn(raw,'brandCity')){
       target.brandCity='Новосибирск';
       if(String(raw?.brandTop||'').trim().toLowerCase()==='выпускной альбом новосибирск')target.brandTop='Выпускной альбом';
