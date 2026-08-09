@@ -238,13 +238,27 @@
 
   function route(){
     const raw=(location.hash||'#home').slice(1),p=raw.split('/').filter(Boolean);
+    const path=location.pathname.replace(/\/+$/,'');
+    if((path.endsWith('/school')||path==='/school')&&(!p.length||p[0]==='home'))return{view:'direction',dir:'school',section:'albums',item:null};
+    if((path.endsWith('/kindergarten')||path==='/kindergarten')&&(!p.length||p[0]==='home'))return{view:'direction',dir:'kindergarten',section:'albums',item:null};
     if(!p.length||p[0]==='home')return{view:'home'};
     if(p[0]==='about'||p[0]==='contacts')return{view:p[0]};
     if(p[0]==='direction')return{view:'direction',dir:p[1]||'school',section:p[2]||'albums',item:p[3]||null};
     return{view:'home'};
   }
 
-  function go(hash){location.hash=hash;window.scrollTo({top:0,behavior:'smooth'})}
+  function publicHref(hash){
+    if(hash==='home')return '/';
+    if(hash==='direction/school/albums')return '/school/';
+    if(hash==='direction/kindergarten/albums')return '/kindergarten/';
+    return `/#${hash}`;
+  }
+
+  function go(hash){
+    const target=publicHref(hash);
+    if(target.startsWith('/#')||target===location.pathname){location.hash=target.split('#')[1]||'';window.scrollTo({top:0,behavior:'smooth'});return}
+    location.href=target;
+  }
 
   function menuGo(type){
     if(type==='home')return 'home';
@@ -266,13 +280,13 @@
       const target=menuGo(item.type);
       if(!target)return '';
       const isActive=(item.type===active)||(active==='home'&&item.type==='home');
-      return `<button class="nav-button ${isActive?'active':''}" data-go="${esc(target)}">${esc(label)}</button>`;
+      return `<a class="nav-button ${isActive?'active':''}" href="${esc(publicHref(target))}" data-go="${esc(target)}">${esc(label)}</a>`;
     }).join('');
   }
 
   function header(active){
     return `<header class="topbar"><div class="container"><div class="topbar-inner">
-      <button class="brand" data-go="home"><strong>${esc(content.brandTop)}</strong><span class="brand-name">${esc(content.brandBottom)}</span>${content.brandCity?`<span class="brand-city">${esc(content.brandCity)}</span>`:''}</button>
+      <a class="brand" href="/" data-go="home"><strong>${esc(content.brandTop)}</strong><span class="brand-name">${esc(content.brandBottom)}</span>${content.brandCity?`<span class="brand-city">${esc(content.brandCity)}</span>`:''}</a>
       <nav class="topnav" aria-label="Основная навигация">${topMenuMarkup(active)}</nav>
     </div></div></header>`;
   }
@@ -280,7 +294,7 @@
   function home(){
     return `${header('home')}<main id="main"><section class="home container"><h1 class="slogan">${esc(content.homeSlogan)}</h1><div class="direction-grid">${['school','kindergarten'].map(k=>{
       const d=content.directions[k],src=asset(directionImage(d,'home'));
-      return `<button class="direction-card ${src?'has-media':'no-media'}" data-go="direction/${k}/albums">${src?media(src,d.title,'loading="eager"'):''}<span class="direction-card-copy"><h2>${esc(d.title)}</h2><p>${esc(d.subtitle)}</p></span></button>`;
+      return `<a class="direction-card ${src?'has-media':'no-media'}" href="/${k}/" data-go="direction/${k}/albums">${src?media(src,d.title,'loading="eager"'):''}<span class="direction-card-copy"><h2>${esc(d.title)}</h2><p>${esc(d.subtitle)}</p></span></a>`;
     }).join('')}</div></section></main>`;
   }
 
@@ -309,7 +323,7 @@
     if(directionSections.includes(type)){
       return `<button class="side-button ${section===type?'active':''}" data-go="direction/${esc(dir)}/${esc(type)}">${esc(label)}</button>`;
     }
-    if(type==='home')return `<button class="side-button external home-button" data-go="home">${esc(label)}</button>`;
+    if(type==='home')return `<a class="side-button external home-button" href="/" data-go="home">${esc(label)}</a>`;
     if(type==='about')return `<button class="side-button external" data-go="about">${esc(label)}</button>`;
     if(type==='contacts')return `<button class="side-button external" data-go="contacts">${esc(label)}</button>`;
     if(type==='video')return `<a class="side-button external video-button" href="${esc(safeHref(item.url||content.videoUrl))}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
@@ -457,7 +471,7 @@
   }
 
   function bind(){
-    $$('[data-go]').forEach(el=>el.addEventListener('click',()=>go(el.dataset.go)));
+    $$('[data-go]').forEach(el=>el.addEventListener('click',event=>{event.preventDefault();go(el.dataset.go)}));
     $$('[data-faq]').forEach(b=>b.onclick=()=>{faqOpen=faqOpen===Number(b.dataset.faq)?null:Number(b.dataset.faq);render()});
     $$('[data-folder]').forEach(b=>b.onclick=()=>{
       $$('[data-folder]').forEach(x=>x.classList.toggle('active',x===b));
