@@ -1,0 +1,38 @@
+name: Yandex Metrica export
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 2 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Export Yandex Metrica data
+        env:
+          YANDEX_METRIKA_TOKEN: ${{ secrets.YANDEX_METRIKA_TOKEN }}
+          YANDEX_METRIKA_COUNTER_ID: '111851028'
+          METRIKA_DAYS: '90'
+          METRIKA_OUTPUT_DIR: 'yandex-metrica-export'
+        run: python tools/yandex_metrica_export.py
+
+      - name: Upload analytics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: yandex-metrica-export
+          path: yandex-metrica-export/
+          if-no-files-found: error
+          retention-days: 30
