@@ -1,0 +1,86 @@
+{
+  "counter": {
+    "id": 111851028,
+    "status": "Active",
+    "owner_login": "Denis.Gazizov79",
+    "code_status": "CS_ERR_UNKNOWN",
+    "activity_status": "low",
+    "name": "Photobook-nsk.ru",
+    "type": "simple",
+    "favorite": 0,
+    "hide_address": 0,
+    "pro": 0,
+    "permission": "own",
+    "webvisor": {
+      "arch_enabled": 0,
+      "arch_type": "none",
+      "load_player_type": "proxy",
+      "wv_version": 2,
+      "allow_wv2": true,
+      "wv_forms": 1
+    },
+    "code_options": {
+      "async": 1,
+      "informer": {
+        "enabled": 0,
+        "type": "ext",
+        "size": 3,
+        "indicator": "pageviews",
+        "color_start": "FFFFFFFF",
+        "color_end": "EFEFEFFF",
+        "color_text": 0,
+        "color_arrow": 1
+      },
+      "modules": {
+        "prebid_enabled": 0
+      },
+      "visor": 1,
+      "track_hash": 0,
+      "xml_site": 0,
+      "clickmap": 1,
+      "in_one_line": 0,
+      "ecommerce": 1,
+      "alternative_cdn": 0,
+      "ecommerce_object": "dataLayer",
+      "ytm": true,
+      "ssr": true
+    },
+    "create_time": "2026-08-22T11:53:25+03:00",
+    "time_zone_name": "Asia/Novosibirsk",
+    "time_zone_offset": 420,
+    "partner_id": 0,
+    "update_time": "2026-08-22 11:53:26",
+    "code": "\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function(m,e,t,r,i,k,a){\n        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n        m[i].l=1*new Date();\n        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\n        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)\n    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111851028', 'ym');\n\n    ym(111851028, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:\"dataLayer\", params: {__ym: {isFromApi: 'yesIsFromApi'}}, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/111851028\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n",
+    "filter_robots": 1,
+    "currency": 643,
+    "currency_code": "RUB",
+    "visit_threshold": 1800,
+    "max_goals": 200,
+    "max_operations": 30,
+    "max_filters": 30,
+    "features": [
+      "webvisor2"
+    ],
+    "site": "photobook-nsk.ru",
+    "site2": {
+      "site": "photobook-nsk.ru",
+      "domain": "photobook-nsk.ru"
+    },
+    "gdpr_agreement_accepted": 0,
+    "mirrors": [
+      "photobook.nsk.ru"
+    ],
+    "mirrors2": [
+      {
+        "site": "photobook.nsk.ru",
+        "domain": "photobook.nsk.ru"
+      }
+    ],
+    "autogoals_enabled": true,
+    "ecommerce_deduplicator_enabled": false,
+    "ecom_options": {
+      "has_manual_ecom": false,
+      "has_auto_ecom": false
+    }
+  }
+}

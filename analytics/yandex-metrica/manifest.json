@@ -1,0 +1,96 @@
+{
+  "exported_at_utc": "2026-08-22T11:11:33.973048+00:00",
+  "counter_id": "111851028",
+  "counter_name": "Photobook-nsk.ru",
+  "site": "photobook-nsk.ru",
+  "permission": "own",
+  "period": {
+    "date1": "2026-05-25",
+    "date2": "2026-08-22",
+    "days": 90
+  },
+  "goal_count": 0,
+  "reports": [
+    {
+      "name": "daily",
+      "status": "ok",
+      "rows": 1,
+      "total_rows": 1,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "traffic_sources",
+      "status": "ok",
+      "rows": 2,
+      "total_rows": 2,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "search_engines",
+      "status": "ok",
+      "rows": 0,
+      "total_rows": 0,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "landing_pages",
+      "status": "ok",
+      "rows": 2,
+      "total_rows": 2,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "devices",
+      "status": "ok",
+      "rows": 2,
+      "total_rows": 2,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "geography",
+      "status": "ok",
+      "rows": 2,
+      "total_rows": 2,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "browsers",
+      "status": "ok",
+      "rows": 2,
+      "total_rows": 2,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "conversions",
+      "status": "ok",
+      "rows": 0,
+      "total_rows": 0,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "popular_pages",
+      "status": "ok",
+      "rows": 3,
+      "total_rows": 3,
+      "sampled": false,
+      "sample_share": 1.0,
+      "contains_sensitive_data": false
+    }
+  ]
+}
