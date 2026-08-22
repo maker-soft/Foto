@@ -6,7 +6,7 @@ on:
     - cron: '15 2 * * *'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   export:
@@ -26,13 +26,25 @@ jobs:
           YANDEX_METRIKA_TOKEN: ${{ secrets.YANDEX_METRIKA_TOKEN }}
           YANDEX_METRIKA_COUNTER_ID: '111851028'
           METRIKA_DAYS: '90'
-          METRIKA_OUTPUT_DIR: 'yandex-metrica-export'
+          METRIKA_OUTPUT_DIR: 'analytics/yandex-metrica'
         run: python tools/yandex_metrica_export.py
 
       - name: Upload analytics artifact
         uses: actions/upload-artifact@v4
         with:
           name: yandex-metrica-export
-          path: yandex-metrica-export/
+          path: analytics/yandex-metrica/
           if-no-files-found: error
           retention-days: 30
+
+      - name: Save aggregated analytics to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analytics/yandex-metrica
+          if git diff --cached --quiet; then
+            echo "No analytics changes to commit"
+          else
+            git commit -m "Update Yandex Metrica analytics"
+            git push
+          fi
