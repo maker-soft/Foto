@@ -44,8 +44,20 @@
         }
       ],
       "metrics": [
-        1.0,
-        1.0
+        4.0,
+        2.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/?_ym_debug=2`&_ym_status-check=111851028&_ym_lang=ru",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        3.0,
+        2.0
       ]
     },
     {
@@ -63,7 +75,7 @@
     {
       "dimensions": [
         {
-          "name": "https://photobook-nsk.ru/?_ym_debug=2`&_ym_status-check=111851028&_ym_lang=ru",
+          "name": "https://photobook-nsk.ru/kindergarten/",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -73,24 +85,24 @@
       ]
     }
   ],
-  "total_rows": 3,
+  "total_rows": 4,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 3,
-  "sample_space": 3,
+  "sample_size": 9,
+  "sample_space": 9,
   "data_lag": 0,
   "totals": [
-    3.0,
-    2.0
+    9.0,
+    3.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    1.0,
-    1.0
+    4.0,
+    2.0
   ]
 }

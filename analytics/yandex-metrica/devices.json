@@ -43,6 +43,24 @@
     {
       "dimensions": [
         {
+          "icon_id": "mobile",
+          "icon_type": "device",
+          "name": "Смартфоны",
+          "id": "mobile"
+        }
+      ],
+      "metrics": [
+        3.0,
+        2.0,
+        7.0,
+        33.33333333,
+        2.33333333,
+        134.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "desktop",
           "icon_type": "device",
           "name": "ПК",
@@ -57,24 +75,6 @@
         2.0,
         23.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "mobile",
-          "icon_type": "device",
-          "name": "Смартфоны",
-          "id": "mobile"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        1.0,
-        100.0,
-        1.0,
-        0.0
-      ]
     }
   ],
   "total_rows": 2,
@@ -82,31 +82,31 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 2,
-  "sample_space": 2,
+  "sample_size": 4,
+  "sample_space": 4,
   "data_lag": 0,
   "totals": [
-    2.0,
-    2.0,
+    4.0,
     3.0,
-    50.0,
-    1.5,
-    11.5
+    9.0,
+    25.0,
+    2.25,
+    106.25
   ],
   "min": [
     1.0,
     1.0,
-    1.0,
-    0.0,
-    1.0,
-    0.0
-  ],
-  "max": [
-    1.0,
-    1.0,
     2.0,
-    100.0,
+    0.0,
     2.0,
     23.0
+  ],
+  "max": [
+    3.0,
+    2.0,
+    7.0,
+    33.33333333,
+    2.33333333,
+    134.0
   ]
 }

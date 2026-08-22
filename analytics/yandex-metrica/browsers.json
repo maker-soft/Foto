@@ -40,6 +40,21 @@
     {
       "dimensions": [
         {
+          "icon_id": "38",
+          "icon_type": "browser",
+          "name": "Mobile Safari",
+          "id": "38"
+        }
+      ],
+      "metrics": [
+        3.0,
+        2.0,
+        33.33333333
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "4",
           "icon_type": "browser",
           "name": "Safari",
@@ -51,21 +66,6 @@
         1.0,
         0.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "38",
-          "icon_type": "browser",
-          "name": "Mobile Safari",
-          "id": "38"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        100.0
-      ]
     }
   ],
   "total_rows": 2,
@@ -73,13 +73,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 2,
-  "sample_space": 2,
+  "sample_size": 4,
+  "sample_space": 4,
   "data_lag": 0,
   "totals": [
-    2.0,
-    2.0,
-    50.0
+    4.0,
+    3.0,
+    25.0
   ],
   "min": [
     1.0,
@@ -87,8 +87,8 @@
     0.0
   ],
   "max": [
-    1.0,
-    1.0,
-    100.0
+    3.0,
+    2.0,
+    33.33333333
   ]
 }

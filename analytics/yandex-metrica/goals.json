@@ -1,3 +1,123 @@
 {
-  "goals": []
+  "goals": [
+    {
+      "id": 600733648,
+      "name": "Обращение к фотографу",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 1,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "lead_contact"
+        }
+      ]
+    },
+    {
+      "id": 600733698,
+      "name": "Обсудить съемку",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "lead_discuss"
+        }
+      ]
+    },
+    {
+      "id": 600733811,
+      "name": "Просмотр контактов",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "view_contacts"
+        }
+      ]
+    },
+    {
+      "id": 600733965,
+      "name": "Начальная школа",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "view_school"
+        }
+      ]
+    },
+    {
+      "id": 600734088,
+      "name": "Детский сад",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "view_kindergarten"
+        }
+      ]
+    },
+    {
+      "id": 600734268,
+      "name": "Просмотр альбома",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "view_album"
+        }
+      ]
+    },
+    {
+      "id": 600734341,
+      "name": "Просмотр видеообзора",
+      "type": "action",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "user",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "exact",
+          "url": "view_video"
+        }
+      ]
+    }
+  ]
 }

@@ -40,37 +40,55 @@
     "adfox_event_id": "0",
     "funnel_pattern": ""
   },
-  "data": [],
-  "total_rows": 0,
+  "data": [
+    {
+      "dimensions": [
+        {
+          "name": "Google, результаты поиска",
+          "id": "google_search",
+          "favicon": "google.com"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        2.0,
+        0.0,
+        2.0,
+        28.0
+      ]
+    }
+  ],
+  "total_rows": 1,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 2,
-  "sample_space": 2,
+  "sample_size": 4,
+  "sample_space": 4,
   "data_lag": 0,
   "totals": [
+    1.0,
+    1.0,
+    2.0,
     0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    2.0,
+    28.0
   ],
   "min": [
+    1.0,
+    1.0,
+    2.0,
     0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    2.0,
+    28.0
   ],
   "max": [
+    1.0,
+    1.0,
+    2.0,
     0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    2.0,
+    28.0
   ]
 }

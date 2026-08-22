@@ -1,5 +1,5 @@
 {
-  "exported_at_utc": "2026-08-22T11:11:33.973048+00:00",
+  "exported_at_utc": "2026-08-22T11:39:21.026431+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
@@ -9,7 +9,7 @@
     "date2": "2026-08-22",
     "days": 90
   },
-  "goal_count": 0,
+  "goal_count": 7,
   "reports": [
     {
       "name": "daily",
@@ -23,8 +23,8 @@
     {
       "name": "traffic_sources",
       "status": "ok",
-      "rows": 2,
-      "total_rows": 2,
+      "rows": 3,
+      "total_rows": 3,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -32,8 +32,8 @@
     {
       "name": "search_engines",
       "status": "ok",
-      "rows": 0,
-      "total_rows": 0,
+      "rows": 1,
+      "total_rows": 1,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -77,8 +77,8 @@
     {
       "name": "conversions",
       "status": "ok",
-      "rows": 0,
-      "total_rows": 0,
+      "rows": 5,
+      "total_rows": 5,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -86,8 +86,8 @@
     {
       "name": "popular_pages",
       "status": "ok",
-      "rows": 3,
-      "total_rows": 3,
+      "rows": 4,
+      "total_rows": 4,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
