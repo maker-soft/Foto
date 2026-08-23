@@ -118,6 +118,22 @@
           "url": "view_video"
         }
       ]
+    },
+    {
+      "id": 600743649,
+      "name": "Автоцель: переход в соц.сеть",
+      "type": "social",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "auto",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "all_social"
+        }
+      ]
     }
   ]
 }
