@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-05-27",
-    "date2": "2026-08-24",
+    "date1": "2026-05-28",
+    "date2": "2026-08-25",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,20 @@
         }
       ],
       "metrics": [
-        4.0,
-        2.0
+        5.0,
+        3.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/school/",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        5.0,
+        1.0
       ]
     },
     {
@@ -97,24 +109,24 @@
       ]
     }
   ],
-  "total_rows": 5,
+  "total_rows": 6,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 10,
-  "sample_space": 10,
+  "sample_size": 16,
+  "sample_space": 16,
   "data_lag": 0,
   "totals": [
-    10.0,
-    4.0
+    16.0,
+    5.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    4.0,
-    2.0
+    5.0,
+    3.0
   ]
 }

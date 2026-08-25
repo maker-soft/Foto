@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-05-27",
-    "date2": "2026-08-24",
+    "date1": "2026-05-28",
+    "date2": "2026-08-25",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -50,12 +50,30 @@
         }
       ],
       "metrics": [
+        4.0,
+        4.0,
+        9.0,
+        25.0,
+        2.25,
+        342.5
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "-1",
+          "icon_type": "traffic-source",
+          "name": "Внутренние переходы",
+          "id": "internal"
+        }
+      ],
+      "metrics": [
         3.0,
+        1.0,
         3.0,
-        6.0,
         33.33333333,
-        2.0,
-        129.66666667
+        1.0,
+        16.0
       ]
     },
     {
@@ -95,36 +113,36 @@
       ]
     }
   ],
-  "total_rows": 3,
+  "total_rows": 4,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 5,
-  "sample_space": 5,
+  "sample_size": 9,
+  "sample_space": 9,
   "data_lag": 0,
   "totals": [
+    9.0,
     5.0,
-    4.0,
-    10.0,
-    20.0,
-    2.0,
-    88.0
+    16.0,
+    22.22222222,
+    1.77777778,
+    163.22222222
   ],
   "min": [
     1.0,
     1.0,
     2.0,
     0.0,
-    2.0,
-    23.0
+    1.0,
+    16.0
   ],
   "max": [
-    3.0,
-    3.0,
-    6.0,
+    4.0,
+    4.0,
+    9.0,
     33.33333333,
-    2.0,
-    129.66666667
+    2.25,
+    342.5
   ]
 }

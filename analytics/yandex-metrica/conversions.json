@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:anyGoalReaches"
     ],
-    "date1": "2026-05-27",
-    "date2": "2026-08-24",
+    "date1": "2026-05-28",
+    "date2": "2026-08-25",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -38,6 +38,34 @@
     "funnel_pattern": ""
   },
   "data": [
+    {
+      "dimensions": [
+        {
+          "name": "Начальная школа",
+          "id": "600733965"
+        }
+      ],
+      "metrics": [
+        4.0,
+        1.0,
+        5.0,
+        100.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "Просмотр альбома",
+          "id": "600734268"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        4.0,
+        100.0
+      ]
+    },
     {
       "dimensions": [
         {
@@ -93,35 +121,21 @@
         1.0,
         100.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "Просмотр альбома",
-          "id": "600734268"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        1.0,
-        100.0
-      ]
     }
   ],
-  "total_rows": 5,
+  "total_rows": 6,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 5,
-  "sample_space": 5,
+  "sample_size": 9,
+  "sample_space": 9,
   "data_lag": 0,
   "totals": [
+    9.0,
     5.0,
-    4.0,
-    5.0,
-    20.0
+    13.0,
+    55.55555556
   ],
   "min": [
     1.0,
@@ -130,9 +144,9 @@
     100.0
   ],
   "max": [
-    1.0,
-    1.0,
-    1.0,
+    4.0,
+    2.0,
+    5.0,
     100.0
   ]
 }
