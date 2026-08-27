@@ -14,8 +14,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-05-29",
-    "date2": "2026-08-26",
+    "date1": "2026-05-30",
+    "date2": "2026-08-27",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -40,6 +40,36 @@
     {
       "dimensions": [
         {
+          "icon_id": "38",
+          "icon_type": "browser",
+          "name": "Mobile Safari",
+          "id": "38"
+        }
+      ],
+      "metrics": [
+        11.0,
+        10.0,
+        27.27272727
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "70",
+          "icon_type": "browser",
+          "name": "Яндекс.Браузер",
+          "id": "70"
+        }
+      ],
+      "metrics": [
+        5.0,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "83",
           "icon_type": "browser",
           "name": "Chrome Mobile",
@@ -47,18 +77,18 @@
         }
       ],
       "metrics": [
-        4.0,
-        1.0,
-        25.0
+        5.0,
+        2.0,
+        20.0
       ]
     },
     {
       "dimensions": [
         {
-          "icon_id": "38",
+          "icon_id": "6",
           "icon_type": "browser",
-          "name": "Mobile Safari",
-          "id": "38"
+          "name": "Google Chrome",
+          "id": "6"
         }
       ],
       "metrics": [
@@ -81,35 +111,20 @@
         1.0,
         0.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "70",
-          "icon_type": "browser",
-          "name": "Яндекс.Браузер",
-          "id": "70"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        0.0
-      ]
     }
   ],
-  "total_rows": 4,
+  "total_rows": 5,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 9,
-  "sample_space": 9,
+  "sample_size": 25,
+  "sample_space": 25,
   "data_lag": 0,
   "totals": [
-    9.0,
-    5.0,
-    22.22222222
+    25.0,
+    20.0,
+    20.0
   ],
   "min": [
     1.0,
@@ -117,8 +132,8 @@
     0.0
   ],
   "max": [
-    4.0,
-    2.0,
+    11.0,
+    10.0,
     33.33333333
   ]
 }
