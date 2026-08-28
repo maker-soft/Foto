@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-05-30",
-    "date2": "2026-08-27",
+    "date1": "2026-05-31",
+    "date2": "2026-08-28",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        19.0,
+        20.0,
         14.0,
-        10.52631579
+        10.0
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        3.0,
-        3.0,
-        33.33333333
+        4.0,
+        4.0,
+        50.0
       ]
     },
     {
@@ -96,9 +96,30 @@
         }
       ],
       "metrics": [
-        2.0,
-        2.0,
-        50.0
+        3.0,
+        3.0,
+        66.66666667
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "96",
+          "icon_type": "country",
+          "iso_name": "DE",
+          "id": "96",
+          "name": "Германия"
+        },
+        {
+          "iso_name": "DE FRA",
+          "id": "100",
+          "name": "Франкфурт-на-Майне"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
       ]
     },
     {
@@ -123,26 +144,26 @@
       ]
     }
   ],
-  "total_rows": 4,
+  "total_rows": 5,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 25,
-  "sample_space": 25,
+  "sample_size": 29,
+  "sample_space": 29,
   "data_lag": 0,
   "totals": [
-    25.0,
-    20.0,
-    20.0
+    29.0,
+    21.0,
+    24.13793103
   ],
   "min": [
     1.0,
     1.0,
-    10.52631579
+    0.0
   ],
   "max": [
-    19.0,
+    20.0,
     14.0,
     100.0
   ]

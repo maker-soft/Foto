@@ -60,6 +60,7 @@
     "max_filters": 30,
     "features": [
       "webvisor2",
+      "russian_market",
       "favorite_goals"
     ],
     "site": "photobook-nsk.ru",
