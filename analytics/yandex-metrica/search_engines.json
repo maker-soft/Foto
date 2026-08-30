@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-01",
-    "date2": "2026-08-29",
+    "date1": "2026-06-02",
+    "date2": "2026-08-30",
     "filters": "ym:s:trafficSource=='organic'",
     "limit": 100000,
     "offset": 1,
