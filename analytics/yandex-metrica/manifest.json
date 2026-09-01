@@ -1,12 +1,12 @@
 {
-  "exported_at_utc": "2026-08-31T08:38:58.366949+00:00",
+  "exported_at_utc": "2026-09-01T07:49:19.583035+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
   "permission": "own",
   "period": {
-    "date1": "2026-06-03",
-    "date2": "2026-08-31",
+    "date1": "2026-06-04",
+    "date2": "2026-09-01",
     "days": 90
   },
   "goal_count": 8,
@@ -14,8 +14,8 @@
     {
       "name": "daily",
       "status": "ok",
-      "rows": 7,
-      "total_rows": 7,
+      "rows": 8,
+      "total_rows": 8,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -23,8 +23,8 @@
     {
       "name": "traffic_sources",
       "status": "ok",
-      "rows": 4,
-      "total_rows": 4,
+      "rows": 5,
+      "total_rows": 5,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -59,8 +59,8 @@
     {
       "name": "geography",
       "status": "ok",
-      "rows": 5,
-      "total_rows": 5,
+      "rows": 6,
+      "total_rows": 6,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
