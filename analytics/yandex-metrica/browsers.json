@@ -14,12 +14,12 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-04",
-    "date2": "2026-09-01",
+    "date1": "2026-06-05",
+    "date2": "2026-09-02",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
-    "benchmarks_version": "1786924800000",
+    "benchmarks_version": "1787529600000",
     "benchmarks_sub_industry": "false",
     "auto_group_size": "1",
     "exp_bucket_size": "100",
@@ -62,7 +62,7 @@
         }
       ],
       "metrics": [
-        8.0,
+        9.0,
         5.0,
         0.0
       ]
@@ -92,9 +92,9 @@
         }
       ],
       "metrics": [
+        6.0,
         5.0,
-        4.0,
-        60.0
+        66.66666667
       ]
     },
     {
@@ -111,20 +111,50 @@
         1.0,
         0.0
       ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "191",
+          "icon_type": "browser",
+          "name": "MIUI",
+          "id": "191"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "205",
+          "icon_type": "browser",
+          "name": "Яндекс с Алисой: мобильное приложение",
+          "id": "205"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        100.0
+      ]
     }
   ],
-  "total_rows": 5,
+  "total_rows": 7,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 42,
-  "sample_space": 42,
+  "sample_size": 46,
+  "sample_space": 46,
   "data_lag": 0,
   "totals": [
-    42.0,
-    27.0,
-    30.95238095
+    46.0,
+    30.0,
+    32.60869565
   ],
   "min": [
     1.0,
@@ -134,6 +164,6 @@
   "max": [
     20.0,
     15.0,
-    60.0
+    100.0
   ]
 }
