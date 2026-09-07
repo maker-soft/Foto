@@ -1,21 +1,21 @@
 {
-  "exported_at_utc": "2026-09-06T07:07:47.123741+00:00",
+  "exported_at_utc": "2026-09-07T07:19:31.695831+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
   "permission": "own",
   "period": {
-    "date1": "2026-06-09",
-    "date2": "2026-09-06",
+    "date1": "2026-06-10",
+    "date2": "2026-09-07",
     "days": 90
   },
-  "goal_count": 8,
+  "goal_count": 9,
   "reports": [
     {
       "name": "daily",
       "status": "ok",
-      "rows": 13,
-      "total_rows": 13,
+      "rows": 14,
+      "total_rows": 14,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -41,8 +41,8 @@
     {
       "name": "landing_pages",
       "status": "ok",
-      "rows": 8,
-      "total_rows": 8,
+      "rows": 13,
+      "total_rows": 13,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -59,8 +59,8 @@
     {
       "name": "geography",
       "status": "ok",
-      "rows": 7,
-      "total_rows": 7,
+      "rows": 8,
+      "total_rows": 8,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -68,8 +68,8 @@
     {
       "name": "browsers",
       "status": "ok",
-      "rows": 9,
-      "total_rows": 9,
+      "rows": 10,
+      "total_rows": 10,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -86,8 +86,8 @@
     {
       "name": "popular_pages",
       "status": "ok",
-      "rows": 13,
-      "total_rows": 13,
+      "rows": 19,
+      "total_rows": 19,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false

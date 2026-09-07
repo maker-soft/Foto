@@ -134,6 +134,23 @@
           "type": "all_social"
         }
       ]
+    },
+    {
+      "id": 609476703,
+      "name": "Автоцель: переход в мессенджер",
+      "type": "messenger",
+      "default_price": 0.0,
+      "is_retargeting": 0,
+      "goal_source": "auto",
+      "is_favorite": 0,
+      "status": "Active",
+      "labels": [],
+      "conditions": [
+        {
+          "type": "messenger",
+          "url": "all_messengers"
+        }
+      ]
     }
   ]
 }

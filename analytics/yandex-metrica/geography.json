@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-09",
-    "date2": "2026-09-06",
+    "date1": "2026-06-10",
+    "date2": "2026-09-07",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
+        64.0,
         43.0,
-        29.0,
-        13.95348837
+        12.5
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        24.0,
-        16.0,
-        33.33333333
+        34.0,
+        23.0,
+        26.47058824
       ]
     },
     {
@@ -96,9 +96,30 @@
         }
       ],
       "metrics": [
+        6.0,
+        6.0,
+        50.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU-MOW",
+          "id": "213",
+          "name": "Москва"
+        }
+      ],
+      "metrics": [
         5.0,
         5.0,
-        60.0
+        100.0
       ]
     },
     {
@@ -132,15 +153,15 @@
           "name": "Россия"
         },
         {
-          "iso_name": "RU-MOW",
-          "id": "213",
-          "name": "Москва"
+          "iso_name": null,
+          "id": "20105",
+          "name": "Татарск"
         }
       ],
       "metrics": [
-        4.0,
-        4.0,
-        100.0
+        3.0,
+        1.0,
+        33.33333333
       ]
     },
     {
@@ -186,27 +207,27 @@
       ]
     }
   ],
-  "total_rows": 7,
+  "total_rows": 8,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 84,
-  "sample_space": 84,
+  "sample_size": 120,
+  "sample_space": 120,
   "data_lag": 0,
   "totals": [
-    84.0,
-    54.0,
-    29.76190476
+    120.0,
+    77.0,
+    25.0
   ],
   "min": [
     1.0,
     1.0,
-    13.95348837
+    12.5
   ],
   "max": [
+    64.0,
     43.0,
-    29.0,
     100.0
   ]
 }
