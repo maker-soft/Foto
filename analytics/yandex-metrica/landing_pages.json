@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-13",
-    "date2": "2026-09-10",
+    "date1": "2026-06-14",
+    "date2": "2026-09-11",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -48,12 +48,12 @@
         }
       ],
       "metrics": [
-        104.0,
-        73.0,
-        266.0,
-        25.96153846,
-        2.55769231,
-        250.19230769
+        151.0,
+        106.0,
+        403.0,
+        22.51655629,
+        2.66887417,
+        237.19205298
       ]
     },
     {
@@ -64,12 +64,12 @@
         }
       ],
       "metrics": [
-        20.0,
-        14.0,
-        23.0,
-        25.0,
-        1.15,
-        12.55
+        21.0,
+        15.0,
+        24.0,
+        23.80952381,
+        1.14285714,
+        12.71428571
       ]
     },
     {
@@ -80,12 +80,12 @@
         }
       ],
       "metrics": [
-        8.0,
-        6.0,
-        9.0,
-        12.5,
-        1.125,
-        82.0
+        12.0,
+        10.0,
+        26.0,
+        8.33333333,
+        2.16666667,
+        81.91666667
       ]
     },
     {
@@ -140,6 +140,38 @@
       "dimensions": [
         {
           "name": "https://photobook-nsk.ru/?_ym_debug=2`",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        1.0,
+        100.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-2",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        1.0,
+        100.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-4",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -249,21 +281,21 @@
       ]
     }
   ],
-  "total_rows": 13,
+  "total_rows": 15,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 143,
-  "sample_space": 143,
+  "sample_size": 197,
+  "sample_space": 197,
   "data_lag": 0,
   "totals": [
-    143.0,
-    87.0,
-    328.0,
-    25.87412587,
-    2.29370629,
-    197.58041958
+    197.0,
+    123.0,
+    485.0,
+    23.35025381,
+    2.46192893,
+    194.89340102
   ],
   "min": [
     1.0,
@@ -274,9 +306,9 @@
     0.0
   ],
   "max": [
-    104.0,
-    73.0,
-    266.0,
+    151.0,
+    106.0,
+    403.0,
     100.0,
     5.5,
     618.5

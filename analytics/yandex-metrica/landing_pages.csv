@@ -1,11 +1,13 @@
 ﻿ym:s:startURL,ym:s:visits,ym:s:users,ym:s:pageviews,ym:s:bounceRate,ym:s:pageDepth,ym:s:avgVisitDurationSeconds
-https://photobook-nsk.ru/,104.0,73.0,266.0,25.96153846,2.55769231,250.19230769
-https://photobook-nsk.ru/school/,20.0,14.0,23.0,25.0,1.15,12.55
-https://photobook-nsk.ru/kindergarten/,8.0,6.0,9.0,12.5,1.125,82.0
+https://photobook-nsk.ru/,151.0,106.0,403.0,22.51655629,2.66887417,237.19205298
+https://photobook-nsk.ru/school/,21.0,15.0,24.0,23.80952381,1.14285714,12.71428571
+https://photobook-nsk.ru/kindergarten/,12.0,10.0,26.0,8.33333333,2.16666667,81.91666667
 https://photobook-nsk.ru/school/#direction/school/albums/school-optimal,2.0,1.0,11.0,0.0,5.5,618.5
 https://photobook-nsk.ru/?_ym_debug=1,1.0,1.0,1.0,100.0,1.0,0.0
 https://photobook-nsk.ru/?_ym_debug=2,1.0,1.0,1.0,0.0,1.0,15.0
 https://photobook-nsk.ru/?_ym_debug=2`,1.0,1.0,1.0,100.0,1.0,0.0
+https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-2,1.0,1.0,1.0,100.0,1.0,1.0
+https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-4,1.0,1.0,1.0,100.0,1.0,0.0
 https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-more,1.0,1.0,1.0,100.0,1.0,0.0
 https://photobook-nsk.ru/kindergarten/#direction/kindergarten/questions,1.0,1.0,1.0,100.0,1.0,0.0
 https://photobook-nsk.ru/school/#direction/school/albums/school-classic,1.0,1.0,2.0,0.0,2.0,31.0

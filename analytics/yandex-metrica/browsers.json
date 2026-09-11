@@ -14,8 +14,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-13",
-    "date2": "2026-09-10",
+    "date1": "2026-06-14",
+    "date2": "2026-09-11",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -40,21 +40,6 @@
     {
       "dimensions": [
         {
-          "icon_id": "70",
-          "icon_type": "browser",
-          "name": "Яндекс.Браузер",
-          "id": "70"
-        }
-      ],
-      "metrics": [
-        41.0,
-        18.0,
-        19.51219512
-      ]
-    },
-    {
-      "dimensions": [
-        {
           "icon_id": "83",
           "icon_type": "browser",
           "name": "Chrome Mobile",
@@ -62,9 +47,9 @@
         }
       ],
       "metrics": [
-        40.0,
-        19.0,
-        7.5
+        56.0,
+        31.0,
+        7.14285714
       ]
     },
     {
@@ -77,9 +62,24 @@
         }
       ],
       "metrics": [
-        30.0,
-        24.0,
-        40.0
+        48.0,
+        37.0,
+        37.5
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "70",
+          "icon_type": "browser",
+          "name": "Яндекс.Браузер",
+          "id": "70"
+        }
+      ],
+      "metrics": [
+        45.0,
+        21.0,
+        17.77777778
       ]
     },
     {
@@ -107,9 +107,9 @@
         }
       ],
       "metrics": [
-        7.0,
-        3.0,
-        14.28571429
+        10.0,
+        5.0,
+        10.0
       ]
     },
     {
@@ -122,9 +122,9 @@
         }
       ],
       "metrics": [
-        4.0,
-        4.0,
-        0.0
+        8.0,
+        6.0,
+        25.0
       ]
     },
     {
@@ -137,9 +137,24 @@
         }
       ],
       "metrics": [
-        3.0,
+        7.0,
+        5.0,
+        14.28571429
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "203",
+          "icon_type": "browser",
+          "name": "Huawei Browser",
+          "id": "203"
+        }
+      ],
+      "metrics": [
+        6.0,
         2.0,
-        33.33333333
+        0.0
       ]
     },
     {
@@ -186,21 +201,6 @@
         1.0,
         0.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "203",
-          "icon_type": "browser",
-          "name": "Huawei Browser",
-          "id": "203"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        0.0
-      ]
     }
   ],
   "total_rows": 11,
@@ -208,13 +208,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 143,
-  "sample_space": 143,
+  "sample_size": 197,
+  "sample_space": 197,
   "data_lag": 0,
   "totals": [
-    143.0,
-    87.0,
-    25.87412587
+    197.0,
+    123.0,
+    23.35025381
   ],
   "min": [
     1.0,
@@ -222,8 +222,8 @@
     0.0
   ],
   "max": [
-    41.0,
-    24.0,
+    56.0,
+    37.0,
     85.71428571
   ]
 }
