@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-14",
-    "date2": "2026-09-11",
+    "date1": "2026-06-15",
+    "date2": "2026-09-12",
     "filters": "ym:s:trafficSource=='organic'",
     "limit": 100000,
     "offset": 1,
@@ -67,12 +67,12 @@
         }
       ],
       "metrics": [
-        1.0,
-        1.0,
         2.0,
+        2.0,
+        3.0,
         0.0,
-        2.0,
-        28.0
+        1.5,
+        21.5
       ]
     }
   ],
@@ -81,24 +81,24 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 197,
-  "sample_space": 197,
+  "sample_size": 201,
+  "sample_space": 201,
   "data_lag": 0,
   "totals": [
-    4.0,
-    4.0,
-    11.0,
-    50.0,
-    2.75,
-    205.5
+    5.0,
+    5.0,
+    12.0,
+    40.0,
+    2.4,
+    167.4
   ],
   "min": [
-    1.0,
-    1.0,
     2.0,
+    2.0,
+    3.0,
     0.0,
-    2.0,
-    28.0
+    1.5,
+    21.5
   ],
   "max": [
     3.0,

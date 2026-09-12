@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-06-14",
-    "date2": "2026-09-11",
+    "date1": "2026-06-15",
+    "date2": "2026-09-12",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        256.0,
-        108.0
+        259.0,
+        109.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        109.0,
-        55.0
+        112.0,
+        57.0
       ]
     },
     {
@@ -68,8 +68,8 @@
         }
       ],
       "metrics": [
-        86.0,
-        43.0
+        87.0,
+        44.0
       ]
     },
     {
@@ -118,6 +118,18 @@
       "metrics": [
         2.0,
         2.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        2.0,
+        1.0
       ]
     },
     {
@@ -301,24 +313,24 @@
       ]
     }
   ],
-  "total_rows": 22,
+  "total_rows": 23,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 486,
-  "sample_space": 486,
+  "sample_size": 495,
+  "sample_space": 495,
   "data_lag": 0,
   "totals": [
-    485.0,
-    123.0
+    494.0,
+    125.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    256.0,
-    108.0
+    259.0,
+    109.0
   ]
 }

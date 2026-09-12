@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-14",
-    "date2": "2026-09-11",
+    "date1": "2026-06-15",
+    "date2": "2026-09-12",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -48,12 +48,12 @@
         }
       ],
       "metrics": [
-        151.0,
-        106.0,
-        403.0,
-        22.51655629,
-        2.66887417,
-        237.19205298
+        153.0,
+        107.0,
+        409.0,
+        22.22222222,
+        2.67320261,
+        242.48366013
       ]
     },
     {
@@ -80,12 +80,12 @@
         }
       ],
       "metrics": [
-        12.0,
-        10.0,
-        26.0,
-        8.33333333,
-        2.16666667,
-        81.91666667
+        13.0,
+        11.0,
+        27.0,
+        7.69230769,
+        2.07692308,
+        76.76923077
       ]
     },
     {
@@ -203,6 +203,22 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        2.0,
+        0.0,
+        2.0,
+        82.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/questions",
           "favicon": "photobook-nsk.ru"
         }
@@ -281,21 +297,21 @@
       ]
     }
   ],
-  "total_rows": 15,
+  "total_rows": 16,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 197,
-  "sample_space": 197,
+  "sample_size": 201,
+  "sample_space": 201,
   "data_lag": 0,
   "totals": [
-    197.0,
-    123.0,
-    485.0,
-    23.35025381,
-    2.46192893,
-    194.89340102
+    201.0,
+    125.0,
+    494.0,
+    22.88557214,
+    2.45771144,
+    197.88557214
   ],
   "min": [
     1.0,
@@ -306,9 +322,9 @@
     0.0
   ],
   "max": [
-    151.0,
-    106.0,
-    403.0,
+    153.0,
+    107.0,
+    409.0,
     100.0,
     5.5,
     618.5
