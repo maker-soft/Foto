@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-06-16",
-    "date2": "2026-09-13",
+    "date1": "2026-06-17",
+    "date2": "2026-09-14",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        267.0,
-        111.0
+        276.0,
+        114.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        116.0,
-        58.0
+        126.0,
+        59.0
       ]
     },
     {
@@ -70,6 +70,18 @@
       "metrics": [
         88.0,
         45.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/process",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        10.0,
+        4.0
       ]
     },
     {
@@ -231,7 +243,31 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-5",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-folder",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/preparation",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -313,24 +349,24 @@
       ]
     }
   ],
-  "total_rows": 23,
+  "total_rows": 26,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 508,
-  "sample_space": 508,
+  "sample_size": 539,
+  "sample_space": 539,
   "data_lag": 0,
   "totals": [
-    507.0,
-    127.0
+    538.0,
+    132.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    267.0,
-    111.0
+    276.0,
+    114.0
   ]
 }
