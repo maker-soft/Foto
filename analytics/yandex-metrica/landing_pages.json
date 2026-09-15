@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-17",
-    "date2": "2026-09-14",
+    "date1": "2026-06-18",
+    "date2": "2026-09-15",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -48,28 +48,12 @@
         }
       ],
       "metrics": [
-        164.0,
-        112.0,
-        433.0,
-        21.95121951,
-        2.6402439,
-        241.75
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/school/",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        21.0,
-        15.0,
-        24.0,
-        23.80952381,
-        1.14285714,
-        12.71428571
+        204.0,
+        141.0,
+        534.0,
+        21.56862745,
+        2.61764706,
+        246.08333333
       ]
     },
     {
@@ -80,12 +64,28 @@
         }
       ],
       "metrics": [
-        16.0,
-        14.0,
-        31.0,
-        12.5,
-        1.9375,
-        104.25
+        30.0,
+        28.0,
+        46.0,
+        16.66666667,
+        1.53333333,
+        85.46666667
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/school/",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        23.0,
+        17.0,
+        28.0,
+        21.73913043,
+        1.2173913,
+        13.73913043
       ]
     },
     {
@@ -96,12 +96,28 @@
         }
       ],
       "metrics": [
-        7.0,
-        4.0,
-        13.0,
-        28.57142857,
-        1.85714286,
-        83.71428571
+        16.0,
+        12.0,
+        25.0,
+        18.75,
+        1.5625,
+        72.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-5",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        3.0,
+        50.0,
+        1.5,
+        31.5
       ]
     },
     {
@@ -198,22 +214,6 @@
         100.0,
         1.0,
         0.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-5",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        2.0,
-        0.0,
-        2.0,
-        63.0
       ]
     },
     {
@@ -350,16 +350,16 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 224,
-  "sample_space": 224,
+  "sample_size": 290,
+  "sample_space": 290,
   "data_lag": 0,
   "totals": [
-    224.0,
-    132.0,
-    538.0,
-    23.21428571,
-    2.40178571,
-    194.82589286
+    290.0,
+    181.0,
+    671.0,
+    22.4137931,
+    2.3137931,
+    192.08965517
   ],
   "min": [
     1.0,
@@ -370,9 +370,9 @@
     0.0
   ],
   "max": [
-    164.0,
-    112.0,
-    433.0,
+    204.0,
+    141.0,
+    534.0,
     100.0,
     5.5,
     618.5
