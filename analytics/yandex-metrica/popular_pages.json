@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-06-19",
-    "date2": "2026-09-16",
+    "date1": "2026-06-20",
+    "date2": "2026-09-17",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        399.0,
-        177.0
+        448.0,
+        200.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        219.0,
-        113.0
+        256.0,
+        128.0
       ]
     },
     {
@@ -68,8 +68,8 @@
         }
       ],
       "metrics": [
-        103.0,
-        54.0
+        107.0,
+        57.0
       ]
     },
     {
@@ -80,8 +80,8 @@
         }
       ],
       "metrics": [
-        21.0,
-        12.0
+        23.0,
+        13.0
       ]
     },
     {
@@ -93,6 +93,18 @@
       ],
       "metrics": [
         10.0,
+        2.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-4",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        4.0,
         2.0
       ]
     },
@@ -135,6 +147,18 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/questions",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/#about",
           "favicon": "photobook-nsk.ru"
         }
@@ -142,18 +166,6 @@
       "metrics": [
         2.0,
         1.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-4",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        2.0,
-        2.0
       ]
     },
     {
@@ -172,18 +184,6 @@
       "dimensions": [
         {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-more",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        2.0,
-        2.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/questions",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -354,19 +354,19 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 787,
-  "sample_space": 787,
+  "sample_size": 884,
+  "sample_space": 884,
   "data_lag": 0,
   "totals": [
-    788.0,
-    213.0
+    883.0,
+    239.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    399.0,
-    177.0
+    448.0,
+    200.0
   ]
 }

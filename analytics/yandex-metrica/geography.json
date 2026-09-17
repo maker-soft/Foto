@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-19",
-    "date2": "2026-09-16",
+    "date1": "2026-06-20",
+    "date2": "2026-09-17",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        178.0,
-        115.0,
-        14.60674157
+        205.0,
+        131.0,
+        16.58536585
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        96.0,
+        99.0,
         71.0,
-        23.95833333
+        21.21212121
       ]
     },
     {
@@ -96,9 +96,9 @@
         }
       ],
       "metrics": [
-        30.0,
-        24.0,
-        40.0
+        42.0,
+        32.0,
+        33.33333333
       ]
     },
     {
@@ -138,9 +138,9 @@
         }
       ],
       "metrics": [
-        9.0,
-        5.0,
-        33.33333333
+        10.0,
+        6.0,
+        30.0
       ]
     },
     {
@@ -230,6 +230,48 @@
     {
       "dimensions": [
         {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU RND",
+          "id": "39",
+          "name": "Ростов-на-Дону"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU BRD",
+          "id": "11314",
+          "name": "Бердск"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "84",
           "icon_type": "country",
           "iso_name": "US",
@@ -249,18 +291,18 @@
       ]
     }
   ],
-  "total_rows": 10,
+  "total_rows": 12,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 339,
-  "sample_space": 339,
+  "sample_size": 387,
+  "sample_space": 387,
   "data_lag": 0,
   "totals": [
-    341.0,
-    213.0,
-    23.75366569
+    387.0,
+    239.0,
+    22.99741602
   ],
   "min": [
     1.0,
@@ -268,8 +310,8 @@
     0.0
   ],
   "max": [
-    178.0,
-    115.0,
+    205.0,
+    131.0,
     100.0
   ]
 }
