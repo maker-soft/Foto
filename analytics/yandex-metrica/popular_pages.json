@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-06-20",
-    "date2": "2026-09-17",
+    "date1": "2026-06-21",
+    "date2": "2026-09-18",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        448.0,
-        200.0
+        484.0,
+        209.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        256.0,
-        128.0
+        273.0,
+        133.0
       ]
     },
     {
@@ -68,8 +68,8 @@
         }
       ],
       "metrics": [
-        107.0,
-        57.0
+        120.0,
+        61.0
       ]
     },
     {
@@ -80,7 +80,7 @@
         }
       ],
       "metrics": [
-        23.0,
+        24.0,
         13.0
       ]
     },
@@ -99,6 +99,18 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        5.0,
+        4.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-4",
           "favicon": "photobook-nsk.ru"
         }
@@ -106,18 +118,6 @@
       "metrics": [
         4.0,
         2.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        4.0,
-        3.0
       ]
     },
     {
@@ -202,6 +202,30 @@
       "metrics": [
         2.0,
         1.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/school/#direction/school/albums/school-folder",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/school/#direction/school/photos",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0
       ]
     },
     {
@@ -303,31 +327,7 @@
     {
       "dimensions": [
         {
-          "name": "https://photobook-nsk.ru/school/#direction/school/albums/school-folder",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
           "name": "https://photobook-nsk.ru/school/#direction/school/albums/school-minimal",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/school/#direction/school/photos",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -354,19 +354,19 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 884,
-  "sample_space": 884,
+  "sample_size": 954,
+  "sample_space": 954,
   "data_lag": 0,
   "totals": [
-    883.0,
-    239.0
+    953.0,
+    248.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    448.0,
-    200.0
+    484.0,
+    209.0
   ]
 }
