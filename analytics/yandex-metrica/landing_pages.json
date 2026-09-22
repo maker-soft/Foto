@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-24",
-    "date2": "2026-09-21",
+    "date1": "2026-06-25",
+    "date2": "2026-09-22",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -48,12 +48,12 @@
         }
       ],
       "metrics": [
-        301.0,
-        203.0,
-        775.0,
-        23.92026578,
-        2.57475083,
-        239.6013289
+        308.0,
+        206.0,
+        793.0,
+        23.37662338,
+        2.57467532,
+        245.96753247
       ]
     },
     {
@@ -75,6 +75,22 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/process",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        24.0,
+        15.0,
+        37.0,
+        25.0,
+        1.54166667,
+        98.54166667
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/school/",
           "favicon": "photobook-nsk.ru"
         }
@@ -86,22 +102,6 @@
         25.0,
         1.20833333,
         13.20833333
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/process",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        23.0,
-        15.0,
-        35.0,
-        26.08695652,
-        1.52173913,
-        102.60869565
       ]
     },
     {
@@ -366,16 +366,16 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 417,
-  "sample_space": 417,
+  "sample_size": 425,
+  "sample_space": 425,
   "data_lag": 0,
   "totals": [
-    417.0,
-    255.0,
-    962.0,
-    23.98081535,
-    2.30695444,
-    201.58273381
+    425.0,
+    258.0,
+    982.0,
+    23.52941176,
+    2.31058824,
+    206.36
   ],
   "min": [
     1.0,
@@ -386,9 +386,9 @@
     0.0
   ],
   "max": [
-    301.0,
-    203.0,
-    775.0,
+    308.0,
+    206.0,
+    793.0,
     100.0,
     5.5,
     618.5
