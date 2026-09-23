@@ -1,12 +1,12 @@
 {
-  "exported_at_utc": "2026-09-22T07:42:44.772977+00:00",
+  "exported_at_utc": "2026-09-23T07:45:35.478316+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
   "permission": "own",
   "period": {
-    "date1": "2026-06-25",
-    "date2": "2026-09-22",
+    "date1": "2026-06-26",
+    "date2": "2026-09-23",
     "days": 90
   },
   "goal_count": 9,
