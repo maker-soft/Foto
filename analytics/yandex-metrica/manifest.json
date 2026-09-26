@@ -1,12 +1,12 @@
 {
-  "exported_at_utc": "2026-09-25T07:48:44.091237+00:00",
+  "exported_at_utc": "2026-09-26T07:41:22.615334+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
   "permission": "own",
   "period": {
-    "date1": "2026-06-28",
-    "date2": "2026-09-25",
+    "date1": "2026-06-29",
+    "date2": "2026-09-26",
     "days": 90
   },
   "goal_count": 9,
@@ -14,8 +14,8 @@
     {
       "name": "daily",
       "status": "ok",
-      "rows": 32,
-      "total_rows": 32,
+      "rows": 33,
+      "total_rows": 33,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
