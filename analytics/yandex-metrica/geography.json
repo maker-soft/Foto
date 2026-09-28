@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-06-30",
-    "date2": "2026-09-27",
+    "date1": "2026-07-01",
+    "date2": "2026-09-28",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -167,6 +167,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU RND",
+          "id": "39",
+          "name": "Ростов-на-Дону"
+        }
+      ],
+      "metrics": [
+        4.0,
+        4.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "96",
           "icon_type": "country",
           "iso_name": "DE",
@@ -183,27 +204,6 @@
         3.0,
         2.0,
         33.33333333
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "225",
-          "icon_type": "country",
-          "iso_name": "RU",
-          "id": "225",
-          "name": "Россия"
-        },
-        {
-          "iso_name": "RU RND",
-          "id": "39",
-          "name": "Ростов-на-Дону"
-        }
-      ],
-      "metrics": [
-        3.0,
-        3.0,
-        0.0
       ]
     },
     {
@@ -338,13 +338,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 501,
-  "sample_space": 501,
+  "sample_size": 502,
+  "sample_space": 502,
   "data_lag": 0,
   "totals": [
-    501.0,
-    312.0,
-    23.35329341
+    502.0,
+    313.0,
+    23.30677291
   ],
   "min": [
     1.0,
