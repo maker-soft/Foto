@@ -14,8 +14,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-05",
-    "date2": "2026-10-02",
+    "date1": "2026-07-06",
+    "date2": "2026-10-03",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -160,6 +160,21 @@
     {
       "dimensions": [
         {
+          "icon_id": "204",
+          "icon_type": "browser",
+          "name": "HeadlessChrome",
+          "id": "204"
+        }
+      ],
+      "metrics": [
+        3.0,
+        3.0,
+        100.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "3",
           "icon_type": "browser",
           "name": "Firefox",
@@ -200,21 +215,6 @@
         2.0,
         2.0,
         0.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "204",
-          "icon_type": "browser",
-          "name": "HeadlessChrome",
-          "id": "204"
-        }
-      ],
-      "metrics": [
-        2.0,
-        2.0,
-        100.0
       ]
     },
     {
@@ -283,13 +283,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 534,
-  "sample_space": 534,
+  "sample_size": 535,
+  "sample_space": 535,
   "data_lag": 0,
   "totals": [
-    534.0,
-    336.0,
-    23.78277154
+    535.0,
+    337.0,
+    23.92523364
   ],
   "min": [
     1.0,
