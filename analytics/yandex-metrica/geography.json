@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-07",
-    "date2": "2026-10-04",
+    "date1": "2026-07-08",
+    "date2": "2026-10-05",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        287.0,
-        182.0,
-        17.42160279
+        296.0,
+        187.0,
+        16.89189189
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        132.0,
-        95.0,
-        25.0
+        138.0,
+        101.0,
+        25.36231884
       ]
     },
     {
@@ -300,6 +300,27 @@
           "name": "Россия"
         },
         {
+          "iso_name": "RU OMS",
+          "id": "66",
+          "name": "Омск"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
           "iso_name": "RU BRD",
           "id": "11314",
           "name": "Бердск"
@@ -354,18 +375,18 @@
       ]
     }
   ],
-  "total_rows": 15,
+  "total_rows": 16,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 536,
-  "sample_space": 536,
+  "sample_size": 553,
+  "sample_space": 553,
   "data_lag": 0,
   "totals": [
-    536.0,
-    338.0,
-    24.06716418
+    553.0,
+    348.0,
+    23.68896926
   ],
   "min": [
     1.0,
@@ -373,8 +394,8 @@
     0.0
   ],
   "max": [
-    287.0,
-    182.0,
+    296.0,
+    187.0,
     100.0
   ]
 }

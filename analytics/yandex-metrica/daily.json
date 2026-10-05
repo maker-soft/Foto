@@ -17,8 +17,8 @@
     "sort": [
       "ym:s:date"
     ],
-    "date1": "2026-07-07",
-    "date2": "2026-10-04",
+    "date1": "2026-07-08",
+    "date2": "2026-10-05",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -617,30 +617,45 @@
         }
       ],
       "metrics": [
-        1.0,
-        1.0,
-        1.0,
-        100.0,
-        1.0,
-        0.0
+        2.0,
+        2.0,
+        3.0,
+        50.0,
+        1.5,
+        9.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-10-05"
+        }
+      ],
+      "metrics": [
+        16.0,
+        14.0,
+        46.0,
+        12.5,
+        2.875,
+        311.1875
       ]
     }
   ],
-  "total_rows": 39,
+  "total_rows": 40,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 536,
-  "sample_space": 536,
+  "sample_size": 553,
+  "sample_space": 553,
   "data_lag": 0,
   "totals": [
-    536.0,
-    338.0,
-    1199.0,
-    24.06716418,
-    2.2369403,
-    185.09701493
+    553.0,
+    348.0,
+    1247.0,
+    23.68896926,
+    2.25497288,
+    188.44303797
   ],
   "min": [
     1.0,
