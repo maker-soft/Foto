@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-07-12",
-    "date2": "2026-10-09",
+    "date1": "2026-07-13",
+    "date2": "2026-10-10",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        721.0,
-        331.0
+        732.0,
+        338.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        380.0,
-        186.0
+        387.0,
+        191.0
       ]
     },
     {
@@ -68,8 +68,8 @@
         }
       ],
       "metrics": [
-        182.0,
-        92.0
+        185.0,
+        94.0
       ]
     },
     {
@@ -99,6 +99,18 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-5",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
           "favicon": "photobook-nsk.ru"
         }
@@ -118,18 +130,6 @@
       "metrics": [
         4.0,
         2.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-5",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        4.0,
-        4.0
       ]
     },
     {
@@ -378,19 +378,19 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 1309,
-  "sample_space": 1309,
+  "sample_size": 1394,
+  "sample_space": 1394,
   "data_lag": 0,
   "totals": [
-    1369.0,
-    387.0
+    1391.0,
+    396.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    721.0,
-    331.0
+    732.0,
+    338.0
   ]
 }

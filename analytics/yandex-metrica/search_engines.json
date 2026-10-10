@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-12",
-    "date2": "2026-10-09",
+    "date1": "2026-07-13",
+    "date2": "2026-10-10",
     "filters": "ym:s:trafficSource=='organic'",
     "limit": 100000,
     "offset": 1,
@@ -81,8 +81,8 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 585,
-  "sample_space": 585,
+  "sample_size": 624,
+  "sample_space": 624,
   "data_lag": 0,
   "totals": [
     7.0,
