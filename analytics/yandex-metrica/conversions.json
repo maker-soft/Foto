@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:anyGoalReaches"
     ],
-    "date1": "2026-07-13",
-    "date2": "2026-10-10",
+    "date1": "2026-07-14",
+    "date2": "2026-10-11",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -60,9 +60,9 @@
         }
       ],
       "metrics": [
-        313.0,
+        315.0,
         199.0,
-        390.0,
+        392.0,
         100.0
       ]
     },
@@ -170,14 +170,14 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 624,
-  "sample_space": 624,
+  "sample_size": 630,
+  "sample_space": 630,
   "data_lag": 0,
   "totals": [
-    624.0,
-    396.0,
-    1506.0,
-    69.07051282
+    630.0,
+    398.0,
+    1508.0,
+    68.73015873
   ],
   "min": [
     3.0,
@@ -186,7 +186,7 @@
     100.0
   ],
   "max": [
-    313.0,
+    315.0,
     199.0,
     824.0,
     100.0
