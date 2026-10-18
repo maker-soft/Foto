@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-20",
-    "date2": "2026-10-17",
+    "date1": "2026-07-21",
+    "date2": "2026-10-18",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        373.0,
+        374.0,
         231.0,
-        17.69436997
+        17.64705882
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        165.0,
-        121.0,
-        23.63636364
+        166.0,
+        122.0,
+        23.4939759
       ]
     },
     {
@@ -356,6 +356,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "96",
+          "icon_type": "country",
+          "iso_name": "DE",
+          "id": "96",
+          "name": "Германия"
+        },
+        {
+          "iso_name": null,
+          "id": null,
+          "name": null
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        100.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "225",
           "icon_type": "country",
           "iso_name": "RU",
@@ -396,7 +417,7 @@
       ]
     }
   ],
-  "total_rows": 17,
+  "total_rows": 18,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
@@ -405,9 +426,9 @@
   "sample_space": 630,
   "data_lag": 0,
   "totals": [
-    710.0,
-    430.0,
-    24.36619718
+    713.0,
+    432.0,
+    24.40392707
   ],
   "min": [
     1.0,
@@ -415,7 +436,7 @@
     0.0
   ],
   "max": [
-    373.0,
+    374.0,
     231.0,
     100.0
   ]
