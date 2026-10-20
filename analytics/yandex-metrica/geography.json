@@ -15,12 +15,12 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-22",
-    "date2": "2026-10-19",
+    "date1": "2026-07-23",
+    "date2": "2026-10-20",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
-    "benchmarks_version": "1791158400000",
+    "benchmarks_version": "1791763200000",
     "benchmarks_sub_industry": "false",
     "auto_group_size": "1",
     "exp_bucket_size": "100",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        378.0,
-        234.0,
-        17.72486772
+        383.0,
+        239.0,
+        17.49347258
       ]
     },
     {
@@ -96,9 +96,9 @@
         }
       ],
       "metrics": [
-        74.0,
+        75.0,
         58.0,
-        27.02702703
+        26.66666667
       ]
     },
     {
@@ -117,9 +117,9 @@
         }
       ],
       "metrics": [
-        41.0,
-        40.0,
-        82.92682927
+        43.0,
+        42.0,
+        83.72093023
       ]
     },
     {
@@ -415,20 +415,41 @@
         1.0,
         0.0
       ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "10105",
+          "icon_type": "country",
+          "iso_name": "SG",
+          "id": "10105",
+          "name": "Сингапур"
+        },
+        {
+          "iso_name": "SG SIN",
+          "id": "10619",
+          "name": "Сингапур"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        100.0
+      ]
     }
   ],
-  "total_rows": 18,
+  "total_rows": 19,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 630,
-  "sample_space": 630,
+  "sample_size": 648,
+  "sample_space": 648,
   "data_lag": 0,
   "totals": [
-    726.0,
-    444.0,
-    24.24242424
+    735.0,
+    452.0,
+    24.3537415
   ],
   "min": [
     1.0,
@@ -436,8 +457,8 @@
     0.0
   ],
   "max": [
-    378.0,
-    234.0,
+    383.0,
+    239.0,
     100.0
   ]
 }
