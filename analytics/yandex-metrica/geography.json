@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-26",
-    "date2": "2026-10-23",
+    "date1": "2026-07-27",
+    "date2": "2026-10-24",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        394.0,
-        246.0,
-        17.76649746
+        395.0,
+        247.0,
+        17.72151899
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        179.0,
-        135.0,
-        21.7877095
+        181.0,
+        137.0,
+        21.54696133
       ]
     },
     {
@@ -419,6 +419,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU TYA",
+          "id": "15",
+          "name": "Тула"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "10105",
           "icon_type": "country",
           "iso_name": "SG",
@@ -438,18 +459,18 @@
       ]
     }
   ],
-  "total_rows": 19,
+  "total_rows": 20,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 728,
-  "sample_space": 728,
+  "sample_size": 739,
+  "sample_space": 739,
   "data_lag": 0,
   "totals": [
-    758.0,
-    469.0,
-    24.53825858
+    762.0,
+    473.0,
+    24.40944882
   ],
   "min": [
     1.0,
@@ -457,8 +478,8 @@
     0.0
   ],
   "max": [
-    394.0,
-    246.0,
+    395.0,
+    247.0,
     100.0
   ]
 }
