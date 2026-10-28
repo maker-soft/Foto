@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-07-30",
-    "date2": "2026-10-27",
+    "date1": "2026-07-31",
+    "date2": "2026-10-28",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        912.0,
-        416.0
+        919.0,
+        421.0
       ]
     },
     {
@@ -56,8 +56,8 @@
         }
       ],
       "metrics": [
-        486.0,
-        219.0
+        487.0,
+        220.0
       ]
     },
     {
@@ -68,8 +68,8 @@
         }
       ],
       "metrics": [
-        216.0,
-        108.0
+        223.0,
+        112.0
       ]
     },
     {
@@ -106,6 +106,18 @@
       "metrics": [
         10.0,
         2.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "https://photobook-nsk.ru/school/#direction/school/preparation",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        9.0,
+        7.0
       ]
     },
     {
@@ -172,18 +184,6 @@
       "dimensions": [
         {
           "name": "https://photobook-nsk.ru/school/#direction/school/photos",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        3.0,
-        3.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/school/#direction/school/preparation",
           "favicon": "photobook-nsk.ru"
         }
       ],
@@ -378,19 +378,19 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 1704,
-  "sample_space": 1704,
+  "sample_size": 1735,
+  "sample_space": 1735,
   "data_lag": 0,
   "totals": [
-    1711.0,
-    491.0
+    1732.0,
+    502.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    912.0,
-    416.0
+    919.0,
+    421.0
   ]
 }
