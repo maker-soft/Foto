@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-07-31",
-    "date2": "2026-10-28",
+    "date1": "2026-08-01",
+    "date2": "2026-10-29",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -48,12 +48,12 @@
         }
       ],
       "metrics": [
-        598.0,
-        408.0,
-        1419.0,
-        24.41471572,
-        2.3729097,
-        194.98662207
+        603.0,
+        412.0,
+        1425.0,
+        24.21227197,
+        2.36318408,
+        193.52072968
       ]
     },
     {
@@ -80,12 +80,12 @@
         }
       ],
       "metrics": [
-        44.0,
-        34.0,
-        55.0,
-        27.27272727,
-        1.25,
-        31.45454545
+        48.0,
+        35.0,
+        59.0,
+        27.08333333,
+        1.22916667,
+        29.9375
       ]
     },
     {
@@ -107,6 +107,22 @@
     {
       "dimensions": [
         {
+          "name": "https://photobook-nsk.ru/school/#direction/school/preparation",
+          "favicon": "photobook-nsk.ru"
+        }
+      ],
+      "metrics": [
+        15.0,
+        11.0,
+        21.0,
+        13.33333333,
+        1.4,
+        135.4
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/photos",
           "favicon": "photobook-nsk.ru"
         }
@@ -118,22 +134,6 @@
         14.28571429,
         1.14285714,
         22.85714286
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "name": "https://photobook-nsk.ru/school/#direction/school/preparation",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        7.0,
-        6.0,
-        8.0,
-        14.28571429,
-        1.14285714,
-        36.28571429
       ]
     },
     {
@@ -414,16 +414,16 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 802,
-  "sample_space": 802,
+  "sample_size": 819,
+  "sample_space": 819,
   "data_lag": 0,
   "totals": [
-    802.0,
-    502.0,
-    1732.0,
-    24.06483791,
-    2.159601,
-    175.32668329
+    819.0,
+    511.0,
+    1755.0,
+    23.80952381,
+    2.14285714,
+    174.03296703
   ],
   "min": [
     1.0,
@@ -434,9 +434,9 @@
     0.0
   ],
   "max": [
-    598.0,
-    408.0,
-    1419.0,
+    603.0,
+    412.0,
+    1425.0,
     100.0,
     5.5,
     618.5
