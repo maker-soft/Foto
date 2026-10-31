@@ -17,8 +17,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-02",
-    "date2": "2026-10-30",
+    "date1": "2026-08-03",
+    "date2": "2026-10-31",
     "filters": "ym:s:trafficSource=='organic'",
     "limit": 100000,
     "offset": 1,
@@ -44,8 +44,8 @@
     {
       "dimensions": [
         {
-          "name": "Google, результаты поиска",
-          "id": "google_search",
+          "name": "Google",
+          "id": "google",
           "favicon": "google.com"
         }
       ],
@@ -61,8 +61,8 @@
     {
       "dimensions": [
         {
-          "name": "Яндекс, результаты поиска",
-          "id": "yandex_search",
+          "name": "Яндекс",
+          "id": "yandex",
           "favicon": "www.yandex.ru"
         }
       ],
@@ -81,8 +81,8 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 823,
-  "sample_space": 823,
+  "sample_size": 825,
+  "sample_space": 825,
   "data_lag": 0,
   "totals": [
     11.0,
