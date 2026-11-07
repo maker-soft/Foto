@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-08",
-    "date2": "2026-11-05",
+    "date1": "2026-08-10",
+    "date2": "2026-11-07",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        425.0,
-        263.0,
-        17.88235294
+        440.0,
+        272.0,
+        17.72727273
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        205.0,
-        161.0,
-        20.0
+        208.0,
+        164.0,
+        20.67307692
       ]
     },
     {
@@ -96,9 +96,9 @@
         }
       ],
       "metrics": [
-        81.0,
-        60.0,
-        25.92592593
+        83.0,
+        62.0,
+        25.30120482
       ]
     },
     {
@@ -138,9 +138,9 @@
         }
       ],
       "metrics": [
-        32.0,
-        25.0,
-        12.5
+        40.0,
+        33.0,
+        10.0
       ]
     },
     {
@@ -356,6 +356,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "10105",
+          "icon_type": "country",
+          "iso_name": "SG",
+          "id": "10105",
+          "name": "Сингапур"
+        },
+        {
+          "iso_name": "SG SIN",
+          "id": "10619",
+          "name": "Сингапур"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        100.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "96",
           "icon_type": "country",
           "iso_name": "DE",
@@ -393,6 +414,27 @@
         1.0,
         1.0,
         0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "20975",
+          "icon_type": "country",
+          "iso_name": "KH",
+          "id": "20975",
+          "name": "Камбоджа"
+        },
+        {
+          "iso_name": "KH PNH",
+          "id": "21316",
+          "name": "Пномпень"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        100.0
       ]
     },
     {
@@ -457,41 +499,20 @@
         1.0,
         0.0
       ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "10105",
-          "icon_type": "country",
-          "iso_name": "SG",
-          "id": "10105",
-          "name": "Сингапур"
-        },
-        {
-          "iso_name": "SG SIN",
-          "id": "10619",
-          "name": "Сингапур"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        100.0
-      ]
     }
   ],
-  "total_rows": 21,
+  "total_rows": 22,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 842,
-  "sample_space": 842,
+  "sample_size": 872,
+  "sample_space": 872,
   "data_lag": 0,
   "totals": [
-    842.0,
-    531.0,
-    23.63420428
+    872.0,
+    555.0,
+    23.50917431
   ],
   "min": [
     1.0,
@@ -499,8 +520,8 @@
     0.0
   ],
   "max": [
-    425.0,
-    263.0,
+    440.0,
+    272.0,
     100.0
   ]
 }
