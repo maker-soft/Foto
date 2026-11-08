@@ -13,8 +13,8 @@
     "sort": [
       "-ym:pv:pageviews"
     ],
-    "date1": "2026-08-10",
-    "date2": "2026-11-07",
+    "date1": "2026-08-11",
+    "date2": "2026-11-08",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -44,8 +44,8 @@
         }
       ],
       "metrics": [
-        963.0,
-        455.0
+        969.0,
+        461.0
       ]
     },
     {
@@ -378,19 +378,19 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 1826,
-  "sample_space": 1826,
+  "sample_size": 1832,
+  "sample_space": 1832,
   "data_lag": 0,
   "totals": [
-    1823.0,
-    555.0
+    1829.0,
+    561.0
   ],
   "min": [
     1.0,
     1.0
   ],
   "max": [
-    963.0,
-    455.0
+    969.0,
+    461.0
   ]
 }
