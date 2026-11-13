@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:anyGoalReaches"
     ],
-    "date1": "2026-08-15",
-    "date2": "2026-11-12",
+    "date1": "2026-08-16",
+    "date2": "2026-11-13",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -170,14 +170,14 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 907,
-  "sample_space": 907,
+  "sample_size": 909,
+  "sample_space": 909,
   "data_lag": 0,
   "totals": [
-    907.0,
-    576.0,
+    909.0,
+    578.0,
     2034.0,
-    65.27012128
+    65.12651265
   ],
   "min": [
     4.0,

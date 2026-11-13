@@ -1,12 +1,12 @@
 {
-  "exported_at_utc": "2026-11-12T09:50:21.419540+00:00",
+  "exported_at_utc": "2026-11-13T09:31:22.173976+00:00",
   "counter_id": "111851028",
   "counter_name": "Photobook-nsk.ru",
   "site": "photobook-nsk.ru",
   "permission": "own",
   "period": {
-    "date1": "2026-08-15",
-    "date2": "2026-11-12",
+    "date1": "2026-08-16",
+    "date2": "2026-11-13",
     "days": 90
   },
   "goal_count": 9,
@@ -14,8 +14,8 @@
     {
       "name": "daily",
       "status": "ok",
-      "rows": 77,
-      "total_rows": 77,
+      "rows": 78,
+      "total_rows": 78,
       "sampled": false,
       "sample_share": 1.0,
       "contains_sensitive_data": false
@@ -85,12 +85,8 @@
     },
     {
       "name": "popular_pages",
-      "status": "ok",
-      "rows": 28,
-      "total_rows": 28,
-      "sampled": false,
-      "sample_share": 1.0,
-      "contains_sensitive_data": false
+      "status": "error",
+      "error": "HTTP 400 for /stat/v1/data: {\"errors\":[{\"error_type\":\"query_error\",\"message\":\"Запрос слишком сложный. Пожалуйста, уменьшите интервал дат или семплирование.\"}],\"code\":400,\"message\":\"Запрос слишком сложный. Пожалуйста, уменьшите интервал дат или семплирование.\"}"
     }
   ]
 }
