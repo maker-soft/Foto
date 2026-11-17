@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-19",
-    "date2": "2026-11-16",
+    "date1": "2026-08-20",
+    "date2": "2026-11-17",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        215.0,
-        171.0,
-        21.39534884
+        216.0,
+        172.0,
+        21.2962963
       ]
     },
     {
@@ -527,13 +527,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 910,
-  "sample_space": 910,
+  "sample_size": 911,
+  "sample_space": 911,
   "data_lag": 0,
   "totals": [
-    910.0,
+    911.0,
     578.0,
-    23.40659341
+    23.38090011
   ],
   "min": [
     1.0,

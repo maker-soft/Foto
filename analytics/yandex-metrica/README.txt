@@ -3,8 +3,8 @@ Yandex Metrica export
 
 Counter: 111851028
 Site: photobook-nsk.ru
-Period: 2026-08-19 .. 2026-11-16
-Generated (UTC): 2026-11-16T09:43:26.192909+00:00
+Period: 2026-08-20 .. 2026-11-17
+Generated (UTC): 2026-11-17T10:43:41.179227+00:00
 
 This archive contains aggregated reports only.
 The OAuth token is never written to the archive.
