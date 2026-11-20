@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-22",
-    "date2": "2026-11-19",
+    "date1": "2026-08-23",
+    "date2": "2026-11-20",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        461.0,
-        280.0,
-        17.35357918
+        457.0,
+        278.0,
+        17.50547046
       ]
     },
     {
@@ -335,27 +335,6 @@
     {
       "dimensions": [
         {
-          "icon_id": "84",
-          "icon_type": "country",
-          "iso_name": "US",
-          "id": "84",
-          "name": "США"
-        },
-        {
-          "iso_name": null,
-          "id": null,
-          "name": null
-        }
-      ],
-      "metrics": [
-        2.0,
-        2.0,
-        100.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
           "icon_id": "10105",
           "icon_type": "country",
           "iso_name": "SG",
@@ -520,6 +499,27 @@
         1.0,
         0.0
       ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "84",
+          "icon_type": "country",
+          "iso_name": "US",
+          "id": "84",
+          "name": "США"
+        },
+        {
+          "iso_name": null,
+          "id": null,
+          "name": null
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        100.0
+      ]
     }
   ],
   "total_rows": 23,
@@ -527,13 +527,13 @@
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 912,
-  "sample_space": 912,
+  "sample_size": 907,
+  "sample_space": 907,
   "data_lag": 0,
   "totals": [
-    912.0,
-    578.0,
-    23.35526316
+    907.0,
+    575.0,
+    23.37375965
   ],
   "min": [
     1.0,
@@ -541,8 +541,8 @@
     0.0
   ],
   "max": [
-    461.0,
-    280.0,
+    457.0,
+    278.0,
     100.0
   ]
 }
