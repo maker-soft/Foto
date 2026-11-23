@@ -17,8 +17,8 @@
     "sort": [
       "ym:s:date"
     ],
-    "date1": "2026-08-25",
-    "date2": "2026-11-22",
+    "date1": "2026-08-26",
+    "date2": "2026-11-23",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -1232,30 +1232,45 @@
         }
       ],
       "metrics": [
-        1.0,
-        1.0,
-        1.0,
+        5.0,
+        4.0,
+        18.0,
         0.0,
+        3.6,
+        98.6
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-11-23"
+        }
+      ],
+      "metrics": [
+        4.0,
+        3.0,
+        4.0,
+        25.0,
         1.0,
-        47.0
+        71.0
       ]
     }
   ],
-  "total_rows": 80,
+  "total_rows": 81,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 908,
-  "sample_space": 908,
+  "sample_size": 916,
+  "sample_space": 916,
   "data_lag": 0,
   "totals": [
-    908.0,
-    579.0,
-    1883.0,
-    23.34801762,
-    2.07378855,
-    166.55726872
+    916.0,
+    584.0,
+    1904.0,
+    23.25327511,
+    2.07860262,
+    165.89956332
   ],
   "min": [
     1.0,

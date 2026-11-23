@@ -14,8 +14,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-25",
-    "date2": "2026-11-22",
+    "date1": "2026-08-26",
+    "date2": "2026-11-23",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -47,9 +47,9 @@
         }
       ],
       "metrics": [
-        295.0,
-        205.0,
-        26.77966102
+        298.0,
+        207.0,
+        26.84563758
       ]
     },
     {
@@ -77,9 +77,9 @@
         }
       ],
       "metrics": [
-        114.0,
+        116.0,
         59.0,
-        14.9122807
+        14.65517241
       ]
     },
     {
@@ -145,6 +145,21 @@
     {
       "dimensions": [
         {
+          "icon_id": "203",
+          "icon_type": "browser",
+          "name": "Huawei Browser",
+          "id": "203"
+        }
+      ],
+      "metrics": [
+        12.0,
+        7.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "204",
           "icon_type": "browser",
           "name": "HeadlessChrome",
@@ -155,21 +170,6 @@
         12.0,
         12.0,
         66.66666667
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "203",
-          "icon_type": "browser",
-          "name": "Huawei Browser",
-          "id": "203"
-        }
-      ],
-      "metrics": [
-        11.0,
-        6.0,
-        0.0
       ]
     },
     {
@@ -235,6 +235,21 @@
     {
       "dimensions": [
         {
+          "icon_id": "53",
+          "icon_type": "browser",
+          "name": "Firefox Mobile",
+          "id": "53"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "2",
           "icon_type": "browser",
           "name": "Opera",
@@ -263,18 +278,18 @@
       ]
     }
   ],
-  "total_rows": 15,
+  "total_rows": 16,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 908,
-  "sample_space": 908,
+  "sample_size": 916,
+  "sample_space": 916,
   "data_lag": 0,
   "totals": [
-    908.0,
-    579.0,
-    23.34801762
+    916.0,
+    584.0,
+    23.25327511
   ],
   "min": [
     1.0,
@@ -282,8 +297,8 @@
     0.0
   ],
   "max": [
-    295.0,
-    205.0,
+    298.0,
+    207.0,
     100.0
   ]
 }
