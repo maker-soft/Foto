@@ -17,12 +17,12 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-27",
-    "date2": "2026-11-24",
+    "date1": "2026-08-28",
+    "date2": "2026-11-25",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
-    "benchmarks_version": "1794182400000",
+    "benchmarks_version": "1794787200000",
     "benchmarks_sub_industry": "false",
     "auto_group_size": "1",
     "exp_bucket_size": "100",
@@ -48,12 +48,12 @@
         }
       ],
       "metrics": [
-        657.0,
-        459.0,
-        1508.0,
-        23.43987823,
-        2.29528158,
-        179.02435312
+        654.0,
+        458.0,
+        1505.0,
+        23.24159021,
+        2.30122324,
+        179.82262997
       ]
     },
     {
@@ -64,12 +64,12 @@
         }
       ],
       "metrics": [
-        125.0,
-        104.0,
-        193.0,
-        20.8,
-        1.544,
-        184.528
+        124.0,
+        103.0,
+        192.0,
+        20.96774194,
+        1.5483871,
+        185.64516129
       ]
     },
     {
@@ -219,22 +219,6 @@
     {
       "dimensions": [
         {
-          "name": "https://photobook-nsk.ru/?_ym_debug=1",
-          "favicon": "photobook-nsk.ru"
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
-        1.0,
-        100.0,
-        1.0,
-        0.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
           "name": "https://photobook-nsk.ru/kindergarten/#direction/kindergarten/albums/kg-2",
           "favicon": "photobook-nsk.ru"
         }
@@ -377,21 +361,21 @@
       ]
     }
   ],
-  "total_rows": 21,
+  "total_rows": 20,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 906,
-  "sample_space": 906,
+  "sample_size": 901,
+  "sample_space": 901,
   "data_lag": 0,
   "totals": [
-    906.0,
-    579.0,
-    1881.0,
-    23.50993377,
-    2.07615894,
-    165.30463576
+    901.0,
+    576.0,
+    1876.0,
+    23.30743618,
+    2.08213097,
+    166.15427303
   ],
   "min": [
     1.0,
@@ -402,9 +386,9 @@
     0.0
   ],
   "max": [
-    657.0,
-    459.0,
-    1508.0,
+    654.0,
+    458.0,
+    1505.0,
     100.0,
     5.5,
     618.5
