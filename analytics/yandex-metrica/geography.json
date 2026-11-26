@@ -15,8 +15,8 @@
     "sort": [
       "-ym:s:visits"
     ],
-    "date1": "2026-08-28",
-    "date2": "2026-11-25",
+    "date1": "2026-08-29",
+    "date2": "2026-11-26",
     "limit": 100000,
     "offset": 1,
     "group": "Week",
@@ -54,9 +54,9 @@
         }
       ],
       "metrics": [
-        454.0,
-        279.0,
-        17.40088106
+        458.0,
+        280.0,
+        17.2489083
       ]
     },
     {
@@ -75,9 +75,9 @@
         }
       ],
       "metrics": [
-        216.0,
-        173.0,
-        21.75925926
+        219.0,
+        176.0,
+        22.83105023
       ]
     },
     {
@@ -188,6 +188,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "96",
+          "icon_type": "country",
+          "iso_name": "DE",
+          "id": "96",
+          "name": "Германия"
+        },
+        {
+          "iso_name": null,
+          "id": null,
+          "name": null
+        }
+      ],
+      "metrics": [
+        6.0,
+        6.0,
+        100.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "225",
           "icon_type": "country",
           "iso_name": "RU",
@@ -251,27 +272,6 @@
     {
       "dimensions": [
         {
-          "icon_id": "96",
-          "icon_type": "country",
-          "iso_name": "DE",
-          "id": "96",
-          "name": "Германия"
-        },
-        {
-          "iso_name": "DE FRA",
-          "id": "100",
-          "name": "Франкфурт-на-Майне"
-        }
-      ],
-      "metrics": [
-        3.0,
-        2.0,
-        33.33333333
-      ]
-    },
-    {
-      "dimensions": [
-        {
           "icon_id": "225",
           "icon_type": "country",
           "iso_name": "RU",
@@ -314,6 +314,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "96",
+          "icon_type": "country",
+          "iso_name": "DE",
+          "id": "96",
+          "name": "Германия"
+        },
+        {
+          "iso_name": "DE FRA",
+          "id": "100",
+          "name": "Франкфурт-на-Майне"
+        }
+      ],
+      "metrics": [
+        2.0,
+        2.0,
+        50.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "225",
           "icon_type": "country",
           "iso_name": "RU",
@@ -350,27 +371,6 @@
       "metrics": [
         2.0,
         2.0,
-        100.0
-      ]
-    },
-    {
-      "dimensions": [
-        {
-          "icon_id": "96",
-          "icon_type": "country",
-          "iso_name": "DE",
-          "id": "96",
-          "name": "Германия"
-        },
-        {
-          "iso_name": null,
-          "id": null,
-          "name": null
-        }
-      ],
-      "metrics": [
-        1.0,
-        1.0,
         100.0
       ]
     },
@@ -447,6 +447,27 @@
           "name": "Россия"
         },
         {
+          "iso_name": "RU EKA",
+          "id": "54",
+          "name": "Екатеринбург"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
           "iso_name": "RU IKT",
           "id": "63",
           "name": "Иркутск"
@@ -503,6 +524,27 @@
     {
       "dimensions": [
         {
+          "icon_id": "225",
+          "icon_type": "country",
+          "iso_name": "RU",
+          "id": "225",
+          "name": "Россия"
+        },
+        {
+          "iso_name": "RU KHV",
+          "id": "76",
+          "name": "Хабаровск"
+        }
+      ],
+      "metrics": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
           "icon_id": "84",
           "icon_type": "country",
           "iso_name": "US",
@@ -522,18 +564,18 @@
       ]
     }
   ],
-  "total_rows": 23,
+  "total_rows": 25,
   "total_rows_rounded": false,
   "sampled": false,
   "contains_sensitive_data": false,
   "sample_share": 1.0,
-  "sample_size": 901,
-  "sample_space": 901,
+  "sample_size": 914,
+  "sample_space": 914,
   "data_lag": 0,
   "totals": [
-    901.0,
-    576.0,
-    23.30743618
+    914.0,
+    587.0,
+    23.8512035
   ],
   "min": [
     1.0,
@@ -541,8 +583,8 @@
     0.0
   ],
   "max": [
-    454.0,
-    279.0,
+    458.0,
+    280.0,
     100.0
   ]
 }
